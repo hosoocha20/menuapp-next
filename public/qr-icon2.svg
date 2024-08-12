@@ -1,0 +1,14 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+
+  <path fill="none"
+    stroke="#706ea2" stroke-linecap="round" stroke-width="7" d="M10 70 L10 10 L70 10" ></path>
+<path fill="none"
+    stroke="#706ea2" stroke-linecap="round" stroke-width="7" d="M10 130 L10 190 L70 190" ></path>
+    <path fill="none"
+    stroke="#706ea2" stroke-linecap="round" stroke-width="7" d="M130 190 L190 190 L190 130" ></path>
+    <path fill="none"
+    stroke="#706ea2" stroke-linecap="round" stroke-width="7" d="M190 70 L190 10 L130 10" ></path>
+    <path fill="none"
+    stroke="red" stroke-linecap="round" stroke-width="7" d="M10 100 L190 100" ></path>
+
+</svg>
