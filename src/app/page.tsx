@@ -1,11 +1,10 @@
-'use client'
+"use client";
 import React, { Component, useEffect, useRef, useState } from "react";
-import Image from 'next/image'
+import Image from "next/image";
 
 // import tabletSVG from "public/tablet.svg";
 
 // import mealSVG from "public/family-meal-29.svg";
-
 
 // import qrSVG from "public/qr-code-64.svg";
 // import qrCodePNG from "public/qr-code-128.png"
@@ -34,7 +33,6 @@ import {
   Posf,
   Qrf,
 } from "@/ui/FeaturesIcon";
-
 
 import {
   motion,
@@ -88,12 +86,11 @@ const HomePage = () => {
     hidden: {
       opacity: 0,
       y: 10,
-
     },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, staggerChildren: 0.12,ease: "easeOut" },
+      transition: { duration: 0.4, staggerChildren: 0.12, ease: "easeOut" },
     },
   };
   const imgFadeInUpAni: Variants = {
@@ -177,33 +174,36 @@ const HomePage = () => {
   }, [controls, qrAniIsInView]);
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
-      <div className="h-[100vh] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] border bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
+      <section className="h-[100vh] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
         <div className="pr-[2vw] flex flex-col gap-[2.5rem] justify-center  ">
-          <h1 className=" border  text-[2rem] md:text-[2.5rem] lg:text-[3.1rem] font-[600] text-gun-powder-950  ">
+          <h1 className=" text-[2rem] md:text-[2.5rem] lg:text-[3.1rem] font-[600] text-gun-powder-950  ">
             Boost Efficiency, <span className="block">Delight Customers,</span>{" "}
             <span className="block">Enhance your Service</span>
           </h1>
-          <p className="border">
+          <p>
             Empower customers, optimize operations, maximize profits.
             <span className="block">
               SmartMenu - The premier self-ordering solution.
             </span>
           </p>
-          <button className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center tablet:self-auto">
+          <button className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center tablet:self-auto">
             Get Started
           </button>
         </div>
-        <img src={'/order.svg'} alt={'orderSVG'} className="w-[35%]" />
-      </div>
-      <div className=" py-[2rem] px-[8rem] w-full flex justify-center items-center ">
+        <img src={"/order.svg"} alt={"orderSVG"} className="w-[35%]" />
+      </section>
+      <section className=" py-[2rem] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
         {/* <RevealAni className="w-[80%]" amount={0.4}> */}
-        <div ref={sectionOneRef} className="flex gap-[8rem]  w-[80%]">
+        <div
+          ref={sectionOneRef}
+          className="flex flex-col items-center portrait-tablet:flex-row portrait-tablet:gap-x-[2.5rem] tablet:gap-x-[4rem] lg:gap-x-[clamp(5rem,1vw,8rem)]  "
+        >
           <motion.img
             variants={imgFadeInUpAni}
             initial="hidden"
             whileInView="visible"
             viewport={{ root: sectionOneRef, amount: 0.4 }}
-            src={'/family-meal-1.svg'}
+            src={"/family-meal-1.svg"}
             className="w-[45%]"
           ></motion.img>
           <motion.div
@@ -211,7 +211,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ root: sectionOneRef, amount: 0.4 }}
-            className="flex flex-col gap-[1.5rem] pt-[8rem]  w-fit  smooth-text-rendering "
+            className="flex flex-col items-center portrait-tablet:items-start gap-[1.5rem]  justify-center  w-fit  smooth-text-rendering"
           >
             <motion.h2
               variants={fadeInUpAni}
@@ -222,78 +222,94 @@ const HomePage = () => {
             </motion.h2>
             <motion.p
               variants={fadeInUpAni}
-              className="text-[2rem] text-gun-powder-950 font-[600] w-max will-change-[transform,opacity] smooth-text-rendering"
+              className="text-[1.3rem] md:text-[1.5rem]  xl:text-[2rem] text-gun-powder-950 font-[600] w-max will-change-[transform,opacity] smooth-text-rendering"
             >
-              We offer a <span className="text-my-orange-300">smart</span> way
-              to dine
+              A Smart way to Dine
             </motion.p>
-            <motion.p variants={fadeInUpAni} className="smooth-text-rendering">
+            <motion.p
+              variants={fadeInUpAni}
+              className="text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
+            >
               Its a user-friendly self-service ordering software designed to
               enhance the dining experience for both customers and restaurants.
             </motion.p>
-            <motion.p variants={fadeInUpAni} className="smooth-text-rendering ">
+            <motion.p
+              variants={fadeInUpAni}
+              className="text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
+            >
               With SmartMenu, customers can effortlessly browse menus, customize
               orders, and complete payments without the need for waitstaff
               intervention.
             </motion.p>
             <motion.button
               variants={fadeInUpAni}
-              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-3 mt-[3.2rem] text-white smooth-text-rendering"
+              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 mt-[2.5rem] tablet:mt-[3.2rem] text-white text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base smooth-text-rendering"
             >
               Get Started Now
             </motion.button>
           </motion.div>
         </div>
         {/* </RevealAni> */}
-      </div>
-      <div className=" py-[2rem]  px-[8rem] w-full flex justify-center items-center ">
-        <div ref={sectionTwoRef} className="flex gap-[8rem] w-[80%] ">
-          <motion.div
-            variants={fadeInUpAni}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ root: sectionTwoRef, amount: 0.4 }}
-            className="flex flex-col gap-[1.5rem] pt-[8rem] "
-          >
-            <motion.h2
-              variants={fadeInUpAni}
-              className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] "
-            >
-              Why SmartMenu
-            </motion.h2>
-            <motion.p
-              variants={fadeInUpAni}
-              className="text-[2rem] text-gun-powder-950 font-[600]"
-            >
-              Smart and Eco-friendly
-            </motion.p>
-            <motion.p variants={fadeInUpAni}>
-              Reduce costs, boost efficiency, and embrace sustainability – all
-              with SmartMenu. Our innovative digital menu system eliminates the
-              need for printing and laminating, saving you money and minimizing
-              environmental impact.
-            </motion.p>
-            <motion.p variants={fadeInUpAni}>
-              Say goodbye to outdated menus and hello to a more responsible and
-              efficient way to manage your restaurant.
-            </motion.p>
-            <motion.button
-              variants={fadeInUpAni}
-              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-3 mt-[3.2rem] text-white"
-            >
-              Get Started Now
-            </motion.button>
-          </motion.div>
+      </section>
+      <section className="py-[2rem] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
+        <div
+          ref={sectionTwoRef}
+          className="flex flex-col items-center  portrait-tablet:flex-row-reverse portrait-tablet:gap-x-[2.5rem] tablet:gap-x-[4rem] lg:gap-x-[clamp(5rem,1vw,8rem)] "
+        >
           <motion.img
             variants={imgFadeInUpAni}
             initial="hidden"
             whileInView="visible"
             viewport={{ root: sectionTwoRef, amount: 0.4 }}
-            src={'smartDevice2.svg'}
-            className="w-[40%]"
+            src={"smartDevice2.svg"}
+            className="w-[45%]"
           ></motion.img>
+          <motion.div
+            variants={fadeInUpAni}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ root: sectionTwoRef, amount: 0.4 }}
+            className="flex flex-col items-center portrait-tablet:items-start gap-[1.5rem]  justify-center w-fit"
+          >
+            <motion.h2
+              variants={fadeInUpAni}
+              className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] smooth-text-rendering"
+            >
+              Why SmartMenu
+            </motion.h2>
+            <motion.p
+              variants={fadeInUpAni}
+              className="text-[1.3rem] md:text-[1.5rem]  xl:text-[2rem] text-gun-powder-950 font-[600] w-max"
+            >
+              Smart and Eco-friendly
+            </motion.p>
+            <motion.p
+              variants={fadeInUpAni}
+              className="text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
+            >
+              Reduce costs, boost efficiency, and embrace sustainability – all
+              with SmartMenu. 
+              <br></br>
+              Our innovative digital menu system eliminates the
+              need for printing and laminating, saving you money and minimizing
+              environmental impact.
+            </motion.p>
+            <motion.p
+              variants={fadeInUpAni}
+              className="text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
+            >
+              Say goodbye to outdated menus and hello to a more responsible and
+              efficient way to manage your restaurant.
+            </motion.p>
+            <motion.button
+              variants={fadeInUpAni}
+              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 mt-[2.5rem] tablet:mt-[3.2rem] text-white text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
+            >
+              Get Started Now
+            </motion.button>
+          </motion.div>
         </div>
-      </div>
+      </section>
       <ViewMoreUI
         tag="About us"
         body="Learn more about what we do"
@@ -431,7 +447,11 @@ const HomePage = () => {
                           }}
                           className="absolute bottom-0 left-0 w-full h-[2px] opacity-0 rounded-full bg-[#00a36c]"
                         ></motion.div>
-                        <img src={'/qr-code-128.png'} alt={"qr-code-128.png"} className="w-[100px]"  />
+                        <img
+                          src={"/qr-code-128.png"}
+                          alt={"qr-code-128.png"}
+                          className="w-[100px]"
+                        />
                       </div>
                     </motion.div>
                     {/* After Animation */}
@@ -461,13 +481,18 @@ const HomePage = () => {
                           </div>
                         </div>
                         <div className="grid grid-cols-2 gap-3 px-1">
-                          {foodMenuPhoneArr.map((imgSrc: string, ind: number) => (
-                            <div key={ind} className="bg-white rounded-lg font-[600] text-my-black-950 p-2 border text-center">
-                              <img src={`/${imgSrc}`} />
-                              <p className="text-[0.75rem]">Pizza</p>
-                              <p className="text-[0.7rem]">$20.00</p>
-                            </div>
-                          ))}
+                          {foodMenuPhoneArr.map(
+                            (imgSrc: string, ind: number) => (
+                              <div
+                                key={ind}
+                                className="bg-white rounded-lg font-[600] text-my-black-950 p-2 border text-center"
+                              >
+                                <img src={`/${imgSrc}`} />
+                                <p className="text-[0.75rem]">Pizza</p>
+                                <p className="text-[0.7rem]">$20.00</p>
+                              </div>
+                            )
+                          )}
                         </div>
                       </div>
                     </motion.div>
@@ -582,17 +607,22 @@ const HomePage = () => {
                       </div>
                       <div className="w-[55%] h-full bg-my-black-100">
                         <div className=" h-max  grid grid-cols-5 gap-1 p-1 ">
-                          {foodMenuKioskImgArr.map((imgSrc: string, ind : number) => (
-                            <div key={ind} className="p-1 rounded-md bg-white">
-                              <img src={`/${imgSrc}`} />
-                              <p className="text-[0.4rem] text-center mt-[1px]">
-                                Pizza
-                              </p>
-                              <p className="text-[0.35rem] text-center">
-                                $20.00
-                              </p>
-                            </div>
-                          ))}
+                          {foodMenuKioskImgArr.map(
+                            (imgSrc: string, ind: number) => (
+                              <div
+                                key={ind}
+                                className="p-1 rounded-md bg-white"
+                              >
+                                <img src={`/${imgSrc}`} />
+                                <p className="text-[0.4rem] text-center mt-[1px]">
+                                  Pizza
+                                </p>
+                                <p className="text-[0.35rem] text-center">
+                                  $20.00
+                                </p>
+                              </div>
+                            )
+                          )}
                         </div>
                       </div>
                       <div className="w-[23%]  bg-my-black-50 flex flex-col justify-between">
@@ -668,7 +698,7 @@ const HomePage = () => {
             >
               <motion.img
                 variants={fadeInUpAni}
-                src={'/time.svg'}
+                src={"/time.svg"}
                 className="w-[6rem]  "
               ></motion.img>
               <motion.p
@@ -694,7 +724,7 @@ const HomePage = () => {
             >
               <motion.img
                 variants={fadeInUpAni}
-                src={'/efficiency.svg'}
+                src={"/efficiency.svg"}
                 className="w-[6rem]"
               ></motion.img>
               <motion.p
@@ -719,7 +749,7 @@ const HomePage = () => {
             >
               <motion.img
                 variants={fadeInUpAni}
-                src={'/easy.svg'}
+                src={"/easy.svg"}
                 className="w-[6rem]"
               ></motion.img>
               <motion.p
@@ -749,7 +779,10 @@ const HomePage = () => {
         </div>
         <div className="grid grid-cols-4 px-[10vw] flex-1 gap-3">
           {offerArr.map((item: OfferI, i: number) => (
-            <div key={i} className="rounded-2xl relative group flex flex-col items-center pt-[30%] gap-[2rem] hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out ">
+            <div
+              key={i}
+              className="rounded-2xl relative group flex flex-col items-center pt-[30%] gap-[2rem] hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
+            >
               <div className="group-hover:fill-white fill-my-black-950 w-[3.5rem] translate-y-0 group-hover:translate-y-[-0.2rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75 ">
                 {createComponent(i)}
               </div>
@@ -784,7 +817,7 @@ const HomePage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ root: howSectionRef, amount: 0.4, once: true }}
-          src={'/start1.svg'}
+          src={"/start1.svg"}
           className="w-[35%]"
         ></motion.img>
         <div className="flex flex-col w-[500px] gap-[1.5rem]">
@@ -958,4 +991,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
