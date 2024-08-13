@@ -176,7 +176,7 @@ const HomePage = () => {
     if (qrAniIsInView) qrAnimationSequence();
   }, [controls, qrAniIsInView]);
   return (
-    <div className=" font-inter mt-[-4.5rem] ">
+    <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
       <div className="h-[100vh] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] border bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
         <div className="pr-[2vw] flex flex-col gap-[2.5rem] justify-center  ">
           <h1 className=" border  text-[2rem] md:text-[2.5rem] lg:text-[3.1rem] font-[600] text-gun-powder-950  ">

@@ -1,27 +1,64 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import {
   motion,
   useScroll,
   useMotionValueEvent,
-  useInView,
+  Variants,
   useAnimate,
-  stagger,
-  delay,
+  useAnimationControls,
   easeInOut,
-  easeIn,
+ 
 } from "framer-motion";
-import { easeOut } from "framer-motion/dom";
+
+import { HamburgerI } from "@/ui/Hamburger";
 
 const Navbar = () => {
   const { scrollY } = useScroll();
   const [hideNav, setHideNav] = useState(false);
   const [scope, animate] = useAnimate();
+  const [openNav, setOpenNav] = useState(false);
+
+  const controls = useAnimationControls();
+
+  const navMenuPVariants : Variants ={
+    show: {
+      
+      transition: {duration: 0.3,ease: "easeOut"},
+    },
+    hide: {
+      
+      transition: {duration: 0.3,ease: "easeOut"},
+    }
+  }
+  const navMenuVariants : Variants ={
+    show: {
+      x: 15,
+      opacity: 1,
+      transition: {duration: 0.3, delay:0.2,ease: "easeOut"},
+    },
+    hide: {
+      x: 30,
+      opacity: 0,
+      transition: {duration: 0.3, ease: "easeOut"},
+    }
+  }
+
+  const openMenuAni = async () =>{
+    setOpenNav(!openNav);
+    if (!openNav) {
+      await controls.start("show")
+    }
+    else{
+      await controls.start("hide")
+    }
+    
+  }
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious()!;
-    if (latest > prev && latest > 150) {
+    if (latest > prev && latest > 150 && !openNav) {
       setHideNav(true);
     } else {
       setHideNav(false);
@@ -37,26 +74,39 @@ const Navbar = () => {
       }}
       animate={hideNav ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: easeInOut }}
-      className={` px-sm-nav tablet:px-tablet-nav lg:px-lg-nav  font-inter w-full h-[4.5rem]  sticky top-0 z-50 bg-white`}
+      className={` px-sm-nav tablet:px-tablet-nav lg:px-lg-nav  font-inter w-full   flex flex-col tablet:h-[4.3rem]  sticky top-0 z-50  bg-white `}
     >
       <div
-        className={` flex justify-between items-center  h-full px-1 rounded-[2rem]`}
+        className={`z-[1] flex justify-between items-center  h-[3rem] tablet:h-[4.3rem] px-1 ${!openNav? "text-my-black-950" :"text-white"} transition-colors duration-300 `}
       >
-        <div className="flex-1  ml-[1rem] font-cabin text-gun-powder-950 text-[1.2rem] font-[500]">
+        <div className=" tablet:flex-1   font-cabin  text-[1rem] tablet:text-[1.2rem] font-[500]">
           SmartMenu
         </div>
-        <div className="flex-1   flex justify-center gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
+        <div className="hidden tablet:flex flex-1  justify-center gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
           <p className=" px-2">About</p>
           <p className=" px-2">Features</p>
           <p className=" px-2">Contact</p>
         </div>
-        <div className="flex-1  flex justify-end gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
-          <button className=" ">Login</button>
-          <button className="border border-my-black-950 bg-my-black-950 rounded-[2rem] px-5 py-[0.78rem] text-white">
+        <div className=" flex-1  flex justify-end items-center gap-[3.2rem] tracking-wider font-[400] text-sm tablet:text-[0.95rem]">
+          <button className="hidden sm:block ">Login</button>
+          <button className={`hidden sm:block border ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
             Get Started
+          </button>
+          <button
+            className="block tablet:hidden w-[2rem] h-[1.2rem] "
+            onClick={openMenuAni}
+          >
+            <HamburgerI className="*:bg-my-black-950  *:h-[0.1rem]" />
           </button>
         </div>
       </div>
+      <motion.div variants={navMenuPVariants} animate={controls} initial={"hide"} className={`opacity-0 bg-my-black-950 ${!openNav? "invisible " : "visible opacity-100"} tablet:invisible z-[0] w-full h-screen  transition-[opacity_1s_linear,visibility_0s_linear_300ms] duration-300 absolute left-0 top-0 pt-[3rem] tablet:pt-[4.3rem] px-sm-nav tablet:px-tablet-nav flex flex-col gap-[1rem] text-white text-[1.6rem] md:text-[1.7rem] tablet:text-[2rem] tracking-widest`}>
+        <motion.p variants={navMenuVariants}   className="mt-[2rem]">About</motion.p>
+        <motion.p variants={navMenuVariants}  >Features</motion.p>
+        <motion.p variants={navMenuVariants} >Contact</motion.p>
+        <motion.p variants={navMenuVariants}  >Login</motion.p>
+        <motion.p variants={navMenuVariants}  >Get Started</motion.p>
+      </motion.div>
     </motion.nav>
   );
 };
