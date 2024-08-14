@@ -215,7 +215,7 @@ const HomePage = () => {
           >
             <motion.h2
               variants={fadeInUpAni}
-              className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] smooth-text-rendering"
+              className="font-cabin uppercase font-medium text-my-black-300 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] smooth-text-rendering"
             >
               {" "}
               What is SmartMenu
@@ -273,7 +273,7 @@ const HomePage = () => {
           >
             <motion.h2
               variants={fadeInUpAni}
-              className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] smooth-text-rendering"
+              className="font-cabin uppercase font-medium text-my-black-300 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] smooth-text-rendering"
             >
               Why SmartMenu
             </motion.h2>
