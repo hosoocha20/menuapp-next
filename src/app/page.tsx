@@ -47,6 +47,7 @@ import LinkUI from "@/ui/LinkUI";
 import RevealAni from "@/ui/RevealAni";
 import TextReveal from "@/ui/TextReveal";
 import FadeInRight from "@/ui/FadeInRight";
+import PhoneUi from "@/ui/PhoneUi";
 
 interface OfferI {
   svg: string;
@@ -56,7 +57,6 @@ const HomePage = () => {
   //animation variables
   const controls = useAnimationControls();
   const qrAniRef = useRef(null);
-  const qrAniIsInView = useInView(qrAniRef, { once: true });
 
   const sectionOneRef = useRef(null);
   const sectionTwoRef = useRef(null);
@@ -163,15 +163,6 @@ const HomePage = () => {
     return <Component key={i} />;
   };
 
-  //Animation Functions
-  const qrAnimationSequence = async () => {
-    await controls.start("startQr");
-    return await controls.start("fadeOutQr");
-  };
-  useEffect(() => {
-    console.log("Element is in view: ", qrAniIsInView);
-    if (qrAniIsInView) qrAnimationSequence();
-  }, [controls, qrAniIsInView]);
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
       <section className="h-[100vh] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
@@ -288,10 +279,10 @@ const HomePage = () => {
               className="text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
             >
               Reduce costs, boost efficiency, and embrace sustainability – all
-              with SmartMenu. 
+              with SmartMenu.
               <br></br>
-              Our innovative digital menu system eliminates the
-              need for printing and laminating, saving you money and minimizing
+              Our innovative digital menu system eliminates the need for
+              printing and laminating, saving you money and minimizing
               environmental impact.
             </motion.p>
             <motion.p
@@ -316,10 +307,10 @@ const HomePage = () => {
         className="bg-[#ffffff]"
       />
       <hr className="border w-[70%] mx-auto my-0 border-[#f3f3f3]"></hr>
-      <div className="pt-[5rem]  ">
-        <div className="pb-[5rem]">
+      <section className="pt-[3.5rem] tablet:pt-[5rem]  ">
+        <div className="pb-[2rem] tablet:pb-[5rem]">
           <FadeInRight once={true}>
-            <h2 className="font-cabin  text-center uppercase font-medium text-my-mango-600 text-[0.92rem] tracking-[0.3em] py-[1rem]">
+            <h2 className="font-cabin  text-center uppercase font-medium text-my-mango-600 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] py-[1rem]">
               {" "}
               Our Solution
             </h2>
@@ -330,220 +321,37 @@ const HomePage = () => {
             </p>
           </RevealAni>
         </div>
-        <div ref={phoneContainerRef} className="h-[600px] px-[8rem] ">
-          <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pt-[3rem] px-[3rem]  relative flex justify-center">
-            {/* Phone */}
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: -55 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              exit="visible"
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="absolute top-[0]  h-full overflow-hidden  left-[5vw]"
-            >
-              <div className="h-full w-max overflow-hidden  rounded  px-[2rem] ">
-                <div className="w-[300px] h-[550px]  rounded-[2rem] p-[0.5rem] pl-[0.7rem] bg-[#1f1f1f] iphone-rim">
-                  <motion.div
-                    animate={controls}
-                    variants={{
-                      fadeOutQr: {
-                        background: [
-                          "linear-gradient(60deg, #7371ee 1%,#a1d9d6 100%)",
-                          "#2f2f2f",
-                          "#222222",
-                          "#151515",
-                        ],
-                      },
-                    }}
-                    transition={{ duration: 1, ease: "linear" }}
-                    className=" flex flex-col items-center gap-[1rem]  w-full h-full rounded-[1.5rem] iphone  bg-gun-powder-600 overflow-hidden "
-                  >
-                    <div className="iphone-screen-top">
-                      <p className="text-sm font-[500]">7.53</p>
-                      <div className="flex gap-1">
-                        <IoMdCellular />
-                        <IoIosWifi />
-                        <IoBatteryFull />
-                      </div>
-                    </div>
-                    {/* Before Animation */}
-                    <motion.div
-                      animate={controls}
-                      variants={{
-                        fadeOutQr: { opacity: 0 },
-                      }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="z-1 opacity-1"
-                    >
-                      <p className="text-white font-cabin font-[500] mt-[8rem] text-center">
-                        Scan QR Code
-                      </p>
-                      <div className=" w-fit p-4 relative  mt-[1rem]">
-                        <motion.div
-                          animate={controls}
-                          variants={{
-                            startQr: {
-                              x: [0, "-5px", "5px"],
-                              y: [0, "-5px", "5px"],
-                            },
-                            endQr: { opacity: 0 },
-                          }}
-                          transition={{ duration: 1 }}
-                          className="absolute top-0 left-0 w-[15px] h-[15px] border-t-4 border-l-4 border-white "
-                        ></motion.div>
-                        <motion.div
-                          animate={controls}
-                          variants={{
-                            startQr: {
-                              x: [0, "-5px", "5px"],
-                              y: [0, "5px", "-5px"],
-                            },
-                            endQr: { opacity: 0 },
-                          }}
-                          transition={{ duration: 1 }}
-                          className="absolute bottom-0 left-0 w-[15px] h-[15px] border-b-4 border-l-4 border-white"
-                        ></motion.div>
-                        <motion.div
-                          animate={controls}
-                          variants={{
-                            startQr: {
-                              x: [0, "5px", "-5px"],
-                              y: [0, "-5px", "5px"],
-                            },
-                            endQr: { opacity: 0 },
-                          }}
-                          transition={{ duration: 1 }}
-                          className="absolute top-0 right-0 w-[15px] h-[15px] border-t-4 border-r-4 border-white "
-                        ></motion.div>
-                        <motion.div
-                          animate={controls}
-                          variants={{
-                            startQr: {
-                              x: [0, "5px", "-5px"],
-                              y: [0, "5px", "-5px"],
-                            },
-                            endQr: { opacity: 0 },
-                          }}
-                          transition={{ duration: 1 }}
-                          className="absolute bottom-0 right-0 w-[15px] h-[15px] border-b-4 border-r-4 border-white "
-                        ></motion.div>
-                        <motion.div
-                          animate={controls}
-                          variants={{
-                            startQr: {
-                              opacity: [0, 0.5, 1, 1, 1],
-                              bottom: [0, "25%", "50%", "75%", "100%"],
-                            },
-                            endQr: { opacity: 0 },
-                          }}
-                          transition={{
-                            ease: "linear",
-                            duration: 0.7,
-                            delay: 0.8,
-                          }}
-                          className="absolute bottom-0 left-0 w-full h-[2px] opacity-0 rounded-full bg-[#00a36c]"
-                        ></motion.div>
-                        <img
-                          src={"/qr-code-128.png"}
-                          alt={"qr-code-128.png"}
-                          className="w-[100px]"
-                        />
-                      </div>
-                    </motion.div>
-                    {/* After Animation */}
-                    <motion.div
-                      animate={controls}
-                      variants={{ fadeOutQr: { visibility: "visible" } }}
-                      transition={{ duration: 0.7 }}
-                      className="absolute top-0 left-0 mt-[1.5rem] w-full h-full flex flex-col invisible"
-                    >
-                      <div className="text-center bg-[#151515] text-[0.75rem] py-2 text-white">
-                        SmartMenu
-                      </div>
-                      <div className="flex-1 flex flex-col gap-[1rem] px-3 pt-4 bg-my-black-50 ">
-                        <h2 className="text-my-mango-600 font-[600]">Menu</h2>
-                        <div className="flex text-[0.75rem] gap-2">
-                          <div className="px-4 py-1 rounded-2xl bg-my-mango-500 text-white border border-my-mango-600 font-[600] ">
-                            Main
-                          </div>
-                          <div className="px-4 py-1 rounded-2xl bg-white border font-[600] text-my-black-950">
-                            Sides
-                          </div>
-                          <div className="px-4 py-1 rounded-2xl bg-white border font-[600] text-my-black-950">
-                            Lunch
-                          </div>
-                          <div className="px-4 py-1 rounded-2xl bg-white border font-[600] text-my-black-950">
-                            Drinks
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-3 px-1">
-                          {foodMenuPhoneArr.map(
-                            (imgSrc: string, ind: number) => (
-                              <div
-                                key={ind}
-                                className="bg-white rounded-lg font-[600] text-my-black-950 p-2 border text-center"
-                              >
-                                <img src={`/${imgSrc}`} />
-                                <p className="text-[0.75rem]">Pizza</p>
-                                <p className="text-[0.7rem]">$20.00</p>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      </div>
-                    </motion.div>
-                    <motion.div
-                      animate={controls}
-                      variants={{ fadeOutQr: { visibility: "visible" } }}
-                      transition={{ duration: 0.7 }}
-                      className="absolute bottom-0 left-0 flex border-t text-[1.3rem] w-full bg-white py-2 px-12 justify-between invisible"
-                    >
-                      <div>
-                        <MdHomeFilled className="text-my-mango-500" />
-                        <div className="w-[0.21rem] h-[0.21rem] rounded-full bg-my-mango-500 mx-auto my-0"></div>
-                      </div>
-                      <div>
-                        <TbClipboardText className="text-my-black-400" />
-                        <div className="w-[0.21rem] h-[0.21rem] rounded-full bg-my-mango-500 mx-auto my-0 invisible"></div>
-                      </div>
-                      <div>
-                        <PiShoppingCartBold className="text-my-black-400" />
-                        <div className="w-[0.21rem] h-[0.21rem] rounded-full bg-my-mango-500 mx-auto my-0 invisible"></div>
-                      </div>
-                    </motion.div>
-                    {/* To Here */}
-                    <i className="iphone-speaker">Speaker</i>
-                    <b className="iphone-camera">Camera</b>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
+        <div
+          ref={phoneContainerRef}
+          className="h-[600px] px-sm-nav tablet:px-tablet-nav lg:px-[8rem]  "
+        >
+          <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center">
+          {/* border md:flex-1  flex md:flex-col justify-center items-center h-full w-auto */}
+            <div className="border md:flex-1  flex md:flex-col justify-center items-end md:items-center h-full w-auto">
+              <PhoneUi parentRef={qrAniRef} />
+            </div>
 
             <motion.div
               variants={fadeInUpAni}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.4, once: true }}
-              className=" h-max  flex flex-col gap-[1rem] w-[600px] ml-[10vw] mt-[5vh]"
+              className=" h-max flex-1 flex flex-col gap-[1rem] md:w-[600px]  border"
             >
               <motion.p variants={fadeInUpAni} className="text-my-black-300">
                 01
               </motion.p>
               <motion.h3
                 variants={fadeInUpAni}
-                className="font-cabin text-[2.5rem] font-[600] text-gun-powder-950"
+                className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[600] text-gun-powder-950"
               >
                 QR Code
               </motion.h3>
-              <motion.p variants={fadeInUpAni}>
+              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base">
                 Scan the QR code at your table to access our mobile-optimized
                 ordering platform using a device.
               </motion.p>
-              <motion.p variants={fadeInUpAni}>
+              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base">
                 Allow your customers to use their own device to scan the QR code
                 to connect to the digitlized menu designated to the specific
                 table.
@@ -679,7 +487,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <section className="h-[100vh] flex flex-col justify-center items-center">
         <div className="flex flex-col  w-max py-[3rem] gap-[3rem]">
           <TextReveal className="relative w-full overflow-hidden" once={true}>
