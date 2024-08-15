@@ -53,6 +53,7 @@ import KioskUi from "@/ui/KioskUi";
 interface OfferI {
   svg: string;
   heading: string;
+  body: string;
 }
 const HomePage = () => {
   //animation variables
@@ -137,14 +138,14 @@ const HomePage = () => {
     "food3.jpg",
   ];
   const offerArr: OfferI[] = [
-    { svg: "qrf", heading: "Digitally Avaliable" },
-    { svg: "kioskf", heading: "Kiosk Software" },
-    { svg: "menuf", heading: "Change your Menu at Anytime" },
-    { svg: "brushf", heading: "Design your Menu" },
-    { svg: "customizef", heading: "Customize Features" },
-    { svg: "controlf", heading: "Manage your Orders" },
-    { svg: "posf", heading: "Self PoS" },
-    { svg: "adminf", heading: "Employee PoS" },
+    { svg: "qrf", heading: "Digitally Available", body:"Your customers can access the menu on their own device at anytime, without any app install." },
+    { svg: "kioskf", heading: "Table Ordering", body:"Empower your customers to order at their own pace, directly from their table." },
+    { svg: "menuf", heading: "Change your Menu at Anytime", body:"Update your menu instantly without the hassle of reprints." },
+    { svg: "brushf", heading: "Design your Menu", body: "Create a visually appealing menu that reflects your restaurant's brand." },
+    { svg: "adminf", heading: "Call Server", body: "Allow customers to wuickly request additional service from your waitstaff with a button." },
+    { svg: "controlf", heading: "Manage your Orders", body: "Efficiently manage incoming orders and track their status." },
+    { svg: "posf", heading: "Fully Integrated", body: "Send orders directly to your Kitchen and POS for streamlined operations." },
+    { svg: "customizef", heading: "Additional Features", body: "Includes simple view, recommendations, dietary restrictions etc. "},
   ];
   const components = [
     Qrf,
@@ -508,8 +509,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className=" h-screen flex flex-col bg-my-black-10">
-        <div className="py-[5rem] text-center w-full flex flex-col gap-[1rem]">
+      <section className="min-h-screen flex flex-col bg-my-black-10 border px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
+        <div className="py-[5rem] text-center w-full flex flex-col gap-[1rem] border">
           <h2 className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] ">
             Our Features
           </h2>
@@ -517,11 +518,11 @@ const HomePage = () => {
             What we Offer
           </p>
         </div>
-        <div className="grid grid-cols-4 px-[10vw] flex-1 gap-3">
+        <div className="grid grid-cols-4  flex-1 gap-3 border">
           {offerArr.map((item: OfferI, i: number) => (
             <div
               key={i}
-              className="rounded-2xl relative group flex flex-col items-center pt-[30%] gap-[2rem] hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
+              className="rounded-2xl relative group flex flex-col items-center pt-[30%] gap-[2rem] min-h-[300px] hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
             >
               <div className="group-hover:fill-white fill-my-black-950 w-[3.5rem] translate-y-0 group-hover:translate-y-[-0.2rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75 ">
                 {createComponent(i)}
@@ -535,8 +536,7 @@ const HomePage = () => {
                 {item.heading}
               </h4>
               <p className="absolute w-full text-center px-[25%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[0.3rem] text-transparent tracking-wide group-hover:text-white group-hover:translate-y-[0] transition duration-300 ease-in-out delay-75">
-                Your customers can access the menu on their own device at any
-                time, without any app install.
+                {item.body}
               </p>
             </div>
           ))}
