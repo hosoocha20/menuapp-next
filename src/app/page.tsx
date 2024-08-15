@@ -166,7 +166,7 @@ const HomePage = () => {
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
-      <section className="h-[100vh] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
+      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
         <div className="pr-[2vw] flex flex-col gap-[2.5rem] justify-center  ">
           <h1 className=" text-[2rem] md:text-[2.5rem] lg:text-[3.1rem] font-[600] text-gun-powder-950  ">
             Boost Efficiency, <span className="block">Delight Customers,</span>{" "}
@@ -184,7 +184,7 @@ const HomePage = () => {
         </div>
         <img src={"/order.svg"} alt={"orderSVG"} className="w-[35%]" />
       </section>
-      <section className=" py-[2rem] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
+      <section className=" py-[2rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
         {/* <RevealAni className="w-[80%]" amount={0.4}> */}
         <div
           ref={sectionOneRef}
@@ -243,7 +243,7 @@ const HomePage = () => {
         </div>
         {/* </RevealAni> */}
       </section>
-      <section className="py-[2rem] px-sm-nav tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
+      <section className="py-[2rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
         <div
           ref={sectionTwoRef}
           className="flex flex-col items-center  portrait-tablet:flex-row-reverse portrait-tablet:gap-x-[2.5rem] tablet:gap-x-[4rem] lg:gap-x-[clamp(5rem,1vw,8rem)] "
@@ -324,7 +324,7 @@ const HomePage = () => {
         </div>
         <div
           ref={phoneContainerRef}
-          className="h-[600px] px-sm-nav tablet:px-tablet-nav xl:px-[8rem]  "
+          className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav xl:px-[8rem]  "
         >
           <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center md:items-center">
             <div className="md:flex-1  flex md:flex-col justify-center items-end md:items-center h-full w-auto">
@@ -366,7 +366,7 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-        <div ref={kioskContainerRef} className="h-[600px] px-sm-nav tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] ">
+        <div ref={kioskContainerRef} className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] ">
           <div className="bg-[url('/mesh-921.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pb-0 pt-[3rem] tablet:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse tablet:flex-row-reverse gap-x-[1rem] justify-center tablet:items-center">
             {/* <h2 className="text-[2.5rem] text-center text-gun-powder-950 font-[600]">
                 Our Solution
@@ -414,90 +414,96 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="h-[100vh] flex flex-col justify-center items-center">
-        <div className="flex flex-col  w-max py-[3rem] gap-[3rem]">
-          <TextReveal className="relative w-full overflow-hidden" once={true}>
-            <h2 className="text-[2.9rem] text-gun-powder-950 w-[50vw]  leading-tight  ">
+      <section className="min-h-screen flex flex-col justify-center items-center py-[3rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
+        <div className="flex flex-col    gap-[1.5rem] md:gap-[3rem]  h-full w-full xl:w-[1000px]  lg:justify-center">
+          <TextReveal className=" w-full " once={true}>
+            <h2 className="text-[1.6rem] sm:text-[1.8rem] md:text-[2.4rem] lg:text-[2.9rem] px-5 md:px-0 text-gun-powder-950   leading-tight  ">
               Enhance your customer experience while boosting efficiency with
               our digitalized table ordering solution.
             </h2>
           </TextReveal>
-          <div className="flex  justify-center gap-[1rem] text-gun-powder-950 w-max">
+          <div className="flex flex-col md:flex-row justify-center gap-[1rem] text-gun-powder-950 w-full ">
             <motion.div
               variants={cardFadeInUpAni}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3, once: true }}
-              className="flex flex-col w-[22rem] h-[24rem]   bg-[url('/mesh-gradientOR.png')] bg-cover bg-center px-7 py-5 border rounded-2xl my-bg-shadow"
+              className="md:flex-1 flex flex-col justify-between md:justify-normal h-[12rem]  sm:h-[14rem] md:h-[24rem]   bg-[url('/mesh-gradientOR.png')] bg-cover bg-center px-7 py-4 md:py-5 border rounded-2xl my-bg-shadow"
             >
               <motion.img
                 variants={fadeInUpAni}
                 src={"/time.svg"}
-                className="w-[6rem]  "
+                className="w-[4rem] sm:w-[5rem] md:w-[6rem] "
               ></motion.img>
-              <motion.p
-                variants={fadeInUpAni}
-                className="font-[600] text-[1.1rem] mt-[10vh]"
-              >
-                Reduce wait times
-              </motion.p>
-              <motion.p
-                variants={fadeInUpAni}
-                className="text-[0.875rem] mt-[0.5rem]"
-              >
-                Our service allows customers to order directly from their table
-                leading to faster service and happier customers.
-              </motion.p>
+              <div className="md:mt-[40%]">
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="font-[600] text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] "
+                >
+                  Reduce wait times
+                </motion.p>
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="text-[0.875rem] mt-[0.5rem]"
+                >
+                  Our service allows customers to order directly from their table
+                  leading to faster service and happier customers.
+                </motion.p>
+              </div>
             </motion.div>
             <motion.div
               variants={cardFadeInUpAni}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3, once: true }}
-              className="flex flex-col w-[22rem] h-[24rem]   bg-[url('/mesh-gradientM.png')] bg-cover bg-center px-7 py-5 border rounded-2xl my-bg-shadow"
+              className="md:flex-1 flex flex-col justify-between md:justify-normal  h-[12rem]  sm:h-[14rem] md:h-[24rem]  bg-[url('/mesh-gradientM.png')] bg-cover bg-center px-7 py-4 md:py-5 border rounded-2xl my-bg-shadow"
             >
               <motion.img
                 variants={fadeInUpAni}
                 src={"/efficiency.svg"}
-                className="w-[6rem]"
+                className="w-[4rem] sm:w-[5rem] md:w-[6rem]"
               ></motion.img>
-              <motion.p
-                variants={fadeInUpAni}
-                className="font-[600] text-[1.1rem] mt-[10vh]"
-              >
-                Increased efficiency
-              </motion.p>
-              <motion.p
-                variants={fadeInUpAni}
-                className="text-[0.875rem] mt-[0.5rem]"
-              >
-                Streamline operations and reduce labor costs.
-              </motion.p>
+              <div className="md:mt-[40%]">
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="font-[600] text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] "
+                >
+                  Increased efficiency
+                </motion.p>
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="text-[0.875rem] mt-[0.5rem]"
+                >
+                  Streamline operations and reduce labor costs.
+                </motion.p>
+              </div>
             </motion.div>
             <motion.div
               variants={cardFadeInUpAni}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3, once: true }}
-              className="flex flex-col w-[22rem] h-[24rem]]   bg-[url('/mesh-gradientPU.png')] bg-cover bg-center px-7 py-5 border rounded-2xl my-bg-shadow"
+              className="md:flex-1 flex flex-col justify-between md:justify-normal  h-[12rem]  sm:h-[14rem] md:h-[24rem]   bg-[url('/mesh-gradientPU.png')] bg-cover bg-center px-7 py-4 md:py-5 border rounded-2xl my-bg-shadow"
             >
               <motion.img
                 variants={fadeInUpAni}
                 src={"/easy.svg"}
-                className="w-[6rem]"
+                className="w-[4rem] sm:w-[5rem] md:w-[6rem]"
               ></motion.img>
-              <motion.p
-                variants={fadeInUpAni}
-                className="font-[600] text-[1.1rem] mt-[10vh]"
-              >
-                Easy to use
-              </motion.p>
-              <motion.p
-                variants={fadeInUpAni}
-                className="text-[0.875rem] mt-[0.5rem]"
-              >
-                User-friendly system for a smooth ordering experience.
-              </motion.p>
+              <div className="md:mt-[40%]">
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="font-[600] text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] "
+                >
+                  Easy to use
+                </motion.p>
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="text-[0.875rem] mt-[0.5rem]"
+                >
+                  User-friendly system for a smooth ordering experience.
+                </motion.p>
+              </div>
             </motion.div>
           </div>
         </div>

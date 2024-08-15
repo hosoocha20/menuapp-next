@@ -17,6 +17,7 @@ const config: Config = {
         'lg-nav': '5rem',
         'tablet-nav' : '4rem',
         'sm-nav': '2rem',
+        'mob-nav': '1rem',
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
