@@ -48,6 +48,7 @@ import RevealAni from "@/ui/RevealAni";
 import TextReveal from "@/ui/TextReveal";
 import FadeInRight from "@/ui/FadeInRight";
 import PhoneUi from "@/ui/PhoneUi";
+import KioskUi from "@/ui/KioskUi";
 
 interface OfferI {
   svg: string;
@@ -323,11 +324,10 @@ const HomePage = () => {
         </div>
         <div
           ref={phoneContainerRef}
-          className="h-[600px] px-sm-nav tablet:px-tablet-nav lg:px-[8rem]  "
+          className="h-[600px] px-sm-nav tablet:px-tablet-nav xl:px-[8rem]  "
         >
-          <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center">
-          {/* border md:flex-1  flex md:flex-col justify-center items-center h-full w-auto */}
-            <div className="border md:flex-1  flex md:flex-col justify-center items-end md:items-center h-full w-auto">
+          <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center md:items-center">
+            <div className="md:flex-1  flex md:flex-col justify-center items-end md:items-center h-full w-auto">
               <PhoneUi parentRef={qrAniRef} />
             </div>
 
@@ -336,7 +336,7 @@ const HomePage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.4, once: true }}
-              className=" h-max flex-1 flex flex-col gap-[1rem] md:w-[600px]  border"
+              className=" h-max flex-1 flex flex-col gap-[1rem]   "
             >
               <motion.p variants={fadeInUpAni} className="text-my-black-300">
                 01
@@ -347,11 +347,11 @@ const HomePage = () => {
               >
                 QR Code
               </motion.h3>
-              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base">
+              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base xl:w-[600px]">
                 Scan the QR code at your table to access our mobile-optimized
                 ordering platform using a device.
               </motion.p>
-              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base">
+              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base xl:w-[600px]">
                 Allow your customers to use their own device to scan the QR code
                 to connect to the digitlized menu designated to the specific
                 table.
@@ -359,132 +359,58 @@ const HomePage = () => {
               <motion.div
                 variants={fadeInUpAni}
                 ref={qrAniRef}
-                className=" w-max mt-[2.5rem]"
+                className=" w-max mt-[1.7rem] md:mt-[2.5rem]"
               >
                 <LinkUI name="Learn More" />
               </motion.div>
             </motion.div>
           </div>
         </div>
-        <div ref={kioskContainerRef} className="h-[600px] px-[8rem] mt-[4rem] ">
-          <div className="bg-[url('/mesh-921.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pt-[3rem] px-[3rem]">
+        <div ref={kioskContainerRef} className="h-[600px] px-sm-nav tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] ">
+          <div className="bg-[url('/mesh-921.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pb-0 pt-[3rem] tablet:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse tablet:flex-row-reverse gap-x-[1rem] justify-center tablet:items-center">
             {/* <h2 className="text-[2.5rem] text-center text-gun-powder-950 font-[600]">
                 Our Solution
               </h2>
               <p className="text-center">We offer two convenient ways to order:</p> */}
-            <div className=" h-full  relative">
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: "-30%" },
-                  visible: { opacity: 1, y: "-40%" },
-                }}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                exit="visible"
-                transition={{ duration: 0.6, delay: 0.25 }}
-                className="absolute top-[0] right-[5vw]  w-max overflow-hidden  rounded  px-[2rem] flex flex-col items-center"
-              >
-                <div className=" w-[500px] h-[320px]  rounded-[1.2rem] p-[0.6rem] pr-[0.8rem] bg-[#1f1f1f] kiosk-rim">
-                  <div className="flex flex-col w-full h-full rounded-[0.7rem] tablet-kiosk bg-gun-powder-600 overflow-hidden">
-                    <div className="py-[8px] bg-[#151515] text-[0.35rem] text-white text-center">
-                      SmartMenu
-                    </div>
-                    <div className="flex w-full h-full">
-                      <div className="w-[22%] border-r flex flex-col justify-between text-[0.5rem] bg-my-black-50">
-                        <div>
-                          <div className="p-[7px] border-b bg-my-black-800 text-white">
-                            Mains
-                          </div>
-                          <div className="p-[7px] border-b">
-                            Salad and Sides
-                          </div>
-                          <div className="p-[7px] border-b">Lunch Set</div>
-                          <div className="p-[7px] border-b">Drinks</div>
-                          <div className="p-[7px] border-b">Desserts</div>
-                        </div>
-                        <div>
-                          <div className="p-[7px] border-t border-b">
-                            Your Orders
-                          </div>
-                          <div className="p-[7px]  flex justify-between items-center">
-                            <HiBellAlert />
-                            <VscQuestion />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-[55%] h-full bg-my-black-100">
-                        <div className=" h-max  grid grid-cols-5 gap-1 p-1 ">
-                          {foodMenuKioskImgArr.map(
-                            (imgSrc: string, ind: number) => (
-                              <div
-                                key={ind}
-                                className="p-1 rounded-md bg-white"
-                              >
-                                <img src={`/${imgSrc}`} />
-                                <p className="text-[0.4rem] text-center mt-[1px]">
-                                  Pizza
-                                </p>
-                                <p className="text-[0.35rem] text-center">
-                                  $20.00
-                                </p>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      </div>
-                      <div className="w-[23%]  bg-my-black-50 flex flex-col justify-between">
-                        <div className="text-[0.5rem] py-[5px] px-1">
-                          Your Order Cart
-                        </div>
-                        <div>
-                          <div className="text-[0.45rem] font-[600] py-[5px] px-1 flex justify-between">
-                            <span>Total</span>
-                            <span>$0.00</span>
-                          </div>
-                          <div className="text-[0.5rem] text-white text-center w-full bg-my-orange-400  py-[7px]">
-                            Place Order
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[150px] h-[100px] bg-[#1f1f1f] mt-[1rem] rounded-[1.5rem] kiosk-stand"></div>
-              </motion.div>
+            
+              <div className="tablet:flex-1  flex tablet:flex-col justify-center items-end tablet:items-center h-full w-auto ">
+                <KioskUi />
+              </div>
 
               <motion.div
                 variants={fadeInUpAni}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ amount: 0.4, once: true }}
-                className=" h-max  flex flex-col gap-[1rem]  w-[600px] ml-[10vw] mt-[5vh]"
+                className=" h-full flex-1 flex  items-center justify-center  "
               >
-                <motion.p variants={fadeInUpAni} className="text-my-black-300">
-                  02
-                </motion.p>
-                <motion.h3
-                  variants={fadeInUpAni}
-                  className="font-cabin text-[2.5rem] font-[600] text-gun-powder-950"
-                >
-                  Kiosk
-                </motion.h3>
-                <motion.p variants={fadeInUpAni}>
-                  Enjoy the ease of ordering directly from a device placed at
-                  each table.
-                </motion.p>
-                <motion.p variants={fadeInUpAni}>
-                  Allow your customers to order directly from their table with a
-                  tap.
-                </motion.p>
-                <motion.div
-                  variants={fadeInUpAni}
-                  className=" w-max mt-[2.5rem]"
-                >
-                  <LinkUI name="Learn More" />
-                </motion.div>
+                <div className="h-full flex flex-col justify-center gap-[1rem]">
+                  <motion.p variants={fadeInUpAni} className="text-my-black-300">
+                    02
+                  </motion.p>
+                  <motion.h3
+                    variants={fadeInUpAni}
+                    className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[600] text-gun-powder-950"
+                  >
+                    Table Order
+                  </motion.h3>
+                  <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base ">
+                    Enjoy the ease of ordering directly from a device placed at
+                    each table.
+                  </motion.p>
+                  <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base ">
+                    Allow your customers to order directly from their table with a
+                    tap.
+                  </motion.p>
+                  <motion.div
+                    variants={fadeInUpAni}
+                    className="w-max mt-[1.7rem] md:mt-[2.5rem]"
+                  >
+                    <LinkUI name="Learn More" />
+                  </motion.div>
+                </div>
               </motion.div>
-            </div>
+            
           </div>
         </div>
       </section>

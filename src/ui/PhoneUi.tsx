@@ -1,8 +1,7 @@
 import { motion, useAnimationControls, useInView } from "framer-motion";
 import React, { useEffect } from "react";
-import { IoMdCellular } from "react-icons/io";
 import { IoIosWifi } from "react-icons/io";
-import { IoBatteryFull } from "react-icons/io5";
+import { IoBatteryFull, IoCellular } from "react-icons/io5";
 
 interface Props {
   parentRef: React.MutableRefObject<null>;
@@ -31,16 +30,16 @@ const PhoneUi = (props: Props) => {
       viewport={{ once: true }}
       exit="visible"
       transition={{ duration: 0.6, delay: 0.25 }}
-      className="  overflow-hidden h-[230px] sm:h-[250px] md:h-full   border flex flex-col"
+      className="  overflow-hidden h-[230px] sm:h-[250px] md:h-full  flex flex-col"
     >
         {/* w-[310px] md:w-[320px] lg:w-[350px] h-[250px]*/}
       <div className=" w-[300px] sm:w-[310px] md:w-auto  md:h-full  overflow-hidden   rounded  px-[2rem] ">
         <div className="aspect-[30/55]  md:h-full rounded-[2rem] p-[0.5rem] pl-[0.7rem] bg-[#1f1f1f] iphone-rim">
           <motion.div className=" flex flex-col items-center gap-[1rem]  w-full h-full rounded-[1.5rem] iphone  bg-gun-powder-600 overflow-hidden ">
             <div className="iphone-screen-top">
-              <p className="text-sm font-[500]">7.53</p>
+              <p className="text-[0.84rem] leading-none font-[600]">7:53</p>
               <div className="flex gap-1">
-                <IoMdCellular />
+                <IoCellular />
                 <IoIosWifi />
                 <IoBatteryFull />
               </div>
