@@ -142,7 +142,7 @@ const HomePage = () => {
     { svg: "kioskf", heading: "Table Ordering", body:"Empower your customers to order at their own pace, directly from their table." },
     { svg: "menuf", heading: "Change your Menu at Anytime", body:"Update your menu instantly without the hassle of reprints." },
     { svg: "brushf", heading: "Design your Menu", body: "Create a visually appealing menu that reflects your restaurant's brand." },
-    { svg: "adminf", heading: "Call Server", body: "Allow customers to wuickly request additional service from your waitstaff with a button." },
+    { svg: "adminf", heading: "Call Server", body: "Allow customers to quickly request additional service with a button." },
     { svg: "controlf", heading: "Manage your Orders", body: "Efficiently manage incoming orders and track their status." },
     { svg: "posf", heading: "Fully Integrated", body: "Send orders directly to your Kitchen and POS for streamlined operations." },
     { svg: "customizef", heading: "Additional Features", body: "Includes simple view, recommendations, dietary restrictions etc. "},
@@ -415,7 +415,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="min-h-screen flex flex-col justify-center items-center py-[3rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
+      <section className="min-h-screen flex flex-col justify-center items-center py-[3rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav ">
         <div className="flex flex-col    gap-[1.5rem] md:gap-[3rem]  h-full w-full xl:w-[1000px]  lg:justify-center">
           <TextReveal className=" w-full " once={true}>
             <h2 className="text-[1.6rem] sm:text-[1.8rem] md:text-[2.4rem] lg:text-[2.9rem] px-5 md:px-0 text-gun-powder-950   leading-tight  ">
@@ -509,8 +509,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="min-h-screen flex flex-col bg-my-black-10 border px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
-        <div className="py-[5rem] text-center w-full flex flex-col gap-[1rem] border">
+      <section className=" min-h-screen flex flex-col bg-my-black-10  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav xl:px-[10rem]">
+        <div className="py-[5rem] text-center w-full flex flex-col gap-[1rem]">
           <h2 className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] ">
             Our Features
           </h2>
@@ -518,28 +518,32 @@ const HomePage = () => {
             What we Offer
           </p>
         </div>
-        <div className="grid grid-cols-4  flex-1 gap-3 border">
-          {offerArr.map((item: OfferI, i: number) => (
-            <div
-              key={i}
-              className="rounded-2xl relative group flex flex-col items-center pt-[30%] gap-[2rem] min-h-[300px] hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
-            >
-              <div className="group-hover:fill-white fill-my-black-950 w-[3.5rem] translate-y-0 group-hover:translate-y-[-0.2rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75 ">
-                {createComponent(i)}
-              </div>
-              {/* <div className="group-hover:text-white text-my-black-950"><IoMdCellular /></div> */}
-              {/* <div className="group-hover:text-white text-my-black-950 group-hover:fill-white">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" ><path d="M480-512q-44.55 0-75.27-30.72Q374-573.45 374-618.33q0-44.89 30.73-75.28Q435.45-724 480-724t75.27 30.39Q586-663.22 586-618.33q0 44.88-30.73 75.61Q524.55-512 480-512ZM212-258v-22.67q0-22.66 13.83-41.83 13.84-19.17 36.84-30.17Q319-378 373.15-391q54.14-13 106.83-13t106.85 13q54.17 13 110.15 38.6 23.46 10.8 37.24 29.94Q748-303.33 748-280.67V-258q0 10.83-7.58 18.42Q732.83-232 722-232H238q-10.83 0-18.42-7.58Q212-247.17 212-258Zm24 2h488v-24.67q0-14.66-10.17-28.16-10.16-13.5-28.5-23.17-50-24.33-101.35-36.17Q532.63-380 480-380t-104.31 11.83Q324-356.33 274.67-332q-18.34 9.67-28.5 23.17Q236-295.33 236-280.67V-256Zm244-280q34.33 0 58.17-23.83Q562-583.67 562-618t-23.83-58.17Q514.33-700 480-700t-58.17 23.83Q398-652.33 398-618t23.83 58.17Q445.67-536 480-536Zm0-82Zm0 362Z"/></svg>
-              </div> */}
-
-              <h4 className="px-4 text-[1.1rem] text-my-black-950 group-hover:text-transparent tracking-wider translate-y-0 group-hover:translate-y-[-0.3rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75">
-                {item.heading}
-              </h4>
-              <p className="absolute w-full text-center px-[25%] top-[50%] left-[50%] translate-x-[-50%] translate-y-[0.3rem] text-transparent tracking-wide group-hover:text-white group-hover:translate-y-[0] transition duration-300 ease-in-out delay-75">
-                {item.body}
-              </p>
+        <div className="h-[400px] w-full sm:w-auto sm:h-auto sm:flex-1 ">
+          <div className="overflow-hidden relative h-full z-[1]">
+            <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-3 w-[800%] flex  h-full sm:w-full    ">
+              {offerArr.map((item: OfferI, i: number) => (
+                <div
+                  key={i}
+                  className="bg-white sm:bg-my-black-10 w-full h-full rounded-2xl relative group flex flex-col items-center pt-[5rem] sm:pt-[20%] lg:pt-[30%] gap-[2rem] min-h-[350px]   hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
+                >
+                  <div className="group-hover:fill-white fill-my-black-950 w-[3.5rem] translate-y-0 group-hover:translate-y-[-0.2rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75 ">
+                    {createComponent(i)}
+                  </div>
+                  {/* <div className="group-hover:text-white text-my-black-950"><IoMdCellular /></div> */}
+                  {/* <div className="group-hover:text-white text-my-black-950 group-hover:fill-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" ><path d="M480-512q-44.55 0-75.27-30.72Q374-573.45 374-618.33q0-44.89 30.73-75.28Q435.45-724 480-724t75.27 30.39Q586-663.22 586-618.33q0 44.88-30.73 75.61Q524.55-512 480-512ZM212-258v-22.67q0-22.66 13.83-41.83 13.84-19.17 36.84-30.17Q319-378 373.15-391q54.14-13 106.83-13t106.85 13q54.17 13 110.15 38.6 23.46 10.8 37.24 29.94Q748-303.33 748-280.67V-258q0 10.83-7.58 18.42Q732.83-232 722-232H238q-10.83 0-18.42-7.58Q212-247.17 212-258Zm24 2h488v-24.67q0-14.66-10.17-28.16-10.16-13.5-28.5-23.17-50-24.33-101.35-36.17Q532.63-380 480-380t-104.31 11.83Q324-356.33 274.67-332q-18.34 9.67-28.5 23.17Q236-295.33 236-280.67V-256Zm244-280q34.33 0 58.17-23.83Q562-583.67 562-618t-23.83-58.17Q514.33-700 480-700t-58.17 23.83Q398-652.33 398-618t23.83 58.17Q445.67-536 480-536Zm0-82Zm0 362Z"/></svg>
+                  </div> */}
+                  <h4 className=" text-[1.1rem]  text-my-black-950 group-hover:text-transparent px-[3rem] sm:px-[3rem] md:px-[4rem] lg:px-[2rem] xl:px-[25%] tracking-wider text-center translate-y-0 group-hover:translate-y-[-0.3rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75">
+                    {item.heading}
+                  </h4>
+                  <p className="absolute w-full text-center text-[15.5px] md:text-[0.92rem] lg:text-[0.96rem] xl:text-[0.98rem] px-[15%] sm:px-[3rem] md:px-[4rem] lg:px-[2rem] xl:px-[23%] bottom-[25%] sm:bottom-[15%] md:bottom-[30%]  lg:bottom-[20%] left-[50%] translate-x-[-50%] translate-y-[0.3rem] text-transparent tracking-wide will-change-[transform,text] group-hover:text-white group-hover:translate-y-[0] transition duration-300 ease-in-out delay-75">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
+            <div className=" sm:hidden absolute bottom-4 left-[50%] translate-x-[-50%] text-[14px] text-my-black-300 font-[500]">1  /  8</div>
+          </div>
         </div>
       </section>
       <ViewMoreUI
