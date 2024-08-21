@@ -715,7 +715,7 @@ const HomePage = () => {
           </span>
         </p>
         <button className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-3  text-white">
-          Get Started Now
+          Try Now For Free
         </button>
       </section>
       <div className="flex w-full">
