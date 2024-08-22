@@ -21,6 +21,7 @@ import { PiShoppingCartBold } from "react-icons/pi";
 import { PiDevicesLight } from "react-icons/pi";
 import { PiNotebookLight } from "react-icons/pi";
 import { MdFoodBank } from "react-icons/md";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 //SVG Components
 import {
@@ -36,9 +37,12 @@ import {
 
 import {
   motion,
+  PanInfo,
   useAnimationControls,
   useInView,
+  useMotionValue,
   useScroll,
+  useSpring,
   useTransform,
   Variants,
 } from "framer-motion";
@@ -138,14 +142,46 @@ const HomePage = () => {
     "food3.jpg",
   ];
   const offerArr: OfferI[] = [
-    { svg: "qrf", heading: "Digitally Available", body:"Your customers can access the menu on their own device at anytime, without any app install." },
-    { svg: "kioskf", heading: "Table Ordering", body:"Empower your customers to order at their own pace, directly from their table." },
-    { svg: "menuf", heading: "Change your Menu at Anytime", body:"Update your menu instantly without the hassle of reprints." },
-    { svg: "brushf", heading: "Design your Menu", body: "Create a visually appealing menu that reflects your restaurant's brand." },
-    { svg: "adminf", heading: "Call Server", body: "Allow customers to quickly request additional service with a button." },
-    { svg: "controlf", heading: "Manage your Orders", body: "Efficiently manage incoming orders and track their status." },
-    { svg: "posf", heading: "Fully Integrated", body: "Send orders directly to your Kitchen and POS for streamlined operations." },
-    { svg: "customizef", heading: "Additional Features", body: "Includes simple view, recommendations, dietary restrictions etc. "},
+    {
+      svg: "qrf",
+      heading: "Digitally Available",
+      body: "Your customers can access the menu on their own device at anytime, without any app install.",
+    },
+    {
+      svg: "kioskf",
+      heading: "Table Ordering",
+      body: "Empower your customers to order at their own pace, directly from their table.",
+    },
+    {
+      svg: "menuf",
+      heading: "Change your Menu at Anytime",
+      body: "Update your menu instantly without the hassle of reprints.",
+    },
+    {
+      svg: "brushf",
+      heading: "Design your Menu",
+      body: "Create a visually appealing menu that reflects your restaurant's brand.",
+    },
+    {
+      svg: "adminf",
+      heading: "Call Server",
+      body: "Allow customers to quickly request additional service with a button.",
+    },
+    {
+      svg: "controlf",
+      heading: "Manage your Orders",
+      body: "Efficiently manage incoming orders and track their status.",
+    },
+    {
+      svg: "posf",
+      heading: "Fully Integrated",
+      body: "Send orders directly to your Kitchen and POS for streamlined operations.",
+    },
+    {
+      svg: "customizef",
+      heading: "Additional Features",
+      body: "Includes simple view, recommendations, dietary restrictions etc. ",
+    },
   ];
   const components = [
     Qrf,
@@ -164,6 +200,139 @@ const HomePage = () => {
 
     return <Component key={i} />;
   };
+
+  //Grid features slide function
+  const mq = window.matchMedia( "(min-width: 640px)" );
+  const START_INDEX = 1;
+  const DRAG_THRESHOLD = 150;
+  const FALLBACK_WIDTH = 509;
+  const GAP_WIDTH = 12;
+  const containerSliderRef = useRef<HTMLDivElement>(null);
+  const itemsSliderRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const [activeSlide, setActiveSlide] = useState(START_INDEX);
+  const canScrollPrev = activeSlide > 1;
+  const canScrollNext = activeSlide < offerArr.length - 1;
+  const offsetX = useMotionValue(0);
+  const animatedX = useSpring(offsetX, {
+    damping: 20,
+    stiffness: 150,
+  });
+  if (mq.matches) {
+    //alert("stop")
+    offsetX.set(0);
+    
+  }
+
+  const [isDragging, setIsDragging] = useState(false);
+  function handleDragSnap(
+    _: MouseEvent,
+    { offset: { x: dragOffset } }: PanInfo
+  ) {
+    //reset drag state
+    setIsDragging(false);
+    containerSliderRef.current?.removeAttribute("data-dragging");
+
+    //stop drag animation (rest velocity)
+    animatedX.stop();
+
+    const currentOffset = offsetX.get();
+
+    //snap back if not dragged far enough or if at the start/end of the list
+    if (
+      Math.abs(dragOffset) < DRAG_THRESHOLD ||
+      (!canScrollPrev && dragOffset > 0) ||
+      (!canScrollNext && dragOffset < 0)
+    ) {
+      animatedX.set(currentOffset);
+      return;
+    }
+
+    let offsetWidth = 0;
+    /*
+      - start searching from currently active slide in the direction of the drag
+      - check if the drag offset is greater than the width of the current item
+      - if it is, add/subtract the width of the next/prev item to the offsetWidth
+      - if it isn't, snap to the next/prev item
+    */
+    for (
+      let i = activeSlide;
+      dragOffset > 0 ? i >= 0 : i < itemsSliderRef.current.length;
+      dragOffset > 0 ? i-- : i++
+    ) {
+      const item = itemsSliderRef.current[i];
+      if (item === null) continue;
+      const itemOffset = item.offsetWidth;
+
+      const prevItemWidth =
+        itemsSliderRef.current[i - 1]?.offsetWidth ?? FALLBACK_WIDTH;
+      const nextItemWidth =
+        itemsSliderRef.current[i + 1]?.offsetWidth ?? FALLBACK_WIDTH;
+
+      if (
+        (dragOffset > 0 && //dragging left
+          dragOffset > offsetWidth + itemOffset && //dragged past item
+          i > 1) || //not the first/second item
+        (dragOffset < 0 && //dragging right
+          dragOffset < offsetWidth + -itemOffset && //dragged past item
+          i < itemsSliderRef.current.length - 2) //not the last/second to last item
+      ) {
+        dragOffset > 0
+          ? (offsetWidth += prevItemWidth)
+          : (offsetWidth -= nextItemWidth);
+        continue;
+      }
+
+      if (dragOffset > 0) {
+        //prev
+        if (mq.matches) {
+          //alert("stop")
+          animatedX.set(currentOffset);
+          return;
+        }
+        offsetX.set(currentOffset + offsetWidth + prevItemWidth + GAP_WIDTH );
+        setActiveSlide(i - 1);
+      } else {
+        //next
+        // if(containerSliderRef.current?.offsetWidth! < nextItemWidth * 8) {
+        //   return
+        // }
+        if (mq.matches) {
+          //alert("stop")
+          animatedX.set(currentOffset);
+          return;
+        }
+        offsetX.set(currentOffset + offsetWidth - nextItemWidth - GAP_WIDTH);
+        setActiveSlide(i + 1);
+      }
+      break;
+    }
+  }
+
+  function scrollPrev() {
+    //prevent scrolling past first item
+    if (!canScrollPrev) return;
+
+    const nextWidth = itemsSliderRef.current
+      .at(activeSlide - 1)
+      ?.getBoundingClientRect().width;
+    if (nextWidth === undefined) return;
+    offsetX.set(offsetX.get() + nextWidth + GAP_WIDTH);
+
+    setActiveSlide((prev) => prev - 1);
+  }
+  function scrollNext() {
+    // prevent scrolling past last item
+    if (!canScrollNext) return;
+
+    const nextWidth = itemsSliderRef.current
+      .at(activeSlide + 1)
+      ?.getBoundingClientRect().width;
+    if (nextWidth === undefined) return;
+    offsetX.set(offsetX.get() - nextWidth - GAP_WIDTH);
+
+    setActiveSlide((prev) => prev + 1);
+  }
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
@@ -348,11 +517,17 @@ const HomePage = () => {
               >
                 QR Code
               </motion.h3>
-              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base xl:w-[600px]">
+              <motion.p
+                variants={fadeInUpAni}
+                className="text-[0.9rem] tablet:text-base xl:w-[600px]"
+              >
                 Scan the QR code at your table to access our mobile-optimized
                 ordering platform using a device.
               </motion.p>
-              <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base xl:w-[600px]">
+              <motion.p
+                variants={fadeInUpAni}
+                className="text-[0.9rem] tablet:text-base xl:w-[600px]"
+              >
                 Allow your customers to use their own device to scan the QR code
                 to connect to the digitlized menu designated to the specific
                 table.
@@ -367,51 +542,59 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-        <div ref={kioskContainerRef} className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] ">
+        <div
+          ref={kioskContainerRef}
+          className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] "
+        >
           <div className="bg-[url('/mesh-921.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pb-0 pt-[3rem] tablet:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse tablet:flex-row-reverse gap-x-[1rem] justify-center tablet:items-center">
             {/* <h2 className="text-[2.5rem] text-center text-gun-powder-950 font-[600]">
                 Our Solution
               </h2>
               <p className="text-center">We offer two convenient ways to order:</p> */}
-            
-              <div className="tablet:flex-1  flex tablet:flex-col justify-center items-end tablet:items-center h-full w-auto ">
-                <KioskUi />
-              </div>
 
-              <motion.div
-                variants={fadeInUpAni}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.4, once: true }}
-                className=" h-full flex-1 flex  items-center justify-center  "
-              >
-                <div className="h-full flex flex-col justify-center gap-[1rem]">
-                  <motion.p variants={fadeInUpAni} className="text-my-black-300">
-                    02
-                  </motion.p>
-                  <motion.h3
-                    variants={fadeInUpAni}
-                    className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[600] text-gun-powder-950"
-                  >
-                    Table Order
-                  </motion.h3>
-                  <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base ">
-                    Enjoy the ease of ordering directly from a device placed at
-                    each table.
-                  </motion.p>
-                  <motion.p variants={fadeInUpAni} className="text-[0.9rem] tablet:text-base ">
-                    Allow your customers to order directly from their table with a
-                    tap.
-                  </motion.p>
-                  <motion.div
-                    variants={fadeInUpAni}
-                    className="w-max mt-[1.7rem] md:mt-[2.5rem]"
-                  >
-                    <LinkUI name="Learn More" />
-                  </motion.div>
-                </div>
-              </motion.div>
-            
+            <div className="tablet:flex-1  flex tablet:flex-col justify-center items-end tablet:items-center h-full w-auto ">
+              <KioskUi />
+            </div>
+
+            <motion.div
+              variants={fadeInUpAni}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4, once: true }}
+              className=" h-full flex-1 flex  items-center justify-center  "
+            >
+              <div className="h-full flex flex-col justify-center gap-[1rem]">
+                <motion.p variants={fadeInUpAni} className="text-my-black-300">
+                  02
+                </motion.p>
+                <motion.h3
+                  variants={fadeInUpAni}
+                  className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[600] text-gun-powder-950"
+                >
+                  Table Order
+                </motion.h3>
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="text-[0.9rem] tablet:text-base "
+                >
+                  Enjoy the ease of ordering directly from a device placed at
+                  each table.
+                </motion.p>
+                <motion.p
+                  variants={fadeInUpAni}
+                  className="text-[0.9rem] tablet:text-base "
+                >
+                  Allow your customers to order directly from their table with a
+                  tap.
+                </motion.p>
+                <motion.div
+                  variants={fadeInUpAni}
+                  className="w-max mt-[1.7rem] md:mt-[2.5rem]"
+                >
+                  <LinkUI name="Learn More" />
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -447,8 +630,8 @@ const HomePage = () => {
                   variants={fadeInUpAni}
                   className="text-[0.875rem] mt-[0.5rem]"
                 >
-                  Our service allows customers to order directly from their table
-                  leading to faster service and happier customers.
+                  Our service allows customers to order directly from their
+                  table leading to faster service and happier customers.
                 </motion.p>
               </div>
             </motion.div>
@@ -509,8 +692,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className=" min-h-screen flex flex-col bg-my-black-10  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav xl:px-[10rem]">
-        <div className="py-[5rem] text-center w-full flex flex-col gap-[1rem]">
+      <section className=" min-h-screen flex flex-col bg-my-black-10  ">
+        <div className="py-[5rem] text-center w-full flex flex-col gap-[1rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav xl:px-[10rem]">
           <h2 className="font-cabin uppercase font-medium text-my-black-300 text-[0.92rem] tracking-[0.3em] ">
             Our Features
           </h2>
@@ -519,12 +702,38 @@ const HomePage = () => {
           </p>
         </div>
         <div className="h-[400px] w-full sm:w-auto sm:h-auto sm:flex-1 ">
-          <div className="overflow-hidden relative h-full z-[1]">
-            <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 md:gap-3 w-[800%] flex  h-full sm:w-full    ">
+          <div className="overflow-hidden relative h-full z-[1] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav xl:px-[10rem]">
+            <motion.div
+              ref={containerSliderRef}
+              style={{
+                x: animatedX,
+              }}
+              drag="x"
+              dragConstraints={{
+                left: -(FALLBACK_WIDTH * (offerArr.length - 1)),
+                right: FALLBACK_WIDTH,
+              }}
+              onDragStart={() => {
+                containerSliderRef.current?.setAttribute(
+                  "data-dragging",
+                  "true"
+                );
+                setIsDragging(true);
+              }}
+              onDragEnd={handleDragSnap}
+              className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 w-[calc(800%+6rem)] flex  h-full sm:w-full    "
+            >
               {offerArr.map((item: OfferI, i: number) => (
-                <div
+                <motion.div
                   key={i}
-                  className="bg-white sm:bg-my-black-10 w-full h-full rounded-2xl relative group flex flex-col items-center pt-[5rem] sm:pt-[20%] lg:pt-[30%] gap-[2rem] min-h-[350px]   hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
+                  ref={(el) => {
+                    itemsSliderRef.current[i] = el;
+                  }}
+                  transition={{
+                    ease: "easeInOut",
+                    duration: 0.4,
+                  }}
+                  className=" bg-white sm:bg-my-black-10 w-[100%] sm:w-full h-full rounded-2xl relative group flex flex-col items-center pt-[5rem] sm:pt-[20%] lg:pt-[30%] gap-[2rem] min-h-[350px]   hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
                 >
                   <div className="group-hover:fill-white fill-my-black-950 w-[3.5rem] translate-y-0 group-hover:translate-y-[-0.2rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75 ">
                     {createComponent(i)}
@@ -539,10 +748,18 @@ const HomePage = () => {
                   <p className="absolute w-full text-center text-[15.5px] md:text-[0.92rem] lg:text-[0.96rem] xl:text-[0.98rem] px-[15%] sm:px-[3rem] md:px-[4rem] lg:px-[2rem] xl:px-[23%] bottom-[25%] sm:bottom-[15%] md:bottom-[30%]  lg:bottom-[20%] left-[50%] translate-x-[-50%] translate-y-[0.3rem] text-transparent tracking-wide will-change-[transform,text] group-hover:text-white group-hover:translate-y-[0] transition duration-300 ease-in-out delay-75">
                     {item.body}
                   </p>
-                </div>
+                </motion.div>
               ))}
+            </motion.div>
+            <div className=" sm:hidden absolute bottom-0 left-0 flex w-full text-my-black-300 border justify-between items-center px-5 pb-3">
+              <button onClick={scrollPrev} disabled={!canScrollPrev}>
+                <IoIosArrowBack className="text-[1.5rem]" />
+              </button>
+              <p className="text-[14px]  font-[500]">1 / 8</p>
+              <button onClick={scrollNext} disabled={!canScrollNext}>
+                <IoIosArrowForward id="h-grid-next" className="text-[1.5rem]" />
+              </button>
             </div>
-            <div className=" sm:hidden absolute bottom-4 left-[50%] translate-x-[-50%] text-[14px] text-my-black-300 font-[500]">1  /  8</div>
           </div>
         </div>
       </section>

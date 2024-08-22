@@ -92,12 +92,12 @@ const Navbar = () => {
           <button className={`hidden sm:block border ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
             Get Started
           </button>
-          <button
+          <div
             className="block tablet:hidden w-[2rem] h-[1.2rem] "
             onClick={openMenuAni}
           >
             <HamburgerI className="*:bg-my-black-950  *:h-[0.1rem]" />
-          </button>
+          </div>
         </div>
       </div>
       <motion.div variants={navMenuPVariants} animate={controls} initial={"hide"} className={`opacity-0 bg-my-black-950 ${!openNav? "invisible " : "visible opacity-100"} tablet:invisible z-[0] w-full h-screen  transition-[opacity_1s_linear,visibility_0s_linear_300ms] duration-300 absolute left-0 top-0 pt-[3rem] tablet:pt-[4.3rem] px-sm-nav tablet:px-tablet-nav flex flex-col gap-[1rem] text-white text-[1.6rem] md:text-[1.7rem] tablet:text-[2rem] tracking-widest`}>
