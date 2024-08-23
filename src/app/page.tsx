@@ -496,7 +496,7 @@ const HomePage = () => {
         </div>
         <div
           ref={phoneContainerRef}
-          className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav xl:px-[8rem]  "
+          className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav xl:px-[8rem] overflow-hidden "
         >
           <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center md:items-center">
             <div className="md:flex-1  flex md:flex-col justify-center items-end md:items-center h-full w-auto">
@@ -546,7 +546,7 @@ const HomePage = () => {
         </div>
         <div
           ref={kioskContainerRef}
-          className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] "
+          className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] overflow-hidden "
         >
           <div className="bg-[url('/mesh-921.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pb-0 pt-[3rem] tablet:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse tablet:flex-row-reverse gap-x-[1rem] justify-center tablet:items-center">
             {/* <h2 className="text-[2.5rem] text-center text-gun-powder-950 font-[600]">
