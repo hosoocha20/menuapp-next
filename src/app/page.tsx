@@ -940,18 +940,18 @@ const HomePage = () => {
           Try Now For Free
         </button>
       </section>
-      <div className="flex w-full">
+      <section className="flex flex-col portrait-tablet:flex-row w-full">
         <ViewMoreUI
           tag="Get in touch"
           body="Tell us how we can help"
-          className="flex-1 bg-white border-r border-my-black-80"
+          className="flex-1 bg-white border-b portrait-tablet:border-r portrait-tablet:border-b-0 border-my-black-80"
         />
         <ViewMoreUI
           tag="Service"
           body="Learn more about our features"
           className="flex-1 bg-white"
         />
-      </div>
+      </section>
     </div>
   );
 };
