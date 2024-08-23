@@ -218,11 +218,7 @@ const HomePage = () => {
     damping: 20,
     stiffness: 150,
   });
-  if (mq.matches) {
-    //alert("stop")
-    offsetX.set(0);
-    
-  }
+
 
   const [isDragging, setIsDragging] = useState(false);
   function handleDragSnap(
@@ -333,6 +329,14 @@ const HomePage = () => {
 
     setActiveSlide((prev) => prev + 1);
   }
+
+  useEffect(() =>{
+    if (mq.matches) {
+      //alert("stop")
+      offsetX.set(0);
+      
+    }
+  },[])
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
@@ -721,7 +725,7 @@ const HomePage = () => {
                 setIsDragging(true);
               }}
               onDragEnd={handleDragSnap}
-              className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 w-[calc(800%+6rem)] flex  h-full sm:w-full    "
+              className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3  flex  h-full sm:w-full    "
             >
               {offerArr.map((item: OfferI, i: number) => (
                 <motion.div
@@ -733,7 +737,10 @@ const HomePage = () => {
                     ease: "easeInOut",
                     duration: 0.4,
                   }}
-                  className=" bg-white sm:bg-my-black-10 w-[100%] sm:w-full h-full rounded-2xl relative group flex flex-col items-center pt-[5rem] sm:pt-[20%] lg:pt-[30%] gap-[2rem] min-h-[350px]   hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
+                  style={{
+                    flexBasis: "100%"
+                  }}
+                  className=" bg-white sm:bg-my-black-10 shrink-0 sm:w-full h-full rounded-2xl relative group flex flex-col items-center pt-[5rem] sm:pt-[20%] lg:pt-[30%] gap-[2rem] min-h-[350px]   hover:bg-my-black-950  cursor-pointer transition-[background-color] duration-300 ease-out "
                 >
                   <div className="group-hover:fill-white fill-my-black-950 w-[3.5rem] translate-y-0 group-hover:translate-y-[-0.2rem] will-change-transform transition-[transform] duration-300 ease-in-out delay-75 ">
                     {createComponent(i)}
