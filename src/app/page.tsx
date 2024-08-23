@@ -619,18 +619,18 @@ const HomePage = () => {
               <motion.img
                 variants={fadeInUpAni}
                 src={"/time.svg"}
-                className="w-[4rem] sm:w-[5rem] md:w-[6rem] "
+                className="w-[3.5rem] sm:w-[5rem] md:w-[6rem] "
               ></motion.img>
               <div className="md:mt-[40%]">
                 <motion.p
                   variants={fadeInUpAni}
-                  className="font-[600] text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] "
+                  className="font-[600] text-[0.94rem] sm:text-[1rem] lg:text-[1.1rem] "
                 >
                   Reduce wait times
                 </motion.p>
                 <motion.p
                   variants={fadeInUpAni}
-                  className="text-[0.875rem] mt-[0.5rem]"
+                  className="text-[0.875rem] mt-[0.25rem] sm:mt-[0.5rem]"
                 >
                   Our service allows customers to order directly from their
                   table leading to faster service and happier customers.
@@ -647,18 +647,18 @@ const HomePage = () => {
               <motion.img
                 variants={fadeInUpAni}
                 src={"/efficiency.svg"}
-                className="w-[4rem] sm:w-[5rem] md:w-[6rem]"
+                className="w-[3.5rem] sm:w-[5rem] md:w-[6rem]"
               ></motion.img>
               <div className="md:mt-[40%]">
                 <motion.p
                   variants={fadeInUpAni}
-                  className="font-[600] text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] "
+                  className="font-[600] text-[0.94rem] sm:text-[1rem] lg:text-[1.1rem] "
                 >
                   Increased efficiency
                 </motion.p>
                 <motion.p
                   variants={fadeInUpAni}
-                  className="text-[0.875rem] mt-[0.5rem]"
+                  className="text-[0.875rem] mt-[0.25rem] sm:mt-[0.5rem]"
                 >
                   Streamline operations and reduce labor costs.
                 </motion.p>
@@ -674,18 +674,18 @@ const HomePage = () => {
               <motion.img
                 variants={fadeInUpAni}
                 src={"/easy.svg"}
-                className="w-[4rem] sm:w-[5rem] md:w-[6rem]"
+                className="w-[3.5rem] sm:w-[5rem] md:w-[6rem]"
               ></motion.img>
               <div className="md:mt-[40%]">
                 <motion.p
                   variants={fadeInUpAni}
-                  className="font-[600] text-[0.95rem] sm:text-[1rem] lg:text-[1.1rem] "
+                  className="font-[600] text-[0.94rem] sm:text-[1rem] lg:text-[1.1rem] "
                 >
                   Easy to use
                 </motion.p>
                 <motion.p
                   variants={fadeInUpAni}
-                  className="text-[0.875rem] mt-[0.5rem]"
+                  className="text-[0.875rem] mt-[0.25rem] sm:mt-[0.5rem]"
                 >
                   User-friendly system for a smooth ordering experience.
                 </motion.p>
