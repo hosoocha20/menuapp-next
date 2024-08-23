@@ -4,9 +4,9 @@ import { MdCopyright } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className="h-[300px] bg-my-black-950 text-white px-[8rem] py-[3rem] flex flex-col justify-between">
-      <div className="w-full flex justify-between">
-        <p className="font-cabin-condensed text-[1.2rem]">SmartMenu</p>
+    <div className="portrait-tablet:h-[300px] bg-my-black-950 text-white px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-[8rem] py-[3rem] flex flex-col gap-8 portrait-tablet:gap-0 justify-between">
+      <div className="w-full flex flex-col portrait-tablet:flex-row gap-8 portrait-tablet:gap-0 justify-between">
+        <p className="font-cabin-condensed text-[1rem] tablet:text-[1.2rem]">SmartMenu</p>
         <div className=" flex gap-[2rem]">
           <div className="flex flex-col gap-1">
             <h5 className="font-cabin uppercase font-medium text-my-black-300 text-[0.82rem] tracking-[0.3em]">
@@ -32,17 +32,17 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex border-t border-my-black-800 text-my-black-400 text-[0.8rem] pt-3 ">
+      <div className="w-full flex flex-col portrait-tablet:flex-row gap-4 portrait-tablet:gap-0 border-t border-my-black-800 text-my-black-400 text-[0.7rem] portrait-tablet:text-[0.8rem] pt-3 ">
         <div className="flex-1 flex items-center gap-1">
           <MdCopyright className="text-[1rem]" />
-          <p className="text-[0.85rem] font-medium">2024 Hosoo Cha. <span className="font-normal">All rights reserved.</span></p>
+          <p className=" font-medium">2024 Hosoo Cha. <span className="font-normal">All rights reserved.</span></p>
           
         </div>
         <div className="flex-1  flex justify-center gap-[3rem]">
           <p>Terms and Conditions</p>
           <p>Privacy Policy</p>
         </div>
-        <div className="flex-1 "></div>
+        <div className="portrait-tablet:flex-1 "></div>
       </div>
     </div>
   );
