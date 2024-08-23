@@ -776,7 +776,7 @@ const HomePage = () => {
 
       <section
         ref={howSectionRef}
-        className=" px-[5rem] py-[3rem] flex justify-center items-center gap-[5rem]"
+        className=" px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[3rem] flex flex-col tablet:flex-row justify-center items-center gap-[1rem] tablet:gap-[5rem]"
       >
         <motion.img
           variants={imgFadeInUpAni}
@@ -784,11 +784,11 @@ const HomePage = () => {
           whileInView="visible"
           viewport={{ root: howSectionRef, amount: 0.4, once: true }}
           src={"/start1.svg"}
-          className="w-[35%]"
+          className="w-[70%] tablet:w-[35%] "
         ></motion.img>
-        <div className="flex flex-col w-[500px] gap-[1.5rem]">
+        <div className="flex flex-col tablet:w-[500px] gap-[1.5rem]">
           <FadeInRight once={true}>
-            <h2 className="font-cabin uppercase font-medium text-my-black-900 text-[0.92rem] tracking-[0.3em] ">
+            <h2 className="font-cabin uppercase font-medium text-my-black-900 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] text-center tablet:text-left">
               How it works
             </h2>
           </FadeInRight>
