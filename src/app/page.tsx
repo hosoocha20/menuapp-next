@@ -929,14 +929,14 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
-      <section className=" w-full h-screen py-[6rem] px-[5rem]   mx-auto my-0  bg-my-black-10 bg-[url('/mesh-bg-3.svg')] bg-no-repeat bg-cover bg-center rounded-xl flex flex-col justify-center items-center gap-[2rem]">
-        <p className="text-[2rem] font-cabin ">
+      <section className=" w-full h-screen py-[6rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   mx-auto my-0  bg-my-black-10 bg-[url('/mesh-bg-3.svg')] bg-no-repeat bg-cover bg-center rounded-xl flex flex-col justify-center items-center gap-[2rem]">
+        <p className="text-[1.5rem] md:text-[2rem] font-cabin text-center">
           SmartMenu,{" "}
           <span className="font-inter">
             Your Smart Choice for a Modern Restaurant
           </span>
         </p>
-        <button className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-3  text-white">
+        <button className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3  text-white text-[0.9rem] portrait-tablet:text-[0.95rem]">
           Try Now For Free
         </button>
       </section>
