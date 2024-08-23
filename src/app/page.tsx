@@ -217,7 +217,7 @@ const HomePage = () => {
   const offsetX = useMotionValue(0);
   const animatedX = useSpring(offsetX, {
     damping: 20,
-    stiffness: 150,
+    stiffness: 100,
   });
 
 

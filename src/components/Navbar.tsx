@@ -96,7 +96,7 @@ const Navbar = () => {
             className="block tablet:hidden w-[2rem] h-[1.2rem] "
             onClick={openMenuAni}
           >
-            <HamburgerI className="*:bg-my-black-950  *:h-[0.1rem]" />
+            <HamburgerI className="*:bg-my-black-900  " />
           </div>
         </div>
       </div>

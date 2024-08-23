@@ -19,7 +19,7 @@ export const HamburgerI = (props: Props) => {
     },
     close: {
       rotate: "0deg",
-      backgroundColor: "#222222",
+      backgroundColor: "#3d3d3d",
       transition: { duration: 0.3, ease: "easeInOut" },
     },
     closeI: {
@@ -36,7 +36,7 @@ export const HamburgerI = (props: Props) => {
     },
     closeI: {
       scale: 1,
-      backgroundColor: "#222222",
+      backgroundColor: "#3d3d3d",
       transition: { duration: 0.25, ease: "easeOut" },
     },
   };
@@ -53,7 +53,7 @@ export const HamburgerI = (props: Props) => {
     },
     close: {
       rotate: "0deg",
-      backgroundColor: "#222222",
+      backgroundColor: "#3d3d3d",
       transition: { duration: 0.3, ease: "easeInOut" },
     },
     closeI: {
@@ -79,7 +79,7 @@ export const HamburgerI = (props: Props) => {
   }, [open]);
   return (
     <button
-      className={`h-full *:h-[0.25rem] ${props.heightLine} w-full *:w-full *:bg-white relative  *:rounded-md ${props.className}`}
+      className={`h-full *:h-[0.1rem] ${props.heightLine} w-full *:w-full  relative  *:rounded-md ${props.className}`}
       onClick={() => setOpen(!open)}
     >
       <motion.div
