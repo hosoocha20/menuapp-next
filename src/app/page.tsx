@@ -203,7 +203,7 @@ const HomePage = () => {
   };
 
   //Grid features slide function
-  const mq = window.matchMedia( "(min-width: 640px)" );
+  const isNotMobile = useMediaQuery("(min-width: 640px)");
   const START_INDEX = 1;
   const DRAG_THRESHOLD = 150;
   const FALLBACK_WIDTH = 509;
@@ -282,7 +282,7 @@ const HomePage = () => {
 
       if (dragOffset > 0) {
         //prev
-        if (mq.matches) {
+        if (isNotMobile) {
           //alert("stop")
           animatedX.set(currentOffset);
           return;
@@ -294,7 +294,7 @@ const HomePage = () => {
         // if(containerSliderRef.current?.offsetWidth! < nextItemWidth * 8) {
         //   return
         // }
-        if (mq.matches) {
+        if (isNotMobile) {
           //alert("stop")
           animatedX.set(currentOffset);
           return;
@@ -332,12 +332,9 @@ const HomePage = () => {
   }
 
   useEffect(() =>{
-    if (mq.matches) {
-      //alert("stop")
-      offsetX.set(0);
-      
-    }
-  },[])
+    offsetX.set(0);
+    console.log(isNotMobile)
+  },[isNotMobile])
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
