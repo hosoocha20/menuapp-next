@@ -1,5 +1,6 @@
 "use client";
 import React, { Component, useEffect, useRef, useState } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
 
 // import tabletSVG from "public/tablet.svg";
