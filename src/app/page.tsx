@@ -944,12 +944,12 @@ const HomePage = () => {
         <ViewMoreUI
           tag="Get in touch"
           body="Tell us how we can help"
-          className="flex-1 bg-white border-b portrait-tablet:border-r portrait-tablet:border-b-0 border-my-black-80"
+          className="flex-1 bg-white border-b portrait-tablet:border-r portrait-tablet:border-b-0 border-my-black-80 py-6"
         />
         <ViewMoreUI
           tag="Service"
           body="Learn more about our features"
-          className="flex-1 bg-white"
+          className="flex-1 bg-white py-6"
         />
       </section>
     </div>
