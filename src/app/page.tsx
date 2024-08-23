@@ -368,7 +368,7 @@ const HomePage = () => {
             whileInView="visible"
             viewport={{ root: sectionOneRef, amount: 0.4 }}
             src={"/family-meal-1.svg"}
-            className="w-[45%]"
+            className="w-[70%] sm:w-[45%]"
           ></motion.img>
           <motion.div
             variants={fadeInUpAni}
@@ -426,7 +426,7 @@ const HomePage = () => {
             whileInView="visible"
             viewport={{ root: sectionTwoRef, amount: 0.4 }}
             src={"smartDevice2.svg"}
-            className="w-[45%]"
+            className="w-[70%] sm:w-[45%]"
           ></motion.img>
           <motion.div
             variants={fadeInUpAni}

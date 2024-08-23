@@ -17,7 +17,7 @@ const KioskUi = () => {
   >
     {/* w-[500px] h-[320px]   */}
     <div className=" w-full   overflow-hidden    ">
-      <div className="   aspect-[50/32] rounded-[1.2rem] p-[0.6rem] pr-[0.8rem] bg-[#1f1f1f] kiosk-rim">
+      <div className="   aspect-[50/32] rounded-[1.2rem] p-[0.4rem] pr-[0.6rem] sm:p-[0.6rem] sm:pr-[0.8rem] bg-[#1f1f1f] kiosk-rim">
         <div className="flex flex-col w-full h-full rounded-[0.7rem] tablet-kiosk bg-gun-powder-600 overflow-hidden">
         </div>
       </div>
