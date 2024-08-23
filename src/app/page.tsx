@@ -508,7 +508,7 @@ const HomePage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.4, once: true }}
-              className=" h-max flex-1 flex flex-col gap-[1rem]   "
+              className=" h-max flex-1 flex flex-col gap-[0.6rem] sm:gap-[1rem]   "
             >
               <motion.p variants={fadeInUpAni} className="text-my-black-300">
                 01
@@ -537,7 +537,7 @@ const HomePage = () => {
               <motion.div
                 variants={fadeInUpAni}
                 ref={qrAniRef}
-                className=" w-max mt-[1.7rem] md:mt-[2.5rem]"
+                className=" w-max mt-[1rem] sm:mt-[1.7rem] md:mt-[2.5rem]"
               >
                 <LinkUI name="Learn More" />
               </motion.div>
@@ -565,7 +565,7 @@ const HomePage = () => {
               viewport={{ amount: 0.4, once: true }}
               className=" h-full flex-1 flex  items-center justify-center  "
             >
-              <div className="h-full flex flex-col justify-center gap-[1rem]">
+              <div className="h-full flex flex-col justify-center gap-[0.6rem] sm:gap-[1rem]">
                 <motion.p variants={fadeInUpAni} className="text-my-black-300">
                   02
                 </motion.p>
@@ -591,7 +591,7 @@ const HomePage = () => {
                 </motion.p>
                 <motion.div
                   variants={fadeInUpAni}
-                  className="w-max mt-[1.7rem] md:mt-[2.5rem]"
+                  className="w-max mt-[1rem] sm:mt-[1.7rem] md:mt-[2.5rem]"
                 >
                   <LinkUI name="Learn More" />
                 </motion.div>
