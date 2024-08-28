@@ -26,8 +26,8 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 //SVG Components
 import {
-  Adminf,
   Brushf,
+  Callf,
   Controlf,
   Customizef,
   Kioskf,
@@ -54,6 +54,8 @@ import TextReveal from "@/ui/TextReveal";
 import FadeInRight from "@/ui/FadeInRight";
 import PhoneUi from "@/ui/PhoneUi";
 import KioskUi from "@/ui/KioskUi";
+import PhoneHome from "@/ui/PhoneHome";
+import TabletHome from "@/ui/TabletHome";
 
 interface OfferI {
   svg: string;
@@ -164,8 +166,8 @@ const HomePage = () => {
       body: "Create a visually appealing menu that reflects your restaurant's brand.",
     },
     {
-      svg: "adminf",
-      heading: "Call Server",
+      svg: "callf",
+      heading: "Call for Service",
       body: "Allow customers to quickly request additional service with a button.",
     },
     {
@@ -189,10 +191,10 @@ const HomePage = () => {
     Kioskf,
     Menuf,
     Brushf,
-    Customizef,
+    Callf,
     Controlf,
     Posf,
-    Adminf,
+    Customizef,
   ];
   //Functions
   const createComponent = (i: number) => {
@@ -339,7 +341,7 @@ const HomePage = () => {
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
       <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
-        <div className="pr-[2vw] flex flex-col gap-[2.5rem] justify-center  ">
+        <div className="pr-[2vw] flex-1 border flex flex-col gap-[2.5rem] justify-center  ">
           <h1 className=" text-[2rem] md:text-[2.5rem] lg:text-[3.1rem] font-[600] text-gun-powder-950  ">
             Boost Efficiency, <span className="block">Delight Customers,</span>{" "}
             <span className="block">Enhance your Service</span>
@@ -354,7 +356,14 @@ const HomePage = () => {
             Get Started
           </button>
         </div>
-        <img src={"/order.svg"} alt={"orderSVG"} className="w-[35%]" />
+        <div className="border flex-1 h-full relative">
+          <div className="absolute h-[450px] left-0 top-[50%] translate-y-[-50%] z-[1]">
+            <PhoneHome />
+          </div>
+          <div className="absolute w-full left-0 top-[35%] translate-y-[-35%] flex justify-center  ">
+            <TabletHome />
+          </div>
+        </div>
       </section>
       <section className=" py-[2rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
         {/* <RevealAni className="w-[80%]" amount={0.4}> */}

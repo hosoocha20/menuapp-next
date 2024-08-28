@@ -1,7 +1,7 @@
+import React from 'react'
 import { motion } from "framer-motion";
-import React from "react";
 
-const KioskUi = () => {
+const TabletHome = () => {
   return (
     <motion.div
       variants={{
@@ -13,7 +13,7 @@ const KioskUi = () => {
       viewport={{ once: true }}
       exit="visible"
       transition={{ duration: 0.6, delay: 0.25 }}
-      className="   rounded h-[210px] sm:h-[250px] tablet:h-auto w-full min-w-[300px] max-w-[500px] flex flex-col items-center "
+      className="  rounded h-[210px] sm:h-[250px] tablet:h-auto w-full min-w-[300px] max-w-[700px] flex flex-col items-center "
     >
       {/* w-[500px] h-[320px]   */}
       <div className=" w-full      ">
@@ -32,7 +32,7 @@ const KioskUi = () => {
       </div>
       {/* <div className="w-[150px] h-[100px] bg-[#1f1f1f] mt-[1rem] rounded-[1.5rem] kiosk-stand"></div> */}
     </motion.div>
-  );
-};
+  )
+}
 
-export default KioskUi;
+export default TabletHome
