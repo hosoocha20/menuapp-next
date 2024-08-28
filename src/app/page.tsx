@@ -204,7 +204,7 @@ const HomePage = () => {
 
   //Grid features slide function
   const isNotMobile = useMediaQuery("(min-width: 640px)");
-  const START_INDEX = 1;
+  const START_INDEX = 0;
   const DRAG_THRESHOLD = 100;
   const FALLBACK_WIDTH = 509;
   const GAP_WIDTH = 12;
@@ -212,7 +212,7 @@ const HomePage = () => {
   const itemsSliderRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const [activeSlide, setActiveSlide] = useState(START_INDEX);
-  const canScrollPrev = activeSlide > 1;
+  const canScrollPrev = activeSlide > 0;
   const canScrollNext = activeSlide < offerArr.length - 1;
   const offsetX = useMotionValue(0);
   const animatedX = useSpring(offsetX, {
@@ -699,7 +699,7 @@ const HomePage = () => {
           <h2 className="font-cabin uppercase font-medium text-my-black-300 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] ">
             Our Features
           </h2>
-          <p className=" text-[1.7rem] text-my-black-950  font-light ">
+          <p className="text-[1.5rem] md:text-[1.7rem] text-my-black-950  font-light ">
             What we Offer
           </p>
         </div>
@@ -757,11 +757,11 @@ const HomePage = () => {
               ))}
             </motion.div>
             <div className=" sm:hidden absolute bottom-0 left-0 flex w-full text-my-black-300 justify-between items-center px-8 pb-3">
-              <button onClick={scrollPrev} disabled={!canScrollPrev}>
+              <button onClick={scrollPrev} disabled={!canScrollPrev} className="text-my-black-400 disabled:text-my-black-200">
                 <IoIosArrowBack className="text-[1.5rem]" />
               </button>
-              <p className="text-[14px]  font-[500]">{activeSlide} / 8</p>
-              <button onClick={scrollNext} disabled={!canScrollNext}>
+              <p className="text-[14px]  font-[500]">{activeSlide + 1} / 8</p>
+              <button onClick={scrollNext} disabled={!canScrollNext} className="text-my-black-400 disabled:text-my-black-200">
                 <IoIosArrowForward id="h-grid-next" className="text-[1.5rem]" />
               </button>
             </div>
