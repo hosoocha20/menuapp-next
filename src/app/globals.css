@@ -68,9 +68,9 @@
   position: relative;
 }
 .iphone-rim{
-  -webkit-box-shadow: inset 4px 0px 2px 0px rgba(119,119,119,1);
--moz-box-shadow: inset 4px 0px 2px 0px rgba(119,119,119,1);
-box-shadow: inset 4px 0px 2px 0px rgba(119,119,119,1);
+  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(84,84,84,0.84);
+  -moz-box-shadow: inset 0px 0px 0px 3px rgba(84,84,84,0.84);
+  box-shadow: inset 0px 0px 0px 3px rgba(84,84,84,0.84);
 }
 .kiosk-rim{
   -webkit-box-shadow: inset -4px 0px 2px 0px rgba(119,119,119,1);
