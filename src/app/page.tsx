@@ -2,23 +2,6 @@
 import React, { Component, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import Image from "next/image";
-
-// import tabletSVG from "public/tablet.svg";
-
-// import mealSVG from "public/family-meal-29.svg";
-
-// import qrSVG from "public/qr-code-64.svg";
-// import qrCodePNG from "public/qr-code-128.png"
-// import qrIconSVG from "public/qr-icon2.svg";
-import { IoMdCellular } from "react-icons/io";
-import { IoIosWifi } from "react-icons/io";
-import { IoBatteryFull } from "react-icons/io5";
-import { LuScanLine } from "react-icons/lu";
-import { HiBellAlert } from "react-icons/hi2";
-import { VscQuestion } from "react-icons/vsc";
-import { MdHomeFilled } from "react-icons/md";
-import { TbClipboardText } from "react-icons/tb";
-import { PiShoppingCartBold } from "react-icons/pi";
 import { PiDevicesLight } from "react-icons/pi";
 import { PiNotebookLight } from "react-icons/pi";
 import { MdFoodBank } from "react-icons/md";
@@ -54,8 +37,6 @@ import TextReveal from "@/ui/TextReveal";
 import FadeInRight from "@/ui/FadeInRight";
 import PhoneUi from "@/ui/PhoneUi";
 import KioskUi from "@/ui/KioskUi";
-import PhoneHome from "@/ui/PhoneHome";
-import TabletHome from "@/ui/TabletHome";
 
 interface OfferI {
   svg: string;
@@ -335,7 +316,7 @@ const HomePage = () => {
   useEffect(() => {
     offsetX.set(0);
     setActiveSlide(START_INDEX);
-  }, [isNotMobile]);
+  }, [isNotMobile, offsetX]);
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
