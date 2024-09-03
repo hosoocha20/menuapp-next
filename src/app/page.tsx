@@ -222,7 +222,6 @@ const HomePage = () => {
     stiffness: 100,
   });
 
-
   const [isDragging, setIsDragging] = useState(false);
   function handleDragSnap(
     _: MouseEvent,
@@ -289,7 +288,7 @@ const HomePage = () => {
           animatedX.set(currentOffset);
           return;
         }
-        offsetX.set(currentOffset + offsetWidth + prevItemWidth + GAP_WIDTH );
+        offsetX.set(currentOffset + offsetWidth + prevItemWidth + GAP_WIDTH);
         setActiveSlide(i - 1);
       } else {
         //next
@@ -333,37 +332,54 @@ const HomePage = () => {
     setActiveSlide((prev) => prev + 1);
   }
 
-  useEffect(() =>{
+  useEffect(() => {
     offsetX.set(0);
     setActiveSlide(START_INDEX);
-  },[isNotMobile])
+  }, [isNotMobile]);
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
-      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col tablet:flex-row  items-center justify-center gap-[2rem] py-[5rem]">
-        <div className="pr-[2vw] flex-1 border flex flex-col gap-[2.5rem] justify-center  ">
-          <h1 className=" text-[2rem] md:text-[2.5rem] lg:text-[3.1rem] font-[600] text-gun-powder-950  ">
-            Boost Efficiency, <span className="block">Delight Customers,</span>{" "}
-            <span className="block">Enhance your Service</span>
-          </h1>
-          <p>
-            Empower customers, optimize operations, maximize profits.
-            <span className="block">
-              SmartMenu - The premier self-ordering solution.
-            </span>
-          </p>
-          <button className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center tablet:self-auto">
-            Get Started
-          </button>
+      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col lg:flex-row  items-center justify-center gap-0 xl:gap-[2rem] py-[5rem]">
+        <div className="flex-1   flex lg:justify-center  ">
+          <div
+            className="flex flex-col gap-[2.5rem] justify-center "
+          >
+            <h1
+              
+              className=" text-[2rem] md:text-[2.5rem] lg:text-[2.6rem] xl:text-[3.1rem] font-[600] text-gun-powder-950  "
+            >
+              <span>Boost Efficiency, </span>
+              <span className="block">Delight Customers,</span>{" "}
+              <span className="block">Enhance your Service</span>
+            </h1>
+
+            <p >
+              Empower customers, optimize operations, maximize profits.
+              <span className="block">
+                SmartMenu - The premier self-ordering solution.
+              </span>
+            </p>
+            <button  className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center lg:self-auto">
+              Get Started
+            </button>
+          </div>
         </div>
-        <div className="border flex-1 h-full relative">
-          <div className="absolute h-[450px] left-0 top-[50%] translate-y-[-50%] z-[1]">
+        <motion.div
+          variants={imgFadeInUpAni}
+          initial="hidden"
+          animate="visible"
+          className=" flex-1 h-full relative"
+        >
+          {/* <div className="absolute h-[450px] left-0 top-[50%] translate-y-[-50%] z-[1]">
             <PhoneHome />
-          </div>
-          <div className="absolute w-full left-0 top-[35%] translate-y-[-35%] flex justify-center  ">
+          </div> */}
+          {/* <div className="absolute left-0 h-[550px] w-auto z-[1]"><img src="/mainphonemockup.svg" className="w-full h-full"/></div>
+          <div className="absolute left-0 w-full  max-w-[800px]"><img src="/maintabletmockup.svg" className="w-full h-full"/></div> */}
+          {/* <div className="absolute w-full left-0 top-[35%] translate-y-[-35%] flex justify-center  ">
             <TabletHome />
-          </div>
-        </div>
+          </div> */}
+          <img src="/menunowmockup.svg" className="w-full h-full" />
+        </motion.div>
       </section>
       <section className=" py-[2rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
         {/* <RevealAni className="w-[80%]" amount={0.4}> */}
@@ -745,7 +761,7 @@ const HomePage = () => {
                     duration: 0.4,
                   }}
                   style={{
-                    flexBasis: "100%"
+                    flexBasis: "100%",
                   }}
                   className=" bg-white sm:bg-my-black-10 shrink-0 sm:w-full h-full rounded-2xl relative group flex flex-col items-center pt-[5rem] sm:pt-[20%] lg:pt-[30%] gap-[2rem] min-h-[350px]   hover:bg-my-black-950  transition-[background-color] duration-300 ease-out "
                 >
@@ -766,11 +782,19 @@ const HomePage = () => {
               ))}
             </motion.div>
             <div className=" sm:hidden absolute bottom-0 left-0 flex w-full text-my-black-300 justify-between items-center px-8 pb-3">
-              <button onClick={scrollPrev} disabled={!canScrollPrev} className="text-my-black-400 disabled:text-my-black-200">
+              <button
+                onClick={scrollPrev}
+                disabled={!canScrollPrev}
+                className="text-my-black-400 disabled:text-my-black-200"
+              >
                 <IoIosArrowBack className="text-[1.5rem]" />
               </button>
               <p className="text-[14px]  font-[500]">{activeSlide + 1} / 8</p>
-              <button onClick={scrollNext} disabled={!canScrollNext} className="text-my-black-400 disabled:text-my-black-200">
+              <button
+                onClick={scrollNext}
+                disabled={!canScrollNext}
+                className="text-my-black-400 disabled:text-my-black-200"
+              >
                 <IoIosArrowForward id="h-grid-next" className="text-[1.5rem]" />
               </button>
             </div>

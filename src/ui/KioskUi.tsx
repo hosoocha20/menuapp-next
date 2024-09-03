@@ -13,7 +13,7 @@ const KioskUi = () => {
       viewport={{ once: true }}
       exit="visible"
       transition={{ duration: 0.6, delay: 0.25 }}
-      className="   rounded h-[210px] sm:h-[250px] tablet:h-auto w-full min-w-[300px] max-w-[500px] flex flex-col items-center "
+      className="   rounded h-[210px] sm:h-[250px] tablet:h-auto w-full min-w-[300px] max-w-[600px] flex flex-col items-center "
     >
       {/* w-[500px] h-[320px]   */}
       <div className=" w-full      ">

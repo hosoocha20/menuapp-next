@@ -67,6 +67,10 @@
   background: linear-gradient(60deg, #7371ee 1%,#a1d9d6 100%);
   position: relative;
 }
+.tablet-kiosk{
+  background: url('/tabletmenusvg.svg');
+
+}
 .iphone-rim{
   -webkit-box-shadow: inset 0px 0px 0px 3px rgba(84,84,84,0.84);
   -moz-box-shadow: inset 0px 0px 0px 3px rgba(84,84,84,0.84);
