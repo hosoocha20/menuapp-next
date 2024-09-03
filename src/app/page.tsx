@@ -359,7 +359,7 @@ const HomePage = () => {
           {/* <div className="absolute w-full left-0 top-[35%] translate-y-[-35%] flex justify-center  ">
             <TabletHome />
           </div> */}
-          <img src="/menunowmockup.svg" className="w-full h-full" />
+          <Image src="/menunowmockup.svg" className="w-full h-full" width={1000} height={800} alt="SmartMenu digital menu picture"/>
         </motion.div>
       </section>
       <section className=" py-[2rem] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav w-full flex justify-center items-center ">
