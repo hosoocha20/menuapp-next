@@ -94,6 +94,17 @@ const HomePage = () => {
       transition: { duration: 0.6, staggerChildren: 0.12, ease: "easeOut" },
     },
   };
+  const longFadeInUpAni: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 15,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.18, ease: "easeOut" },
+    },
+  };
   const FadeInRightAni: Variants = {
     hidden: {
       opacity: 0,
@@ -102,7 +113,7 @@ const HomePage = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6,  ease: "easeOut" },
+      transition: { duration: 1,  ease: "easeOut" },
     },
   };
   const cardFadeInUpAni: Variants = {
@@ -334,13 +345,13 @@ const HomePage = () => {
       <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col lg:flex-row  items-center justify-center gap-0 xl:gap-[2rem] py-[5rem]">
         <div className="flex-1   flex lg:justify-center  ">
           <motion.div
-          variants={imgFadeInUpAni}
+          variants={longFadeInUpAni}
           initial={"hidden"}
           animate={"visible"}
             className="flex flex-col gap-[2.5rem] justify-center "
           >
             <motion.h1
-              variants={imgFadeInUpAni}
+              variants={longFadeInUpAni}
               className=" text-[2rem] md:text-[2.5rem] lg:text-[2.6rem] xl:text-[3.1rem] font-[600] text-gun-powder-950  "
             >
               <span>Boost Efficiency, </span>
@@ -348,13 +359,13 @@ const HomePage = () => {
               <span className="block">Enhance your Service</span>
             </motion.h1>
 
-            <motion.p variants={imgFadeInUpAni}>
+            <motion.p variants={longFadeInUpAni}>
               <span>Empower customers, optimize operations, maximize profits.</span>
               <span className="block">
                 SmartMenu - The premier self-ordering solution.
               </span>
             </motion.p>
-            <motion.button variants={imgFadeInUpAni} className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center lg:self-auto">
+            <motion.button variants={longFadeInUpAni} className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center lg:self-auto">
               Get Started
             </motion.button>
           </motion.div>
