@@ -80,11 +80,11 @@ const Navbar = () => {
         className={`z-[1] flex justify-between items-center  h-[3rem] tablet:h-[4.3rem] px-1 ${!openNav? "text-my-black-950" :"text-white"} transition-colors duration-300 `}
       >
         <div className=" tablet:flex-1   font-cabin  text-[1rem] tablet:text-[1.2rem] font-[500]">
-          SmartMenu
+          <a href="/">SmartMenu</a>
         </div>
         <div className="hidden tablet:flex flex-1  justify-center gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
           <p className=" px-2">About</p>
-          <p className=" px-2">Features</p>
+          <a href="/features" className=" px-2">Features</a>
           <p className=" px-2">Contact</p>
         </div>
         <div className=" flex-1  flex justify-end items-center gap-[3.2rem] tracking-wider font-[400] text-sm tablet:text-[0.95rem]">

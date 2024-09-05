@@ -16,7 +16,7 @@ const PhoneUi = (props: Props) => {
     //return await controls.start("fadeOutQr");
   };
   useEffect(() => {
-    console.log("Element is in view: ", qrAniIsInView);
+    // console.log("Element is in view: ", qrAniIsInView);
     if (qrAniIsInView) qrAnimationSequence();
   }, [controls, qrAniIsInView]);
   return (
