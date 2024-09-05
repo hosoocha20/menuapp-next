@@ -345,7 +345,7 @@ const HomePage = () => {
       <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col lg:flex-row  items-center justify-center gap-0 xl:gap-[2rem] py-[5rem]">
         <div className="flex-1   flex lg:justify-center  ">
           <motion.div
-          variants={longFadeInUpAni}
+          variants={{"hidden": {opacity: 0}, "visible": {opacity: 1}}}
           initial={"hidden"}
           animate={"visible"}
             className="flex flex-col gap-[2.5rem] justify-center "
