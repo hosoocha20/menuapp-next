@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const KioskUi = () => {
+interface Props{
+  img?: string
+}
+
+const KioskUi = (props: Props) => {
   return (
     <motion.div
       variants={{
@@ -27,7 +31,7 @@ const KioskUi = () => {
             <div className="h-[1.5px] w-[17px] bg-[#292929] rounded-[2px_2px_0_0]"></div>
             <div className="h-[1.5px] w-[17px] bg-[#292929] rounded-[2px_2px_0_0]"></div>
           </div>
-          <div className="flex flex-col w-full h-full rounded-[0.7rem] tablet-kiosk bg-gun-powder-600 overflow-hidden"></div>
+          <div className={`flex flex-col w-full h-full rounded-[0.7rem] tablet-kiosk ${props.img} bg-gun-powder-600  ${props.img} overflow-hidden`}></div>
         </div>
       </div>
       {/* <div className="w-[150px] h-[100px] bg-[#1f1f1f] mt-[1rem] rounded-[1.5rem] kiosk-stand"></div> */}

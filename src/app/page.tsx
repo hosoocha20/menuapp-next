@@ -587,7 +587,7 @@ const HomePage = () => {
               <p className="text-center">We offer two convenient ways to order:</p> */}
 
             <div className="tablet:flex-1  flex tablet:flex-col justify-center items-end tablet:items-center h-full w-auto ">
-              <KioskUi />
+              <KioskUi img='bg-[url("/tabletmenusvg.svg")]'/>
             </div>
 
             <motion.div
