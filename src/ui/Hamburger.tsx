@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimationControls, Variants } from "framer-motion";
+
 interface Props{
   className?: string;
   heightLine?: string;

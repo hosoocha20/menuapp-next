@@ -1,10 +1,16 @@
 "use client";
+
 import { Brushf, Controlf, Customizef, Posf } from "@/ui/FeaturesIcon";
 import KioskUi from "@/ui/KioskUi";
 import React from "react";
 import { SlArrowRight } from "react-icons/sl";
+import { EmblaOptionsType } from 'embla-carousel'
+import EmblaCarousel from "@/ui/EmblaCarousel";
 
 const FeaturesPage = () => {
+    const OPTIONS: EmblaOptionsType = { loop: true }
+
+    const SLIDES = ['bg-[url("/tabletmenusvg.svg")]','bg-[url("/designmenu1.svg")]', 'bg-[url("/designmenu2.svg")]', 'bg-[url("/designmenu3.svg")]']
   return (
     <div>
       <section className="h-[75vh]   px-[2rem]">
@@ -53,16 +59,20 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[4rem] h-[80vh]">
+      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[4rem] min-h-[80vh]">
         <div className="flex flex-col  h-full ">
             <h2 className="text-[1.4rem] font-medium py-[2rem]">Customize Your Menu Theme to Reflect Your Restaurant's Brand</h2>
-            <div className=" w-full flex  ">
-              <KioskUi img='bg-[url("/designmenu1.svg")]'/>
-              <div className=" h-full">
-                {/* <h3>Design Your Theme</h3>
+            <div className="  h-full  flex  ">
+              {/* <KioskUi img='bg-[url("/designmenu1.svg")]'/> */}
+              <div className=" h-full   ">
+                <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+                  {/* <Carasoul arr={['bg-[url("/tabletmenusvg.svg")]','bg-[url("/designmenu1.svg")]', 'bg-[url("/designmenu2.svg")]', 'bg-[url("/designmenu3.svg")]']}/> */}
+              </div>
+              <div className=" h-full flex-1 min-w-fit border">
+                <h3>Design Your Theme</h3>
                 <ul>
                     <li>Choose from a variety of designs</li>
-                </ul> */}
+                </ul>
               </div>
             </div>
         </div>
