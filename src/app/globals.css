@@ -215,7 +215,7 @@ box-shadow: inset 0px 10px 5px 0px rgba(0,0,0,0.75), inset 0px -8px 5px 0px rgba
 .embla {
   max-width: 700px;
   margin: auto;
-
+  min-width: 300px;
   --slide-height: 100%;
   --slide-spacing: 2rem;
   --slide-size: 100%;
@@ -238,7 +238,7 @@ box-shadow: inset 0px 10px 5px 0px rgba(0,0,0,0.75), inset 0px -8px 5px 0px rgba
 }
 
 .embla__controls {
-
+  margin-top: 1rem;
   
 }
 

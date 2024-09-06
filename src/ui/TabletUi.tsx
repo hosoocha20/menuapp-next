@@ -1,7 +1,11 @@
 import React from 'react'
 import { motion } from "framer-motion";
 
-const TabletHome = () => {
+
+interface Props{
+  img?: string
+}
+const TabletUi = (props: Props) => {
   return (
     <motion.div
       variants={{
@@ -13,7 +17,7 @@ const TabletHome = () => {
       viewport={{ once: true }}
       exit="visible"
       transition={{ duration: 0.6, delay: 0.25 }}
-      className="  rounded h-[210px] sm:h-[250px] tablet:h-auto w-full min-w-[300px] max-w-[700px] flex flex-col items-center "
+      className="  rounded h-auto w-full min-w-[300px] max-w-[700px] flex flex-col items-center "
     >
       {/* w-[500px] h-[320px]   */}
       <div className=" w-full      ">
@@ -27,7 +31,7 @@ const TabletHome = () => {
             <div className="h-[1.5px] w-[17px] bg-[#292929] rounded-[2px_2px_0_0]"></div>
             <div className="h-[1.5px] w-[17px] bg-[#292929] rounded-[2px_2px_0_0]"></div>
           </div>
-          <div className="flex flex-col w-full h-full rounded-[0.7rem] tablet-kiosk bg-gun-powder-600 overflow-hidden"></div>
+          <div className={`flex flex-col w-full h-full rounded-[0.7rem] tablet-kiosk bg-gun-powder-600 ${props.img} overflow-hidden`}></div>
         </div>
       </div>
       {/* <div className="w-[150px] h-[100px] bg-[#1f1f1f] mt-[1rem] rounded-[1.5rem] kiosk-stand"></div> */}
@@ -35,4 +39,4 @@ const TabletHome = () => {
   )
 }
 
-export default TabletHome
+export default TabletUi

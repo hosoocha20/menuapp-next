@@ -4,6 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 import KioskUi from './KioskUi'
+import TabletUi from './TabletUi'
 
 type PropType = {
   slides: string[]
@@ -27,7 +28,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container w-full h-full ">
           {slides.map((img: string, index) => (
             <div className="embla__slide  w-full" key={index}>
-              <KioskUi img={img}/>
+              <TabletUi img={img} />
             </div>
           ))}
         </div>
