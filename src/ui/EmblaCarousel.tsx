@@ -22,8 +22,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
 
   return (
-    <section className="embla w-full h-full border ">
-      <div className="embla__viewport w-full h-full border" ref={emblaRef}>
+    <section className="embla w-full h-full  ">
+      <div className="embla__viewport w-full h-full " ref={emblaRef}>
         <div className="embla__container w-full h-full ">
           {slides.map((img: string, index) => (
             <div className="embla__slide  w-full" key={index}>
@@ -33,7 +33,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="embla__controls border z-[10]">
+      <div className="embla__controls  z-[10]">
 
 
         <div className="embla__dots  justify-center">
