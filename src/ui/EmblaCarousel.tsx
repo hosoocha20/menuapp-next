@@ -23,7 +23,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <section className="embla w-full h-full border ">
-      <div className="embla__viewport w-full h-full" ref={emblaRef}>
+      <div className="embla__viewport w-full h-full border" ref={emblaRef}>
         <div className="embla__container w-full h-full ">
           {slides.map((img: string, index) => (
             <div className="embla__slide  w-full" key={index}>

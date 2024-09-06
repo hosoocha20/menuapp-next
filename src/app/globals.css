@@ -226,7 +226,7 @@ box-shadow: inset 0px 10px 5px 0px rgba(0,0,0,0.75), inset 0px -8px 5px 0px rgba
 .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
-  margin-left: calc(var(--slide-spacing)/2 * -1);
+  /* margin-left: calc(var(--slide-spacing)/2 * -1); */
   
 }
 .embla__slide {
