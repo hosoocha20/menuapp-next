@@ -13,13 +13,13 @@ const FeaturesPage = () => {
     const SLIDES = ['bg-[url("/tabletmenusvg.svg")]','bg-[url("/designmenu1.svg")]', 'bg-[url("/designmenu2.svg")]', 'bg-[url("/designmenu3.svg")]']
   return (
     <div>
-      <section className="font-inter h-[75vh]   px-[2rem]">
-        <div className='h-full bg-my-orange-50 bg-[url("/mesh-920.png")] bg-cover bg-no-repeat rounded-[2rem] rounded-bl-none rounded-br-none px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav flex flex-col items-center gap-[6rem] pt-[8rem]'>
-          <h1 className="text-[2rem] font-semibold text-my-black-900 tracking-wide text-center">
+      <section className="font-inter h-[75vh] sm:min-h-[500px]   px-[1rem] sm:px-[2rem]">
+        <div className='h-full  bg-my-orange-50 bg-[url("/mesh-920.png")] bg-cover bg-no-repeat rounded-[2rem] rounded-bl-none rounded-br-none px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav flex flex-col items-center sm:justify-between tablet:justify-normal gap-[3rem] sm:gap-[6rem] py-[2rem] sm:py-[8rem]'>
+          <h1 className="text-[1.5rem] sm:text-[2rem] font-semibold text-my-black-900 tracking-wide text-center">
             SmartMenu Offers Extensive Features for
             <span className="block">Your Restaurant Management</span>
           </h1>
-          <div className="grid grid-cols-2  w-fit gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2  w-fit gap-2 md:gap-6">
             <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Brushf />
@@ -61,7 +61,7 @@ const FeaturesPage = () => {
       </section>
       <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[4rem] min-h-[80vh]">
         <div className="flex flex-col  h-full ">
-            <h2 className="text-[1.5rem] font-medium py-[2rem]">Customize Your Menu Theme to Reflect Your Restaurant's Brand</h2>
+            <h2 className="text-[1.5rem] font-semibold py-[2rem]">Customize Your Menu Theme to Reflect Your Restaurant's Brand</h2>
             <div className="  h-full  flex flex-wrap gap-[2rem] xl:gap-x-[4rem]   justify-center items-center">
               {/* <KioskUi img='bg-[url("/designmenu1.svg")]'/> */}
               <div className=" h-full max-w-[700px] w-full ">
@@ -69,14 +69,14 @@ const FeaturesPage = () => {
                   {/* <Carasoul arr={['bg-[url("/tabletmenusvg.svg")]','bg-[url("/designmenu1.svg")]', 'bg-[url("/designmenu2.svg")]', 'bg-[url("/designmenu3.svg")]']}/> */}
               </div>
               <div className=" h-full w-full flex-1 min-w-[300px]  max-w-[500px]">
-                <h3 className="text-[1.3rem] font-semibold mb-[2rem]">Design Your Menu</h3>
+                <h3 className="text-[1.3rem] font-semibold mb-[2rem] text-my-orange-400">Design Your Menu</h3>
                 <ul className="flex flex-col gap-3 mb-[7rem] ">
-                    <li className="font-medium text-[0.95rem]">Choose from a variety of designs
+                    <li className="font-semibold text-[0.95rem]">Choose from a variety of designs
                         <ul>
                             <li className="font-normal ">Select and customize a design that matches your restaurant's personality.</li>
                         </ul>
                     </li>
-                    <li className="font-medium text-[0.95rem]">Customize menu categories
+                    <li className="font-semibold text-[0.95rem]">Customize menu categories
                         <ul>
                             <li className="font-normal ">Organize your menu items into clear categories that match your restaurant's style.</li>
                         </ul>
