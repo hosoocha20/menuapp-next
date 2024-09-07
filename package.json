@@ -12,6 +12,7 @@
     "embla-carousel-autoplay": "^8.2.1",
     "embla-carousel-react": "^8.2.1",
     "framer-motion": "^11.3.24",
+    "material-symbols": "^0.23.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

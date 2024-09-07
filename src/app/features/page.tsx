@@ -14,14 +14,14 @@ const FeaturesPage = () => {
 
   const SLIDES_D_T = [
     'bg-[url("/tabletmenusvg.svg")]',
-    'bg-[url("/designmenu1.svg")]',
-    'bg-[url("/designmenu2.svg")]',
-    'bg-[url("/designmenu3.svg")]',
+    'bg-[url("/tabletmenudesign11.svg")]',
+    'bg-[url("/tabletmenudesign2222.svg")]',
+    'bg-[url("/tabletmenudesign4444.svg")]',
   ];
   const SLIDES_D_P = [
-    '/phonemenudesign1.svg',
-    '/phonemenudesign2.svg',
-    '/phonemenudesign3.svg',
+    '/phonemenudesign111.svg',
+    '/phonemenudesign2222.svg',
+    '/phonemenudesign333.svg',
   ];
   return (
     <div>
