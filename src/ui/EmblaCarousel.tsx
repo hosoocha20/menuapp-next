@@ -31,7 +31,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               {props.activeT ? (
                 <TabletUi img={img} />
               ) : (
-                <div className="max-w-[300px]    m-auto">
+                <div className="max-w-[300px] min-h-[450px]   m-auto">
                   <img
                     src={img}
                     alt="Phone Menu Designs Image"
