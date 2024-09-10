@@ -183,8 +183,8 @@ const FeaturesPage = () => {
               ))}
             </div>
             <div className=" border flex-1  xl:flex-none xl:w-[800px]">
-              <div className="m-auto flex justify-center">
-                <video src="/optionsvideo1.mp4"  width={400} height={400} loop controls/>
+              <div className={`m-auto flex justify-center ${activeAddFeature === 0 ? "block" : "hidden"} `}>
+                <video src="/optionsvideo.mp4"  width={420} height={400} loop controls={false} autoPlay/>
               </div>
             </div>
           </div>
