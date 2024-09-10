@@ -184,7 +184,7 @@ const FeaturesPage = () => {
             </div>
             <div className=" flex-1  xl:flex-none xl:w-[800px]">
               <div className={`m-auto flex justify-center ${activeAddFeature === 0 ? "block" : "hidden"} `}>
-                <video src="/optionsvideo.mp4"   height={400} muted loop disablePictureInPicture  autoPlay className="w-[400px] tablet:w-[420px]"/>
+                <video src="/optionsvideo.mp4"   height={400} muted loop disablePictureInPicture  autoPlay className="w-[400px] tablet:w-[421px]"/>
               </div>
             </div>
           </div>
