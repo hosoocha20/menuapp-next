@@ -169,10 +169,10 @@ const FeaturesPage = () => {
           <p className="text-center">
             Enhance your offerings and cater to diverse customer preferences.
           </p>
-          <div className="flex flex-col md:flex-row justify-center">
+          <div className="flex flex-col md:flex-row justify-center mt-7">
             <div className="grid grid-cols-3 md:grid-cols-1 auto-rows-fr md:w-[250px] tablet:w-[350px] bg-my-black-10">
               {additionalFeaturesArr.map((item: AdditionalFeaturesI, i) => (
-                <div key={i} className={`flex relative gap-2 border py-2 sm:py-3 px-2 sm:px-10 border-l-[3px] cursor-pointer  ${activeAddFeature === i ? "border-l-my-orange-300 bg-white" : "border-l-[1px] "}`} onClick={() => setActiveAddFeature(i)}>
+                <div key={i} className={`flex relative gap-2 border py-2 sm:py-3 px-2 sm:px-10 cursor-pointer  ${activeAddFeature === i ? "border-b-my-orange-300 md:border-l-my-orange-300 border-b-[3px] md:border-l-[3px] md:border-b-0  bg-white" : "border-l-[1px] "}`} onClick={() => setActiveAddFeature(i)}>
                   <div className="absolute left-2 sm:left-4 top-2 sm:top-3  flex text-my-black-500">{item.Icon}</div>
                   <div className=" sm:pl-3 mt-6 sm:mt-0">
                     <h5 className="font-semibold text-[14px] sm:text-[0.98rem]">{item.heading}</h5>
@@ -182,9 +182,9 @@ const FeaturesPage = () => {
                 </div>
               ))}
             </div>
-            <div className=" border flex-1  xl:flex-none xl:w-[800px]">
+            <div className=" flex-1  xl:flex-none xl:w-[800px]">
               <div className={`m-auto flex justify-center ${activeAddFeature === 0 ? "block" : "hidden"} `}>
-                <video src="/optionsvideo.mp4"  width={420} height={400} loop controls={false} autoPlay/>
+                <video src="/optionsvideo.mp4"   height={400} muted loop disablePictureInPicture  autoPlay className="w-[400px] tablet:w-[420px]"/>
               </div>
             </div>
           </div>
