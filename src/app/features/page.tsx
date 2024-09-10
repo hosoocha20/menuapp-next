@@ -2,13 +2,24 @@
 
 import { Brushf, Controlf, Customizef, Posf } from "@/ui/FeaturesIcon";
 import KioskUi from "@/ui/KioskUi";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { SlArrowRight } from "react-icons/sl";
 import { EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "@/ui/EmblaCarousel";
+import { IoAddCircleOutline } from "react-icons/io5";
+import { LuVegan } from "react-icons/lu";
+import { BsInfoCircle } from "react-icons/bs";
+import VideoTest from "@/ui/VideoTest";
+
+interface AdditionalFeaturesI {
+  Icon: ReactNode
+  heading: string;
+  subheading: string;
+}
 
 const FeaturesPage = () => {
   const [designThemeTActive, setDesignThemeTActive] = useState(true);
+  const [activeAddFeature, setActiveAddFeature] = useState(0);
 
   const OPTIONS: EmblaOptionsType = { loop: true };
 
@@ -19,10 +30,13 @@ const FeaturesPage = () => {
     'bg-[url("/tabletmenudesign4444.svg")]',
   ];
   const SLIDES_D_P = [
-    '/phonemenudesign111.svg',
-    '/phonemenudesign2222.svg',
-    '/phonemenudesign333.svg',
+    "/phonemenudesign111.svg",
+    "/phonemenudesign2222.svg",
+    "/phonemenudesign333.svg",
   ];
+
+  
+  const additionalFeaturesArr : AdditionalFeaturesI[] = [{heading: "Option Labels", subheading: "Offer customizable options for your menu", Icon: <IoAddCircleOutline size={"22px"}/>},{heading: "Dietary Labels", subheading: "Clearly indicate allergens and dietary restrictions for each menu item" , Icon: <LuVegan size={"20px"}/>},{heading: "View More Sections", subheading: "Give informative descriptions for your menu items", Icon: <BsInfoCircle size={"20px"}/>}]
   return (
     <div>
       <section className="font-inter h-[75vh] sm:min-h-[500px]   px-[1rem] sm:px-[2rem]">
@@ -103,13 +117,19 @@ const FeaturesPage = () => {
 
             {designThemeTActive ? (
               <div className=" h-full min-w-[300px] max-w-[700px] ">
-                <EmblaCarousel slides={SLIDES_D_T} options={OPTIONS} activeT={true}/>
-
+                <EmblaCarousel
+                  slides={SLIDES_D_T}
+                  options={OPTIONS}
+                  activeT={true}
+                />
               </div>
             ) : (
               <div className=" h-full  w-full max-w-[700px] ">
-                <EmblaCarousel slides={SLIDES_D_P} options={OPTIONS} activeT={false}/>
-
+                <EmblaCarousel
+                  slides={SLIDES_D_P}
+                  options={OPTIONS}
+                  activeT={false}
+                />
               </div>
             )}
 
@@ -141,6 +161,36 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
+      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]">
+        <div>
+          <h2 className="text-[1.5rem] font-semibold  text-center">
+            Expand Your Menu with Additional Features
+          </h2>
+          <p className="text-center">
+            Enhance your offerings and cater to diverse customer preferences.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center">
+            <div className="grid grid-cols-3 md:grid-cols-1 auto-rows-fr md:w-[250px] tablet:w-[350px] bg-my-black-10">
+              {additionalFeaturesArr.map((item: AdditionalFeaturesI, i) => (
+                <div key={i} className={`flex relative gap-2 border py-2 sm:py-3 px-2 sm:px-10 border-l-[3px] cursor-pointer  ${activeAddFeature === i ? "border-l-my-orange-300 bg-white" : "border-l-[1px] "}`} onClick={() => setActiveAddFeature(i)}>
+                  <div className="absolute left-2 sm:left-4 top-2 sm:top-3  flex text-my-black-500">{item.Icon}</div>
+                  <div className=" sm:pl-3 mt-6 sm:mt-0">
+                    <h5 className="font-semibold text-[14px] sm:text-[0.98rem]">{item.heading}</h5>
+                    <p className="text-[13px] hidden md:block sm:text-[0.93rem] mt-2">{item.subheading}</p>
+                  </div>
+                  <SlArrowRight className="absolute right-2 sm:right-4 top-[0.7rem] sm:top-3 text-[0.85rem] text-my-black-500"/>
+                </div>
+              ))}
+            </div>
+            <div className=" border flex-1  xl:flex-none xl:w-[800px]">
+              <div className="m-auto flex justify-center">
+                <video src="/optionsvideo1.mp4"  width={400} height={400} loop controls/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <VideoTest /> */}
     </div>
   );
 };
