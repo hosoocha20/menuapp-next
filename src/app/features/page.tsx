@@ -7,11 +7,11 @@ import { SlArrowRight } from "react-icons/sl";
 import { EmblaOptionsType } from "embla-carousel";
 import EmblaCarousel from "@/ui/EmblaCarousel";
 import { IoAddCircleOutline } from "react-icons/io5";
-import { LuVegan } from "react-icons/lu";
+import { LuVegan, LuMilk } from "react-icons/lu";
 import { BsInfoCircle } from "react-icons/bs";
 import VideoTest from "@/ui/VideoTest";
-import { ChilliIcon, CrustaceanIcon, EggIcon, FishIcon, GlutenFreeIcon, HalalIcon, HalalIcon2, VeganIcon, VegetarianIcon, VGIcon } from "@/ui/DietaryIcons";
-import { LuMilk, LuCarrot } from "react-icons/lu";
+import { ChilliIcon, CrustaceanIcon, DairyIcon, EggIcon, FishIcon, GFIcon, GlutenFreeIcon, HalalIcon, HalalIcon2, VeganIcon, VegetarianIcon, VGIcon, VIcon } from "@/ui/DietaryIcons";
+
 import { PiShrimp } from "react-icons/pi";
 import { GiPeanut } from "react-icons/gi";
 
@@ -190,36 +190,59 @@ const FeaturesPage = () => {
               <div className={`m-auto flex justify-center ${activeAddFeature === 0 ? "block" : "hidden"} `}>
                 <video src="/optionsvideo.mp4"   height={400} muted loop disablePictureInPicture  autoPlay className="w-[400px] tablet:w-[421px]"/>
               </div>
-              <div className={`m-auto flex justify-center ${activeAddFeature === 1 ? "block" : "hidden"} `}>
-                <div className="flex items-center">
+              <div className={`border h-full m-auto flex flex-col items-center  ${activeAddFeature === 1 ? "block" : "hidden"} `}>
+                <p>Choose from a variety of dietary and allergen labels to add to your menu</p>
+                <div className="flex gap-1 items-center">
+
                   <div className="w-[2rem] flex">
-                    <ChilliIcon />
-                  </div>
-                  <VegetarianIcon />
-                  <VGIcon />
-                  <PiShrimp className="text-[2rem] flex text-[#ff8902]"/>
-                  <GiPeanut className="text-[2rem] flex text-[#c49b6d]"/>
-                  <div className="w-[2rem] flex">
-                    <FishIcon />
+                    <VGIcon />
                   </div>
                   <div className="w-[2rem] flex">
-                    <EggIcon />
+                    <VIcon />
                   </div>
                   <div className="w-[2rem] flex">
-                    <GlutenFreeIcon />
-                  </div>
-                  <div className="w-[2rem] flex">
-                    <CrustaceanIcon />
+                    <GFIcon />
                   </div>
                   <div className="w-[2.6rem] flex">
                     <HalalIcon2 />
                   </div>
+                  <div className="w-[1.9rem] flex">
+                    <ChilliIcon />
+                  </div>
+                  <LuMilk className="text-[1.8rem] flex text-[#008fd5]"/>
+                  <PiShrimp className="text-[1.9rem] flex text-[#ff8902]"/>
+                  <GiPeanut className="text-[1.7rem] flex text-[#c49b6d]"/>
+                  <div className="w-[2rem] flex">
+                    <FishIcon />
+                  </div>
+                  <div className="w-[2.1rem] flex">
+                    <EggIcon />
+                  </div>
+
+                  <div className="w-[1.7rem] flex">
+                    <CrustaceanIcon />
+                  </div>
+
+                </div>
+                <div className="border w-full h-[800px] overflow-hidden">
+                  <p>Hi</p>
+                  <img src={'/phonemenudesign333.svg'} alt="Dietary & Allergen Menu Label" className="h-full w-full"/>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <div className="h-[200vh] flex justify-center items-center">
+          <div className="border h-[800px] relative">
+            <div className="absolute z-[10] right-[130px] top-[158px]">
+            <div className="w-[2.1rem] flex">
+                    <VIcon />
+                  </div>
+            </div>
+          <img src={'/phonemenudesign333.svg'} alt="Dietary & Allergen Menu Label" className="h-full w-full"/>
+          </div>
+      </div>
       {/* <VideoTest /> */}
     </div>
   );
