@@ -119,7 +119,7 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[4rem] min-h-[80vh]">
+      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] min-h-[80vh] ">
         <div className="flex flex-col  h-full gap-[2rem]">
           <h2 className="text-[1.5rem] font-semibold  text-center">
             Customize Your Menu Theme to Reflect Your Restaurant's Brand
@@ -146,7 +146,7 @@ const FeaturesPage = () => {
               Phone Theme
             </button>
           </div>
-          <div className="  h-full  flex flex-wrap gap-[2rem] xl:gap-x-[4rem]   justify-center items-center">
+          <div className=" h-full  flex flex-wrap gap-[2rem] xl:gap-x-[4rem]   justify-center items-center">
             {/* <KioskUi img='bg-[url("/designmenu1.svg")]'/> */}
 
             {designThemeTActive ? (
@@ -171,7 +171,7 @@ const FeaturesPage = () => {
               <h3 className="text-[1.3rem] font-semibold mb-[2rem] text-my-orange-400">
                 Design Your Menu
               </h3>
-              <ul className="flex flex-col gap-3 mb-[7rem] ">
+              <ul className="flex flex-col gap-3  ">
                 <li className="font-semibold text-[0.95rem]">
                   Choose from a variety of designs
                   <ul>
@@ -210,8 +210,8 @@ const FeaturesPage = () => {
                   key={i}
                   className={`flex relative gap-2 border py-2 sm:py-3 px-2 sm:px-10 cursor-pointer  ${
                     activeAddFeature === i
-                      ? "border-b-my-orange-300 md:border-l-my-orange-300 border-b-[3px] md:border-l-[3px] md:border-b-0  bg-white"
-                      : "border-l-[1px] "
+                      ? "border-b-my-orange-300 md:border-l-my-orange-300 border-b-[3px] md:border-l-[3px] md:border-b md:border-b-gray-200  bg-white"
+                      : "border-l-[1px] border-b"
                   }`}
                   onClick={() => setActiveAddFeature(i)}
                 >
@@ -232,10 +232,11 @@ const FeaturesPage = () => {
             </div>
             <div className=" flex-1  xl:flex-none xl:w-[800px]">
               <div
-                className={`m-auto flex justify-center ${
+                className={`m-auto flex flex-col items-center justify-center ${
                   activeAddFeature === 0 ? "block" : "hidden"
                 } `}
               >
+                <p className={`md:hidden px-3 pt-5 pb-3 text-[15px] text-my-orange-400 font-semibold text-center`}>Offer customizable options for your menu</p>
                 <video
                   src="/optionsvideo.mp4"
                   height={400}
@@ -243,7 +244,7 @@ const FeaturesPage = () => {
                   loop
                   disablePictureInPicture
                   autoPlay
-                  className="w-[400px] tablet:w-[421px]"
+                  className="w-[400px] tablet:w-[420px]"
                 />
               </div>
               <div
@@ -251,7 +252,8 @@ const FeaturesPage = () => {
                   activeAddFeature === 1 ? "block" : "hidden"
                 } `}
               >
-                <p className="text-center font-medium">
+                <p className={`md:hidden px-3  pb-2 text-[15px] text-my-orange-400 font-semibold text-center`}>Clearly indicate allergens and dietary restrictions for each menu item</p>
+                <p className="text-center font-medium text-[15px] lg:text-[15.5px]">
                   Choose from a variety of dietary and allergen labels to add to
                   your menu
                 </p>
@@ -296,10 +298,11 @@ const FeaturesPage = () => {
                 />
               </div>
               <div
-                className={`m-auto flex justify-center ${
+                className={`m-auto flex flex-col items-center justify-center ${
                   activeAddFeature === 2 ? "block" : "hidden"
                 } `}
               >
+                <p className={`md:hidden px-3 pt-5 pb-3 text-center text-[15px] text-my-orange-400 font-semibold`}>Give informative descriptions for your menu items</p>
                 <video
                   src="/viewmorevideo.mp4"
                   height={400}
@@ -307,7 +310,7 @@ const FeaturesPage = () => {
                   loop
                   disablePictureInPicture
                   autoPlay
-                  className="w-[400px] tablet:w-[421px]"
+                  className="w-[390px] tablet:w-[420px]"
                 />
               </div>
             </div>
