@@ -10,6 +10,10 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { LuVegan } from "react-icons/lu";
 import { BsInfoCircle } from "react-icons/bs";
 import VideoTest from "@/ui/VideoTest";
+import { ChilliIcon, CrustaceanIcon, EggIcon, FishIcon, GlutenFreeIcon, HalalIcon, HalalIcon2, VeganIcon, VegetarianIcon, VGIcon } from "@/ui/DietaryIcons";
+import { LuMilk, LuCarrot } from "react-icons/lu";
+import { PiShrimp } from "react-icons/pi";
+import { GiPeanut } from "react-icons/gi";
 
 interface AdditionalFeaturesI {
   Icon: ReactNode
@@ -185,6 +189,32 @@ const FeaturesPage = () => {
             <div className=" flex-1  xl:flex-none xl:w-[800px]">
               <div className={`m-auto flex justify-center ${activeAddFeature === 0 ? "block" : "hidden"} `}>
                 <video src="/optionsvideo.mp4"   height={400} muted loop disablePictureInPicture  autoPlay className="w-[400px] tablet:w-[421px]"/>
+              </div>
+              <div className={`m-auto flex justify-center ${activeAddFeature === 1 ? "block" : "hidden"} `}>
+                <div className="flex items-center">
+                  <div className="w-[2rem] flex">
+                    <ChilliIcon />
+                  </div>
+                  <VegetarianIcon />
+                  <VGIcon />
+                  <PiShrimp className="text-[2rem] flex text-[#ff8902]"/>
+                  <GiPeanut className="text-[2rem] flex text-[#c49b6d]"/>
+                  <div className="w-[2rem] flex">
+                    <FishIcon />
+                  </div>
+                  <div className="w-[2rem] flex">
+                    <EggIcon />
+                  </div>
+                  <div className="w-[2rem] flex">
+                    <GlutenFreeIcon />
+                  </div>
+                  <div className="w-[2rem] flex">
+                    <CrustaceanIcon />
+                  </div>
+                  <div className="w-[2.6rem] flex">
+                    <HalalIcon2 />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
