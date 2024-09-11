@@ -80,7 +80,7 @@ const FeaturesPage = () => {
             <span className="block">Your Restaurant Management</span>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  w-fit gap-2 md:gap-6">
-            <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
+            <a href="#section-feature-design" className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Brushf />
               </div>
@@ -88,8 +88,8 @@ const FeaturesPage = () => {
                 DESIGN YOUR MENU
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
-            </button>
-            <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
+            </a>
+            <a href="#section-feature-additional" className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Customizef />
               </div>
@@ -97,7 +97,7 @@ const FeaturesPage = () => {
                 ADDITIONAL OPTIONS
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
-            </button>
+            </a>
             <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Controlf />
@@ -119,7 +119,7 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] min-h-[80vh] ">
+      <section id="section-feature-design" className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] min-h-[80vh] ">
         <div className="flex flex-col  h-full gap-[2rem]">
           <h2 className="text-[1.5rem] font-semibold  text-center">
             Customize Your Menu Theme to Reflect Your Restaurant's Brand
@@ -195,7 +195,7 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]">
+      <section id="section-feature-additional" className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]">
         <div>
           <h2 className="text-[1.5rem] font-semibold  text-center">
             Expand Your Menu with Additional Features
