@@ -295,6 +295,21 @@ const FeaturesPage = () => {
                   className="w-[300px] tablet:w-[320px] mt-4"
                 />
               </div>
+              <div
+                className={`m-auto flex justify-center ${
+                  activeAddFeature === 2 ? "block" : "hidden"
+                } `}
+              >
+                <video
+                  src="/viewmorevideo.mp4"
+                  height={400}
+                  muted
+                  loop
+                  disablePictureInPicture
+                  autoPlay
+                  className="w-[400px] tablet:w-[421px]"
+                />
+              </div>
             </div>
           </div>
         </div>
