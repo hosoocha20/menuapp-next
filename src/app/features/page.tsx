@@ -200,7 +200,7 @@ const FeaturesPage = () => {
           <h2 className="text-[1.5rem] font-semibold  text-center">
             Expand Your Menu with Additional Features
           </h2>
-          <p className="text-center">
+          <p className="text-center mt-3">
             Enhance your offerings and cater to diverse customer preferences.
           </p>
           <div className="flex flex-col md:flex-row justify-center mt-7">
