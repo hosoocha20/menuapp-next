@@ -10,13 +10,27 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { LuVegan, LuMilk } from "react-icons/lu";
 import { BsInfoCircle } from "react-icons/bs";
 import VideoTest from "@/ui/VideoTest";
-import { ChilliIcon, CrustaceanIcon, DairyIcon, EggIcon, FishIcon, GFIcon, GlutenFreeIcon, HalalIcon, HalalIcon2, VeganIcon, VegetarianIcon, VGIcon, VIcon } from "@/ui/DietaryIcons";
+import {
+  ChilliIcon,
+  CrustaceanIcon,
+  DairyIcon,
+  EggIcon,
+  FishIcon,
+  GFIcon,
+  GlutenFreeIcon,
+  HalalIcon,
+  HalalIcon2,
+  VeganIcon,
+  VegetarianIcon,
+  VGIcon,
+  VIcon,
+} from "@/ui/DietaryIcons";
 
 import { PiShrimp } from "react-icons/pi";
 import { GiPeanut } from "react-icons/gi";
 
 interface AdditionalFeaturesI {
-  Icon: ReactNode
+  Icon: ReactNode;
   heading: string;
   subheading: string;
 }
@@ -39,8 +53,24 @@ const FeaturesPage = () => {
     "/phonemenudesign333.svg",
   ];
 
-  
-  const additionalFeaturesArr : AdditionalFeaturesI[] = [{heading: "Option Labels", subheading: "Offer customizable options for your menu", Icon: <IoAddCircleOutline size={"22px"}/>},{heading: "Dietary Labels", subheading: "Clearly indicate allergens and dietary restrictions for each menu item" , Icon: <LuVegan size={"20px"}/>},{heading: "View More Sections", subheading: "Give informative descriptions for your menu items", Icon: <BsInfoCircle size={"20px"}/>}]
+  const additionalFeaturesArr: AdditionalFeaturesI[] = [
+    {
+      heading: "Option Labels",
+      subheading: "Offer customizable options for your menu",
+      Icon: <IoAddCircleOutline size={"22px"} />,
+    },
+    {
+      heading: "Dietary Labels",
+      subheading:
+        "Clearly indicate allergens and dietary restrictions for each menu item",
+      Icon: <LuVegan size={"20px"} />,
+    },
+    {
+      heading: "View More Sections",
+      subheading: "Give informative descriptions for your menu items",
+      Icon: <BsInfoCircle size={"20px"} />,
+    },
+  ];
   return (
     <div>
       <section className="font-inter h-[75vh] sm:min-h-[500px]   px-[1rem] sm:px-[2rem]">
@@ -176,24 +206,56 @@ const FeaturesPage = () => {
           <div className="flex flex-col md:flex-row justify-center mt-7">
             <div className="grid grid-cols-3 md:grid-cols-1 auto-rows-fr md:w-[250px] tablet:w-[350px] bg-my-black-10">
               {additionalFeaturesArr.map((item: AdditionalFeaturesI, i) => (
-                <div key={i} className={`flex relative gap-2 border py-2 sm:py-3 px-2 sm:px-10 cursor-pointer  ${activeAddFeature === i ? "border-b-my-orange-300 md:border-l-my-orange-300 border-b-[3px] md:border-l-[3px] md:border-b-0  bg-white" : "border-l-[1px] "}`} onClick={() => setActiveAddFeature(i)}>
-                  <div className="absolute left-2 sm:left-4 top-2 sm:top-3  flex text-my-black-500">{item.Icon}</div>
-                  <div className=" sm:pl-3 mt-6 sm:mt-0">
-                    <h5 className="font-semibold text-[14px] sm:text-[0.98rem]">{item.heading}</h5>
-                    <p className="text-[13px] hidden md:block sm:text-[0.93rem] mt-2">{item.subheading}</p>
+                <div
+                  key={i}
+                  className={`flex relative gap-2 border py-2 sm:py-3 px-2 sm:px-10 cursor-pointer  ${
+                    activeAddFeature === i
+                      ? "border-b-my-orange-300 md:border-l-my-orange-300 border-b-[3px] md:border-l-[3px] md:border-b-0  bg-white"
+                      : "border-l-[1px] "
+                  }`}
+                  onClick={() => setActiveAddFeature(i)}
+                >
+                  <div className="absolute left-2 sm:left-4 top-2 sm:top-3  flex text-my-black-500">
+                    {item.Icon}
                   </div>
-                  <SlArrowRight className="absolute right-2 sm:right-4 top-[0.7rem] sm:top-3 text-[0.85rem] text-my-black-500"/>
+                  <div className=" sm:pl-3 mt-6 sm:mt-0">
+                    <h5 className="font-semibold text-[14px] sm:text-[0.98rem]">
+                      {item.heading}
+                    </h5>
+                    <p className="text-[13px] hidden md:block sm:text-[0.93rem] mt-2">
+                      {item.subheading}
+                    </p>
+                  </div>
+                  <SlArrowRight className="absolute right-2 sm:right-4 top-[0.7rem] sm:top-3 text-[0.85rem] text-my-black-500" />
                 </div>
               ))}
             </div>
             <div className=" flex-1  xl:flex-none xl:w-[800px]">
-              <div className={`m-auto flex justify-center ${activeAddFeature === 0 ? "block" : "hidden"} `}>
-                <video src="/optionsvideo.mp4"   height={400} muted loop disablePictureInPicture  autoPlay className="w-[400px] tablet:w-[421px]"/>
+              <div
+                className={`m-auto flex justify-center ${
+                  activeAddFeature === 0 ? "block" : "hidden"
+                } `}
+              >
+                <video
+                  src="/optionsvideo.mp4"
+                  height={400}
+                  muted
+                  loop
+                  disablePictureInPicture
+                  autoPlay
+                  className="w-[400px] tablet:w-[421px]"
+                />
               </div>
-              <div className={`border h-full m-auto flex flex-col items-center  ${activeAddFeature === 1 ? "block" : "hidden"} `}>
-                <p>Choose from a variety of dietary and allergen labels to add to your menu</p>
-                <div className="flex gap-1 items-center">
-
+              <div
+                className={` h-full m-auto flex flex-col items-center gap-2 pt-5 px-4  ${
+                  activeAddFeature === 1 ? "block" : "hidden"
+                } `}
+              >
+                <p className="text-center font-medium">
+                  Choose from a variety of dietary and allergen labels to add to
+                  your menu
+                </p>
+                <div className="flex flex-wrap gap-1 items-center">
                   <div className="w-[2rem] flex">
                     <VGIcon />
                   </div>
@@ -209,9 +271,9 @@ const FeaturesPage = () => {
                   <div className="w-[1.9rem] flex">
                     <ChilliIcon />
                   </div>
-                  <LuMilk className="text-[1.8rem] flex text-[#008fd5]"/>
-                  <PiShrimp className="text-[1.9rem] flex text-[#ff8902]"/>
-                  <GiPeanut className="text-[1.7rem] flex text-[#c49b6d]"/>
+                  <LuMilk className="text-[1.8rem] flex text-[#008fd5]" />
+                  <PiShrimp className="text-[1.9rem] flex text-[#ff8902]" />
+                  <GiPeanut className="text-[1.7rem] flex text-[#c49b6d]" />
                   <div className="w-[2rem] flex">
                     <FishIcon />
                   </div>
@@ -222,27 +284,46 @@ const FeaturesPage = () => {
                   <div className="w-[1.7rem] flex">
                     <CrustaceanIcon />
                   </div>
-
                 </div>
-                <div className="border w-full h-[800px] overflow-hidden">
-                  <p>Hi</p>
-                  <img src={'/phonemenudesign333.svg'} alt="Dietary & Allergen Menu Label" className="h-full w-full"/>
-                </div>
+                  <video
+                  src="/dietaryvideo.mp4"
+                  height={400}
+                  muted
+                  loop
+                  disablePictureInPicture
+                  autoPlay
+                  className="w-[300px] tablet:w-[320px] mt-4"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div className="h-[200vh] flex justify-center items-center">
-          <div className="border h-[800px] relative">
-            <div className="absolute z-[10] right-[130px] top-[158px]">
-            <div className="w-[2.1rem] flex">
-                    <VIcon />
-                  </div>
+      {/* <div className="h-[200vh] flex justify-center items-center">
+        <div className=" h-[800px] relative">
+          <div className="absolute z-[10] right-[109px] top-[158px] flex gap-[2px]">
+            <div className="w-[1.3rem] flex">
+              <VIcon />
             </div>
-          <img src={'/phonemenudesign333.svg'} alt="Dietary & Allergen Menu Label" className="h-full w-full"/>
+            <div className="w-[1.2rem] flex">
+              <ChilliIcon />
+            </div>
           </div>
-      </div>
+          <div className="absolute z-[10] right-[130px] top-[510px] flex gap-[2px]">
+            <div className="w-[1.2rem] flex">
+              <CrustaceanIcon />
+            </div>
+          </div>
+          <div className="absolute z-[10] right-[270px] top-[688px] flex gap-[2px]">
+            <PiShrimp className="text-[1.2rem] flex text-[#ff8902]" />
+          </div>
+          <img
+            src={"/phonemenudesign333.svg"}
+            alt="Dietary & Allergen Menu Label"
+            className="h-full w-full"
+          />
+        </div>
+      </div> */}
       {/* <VideoTest /> */}
     </div>
   );
