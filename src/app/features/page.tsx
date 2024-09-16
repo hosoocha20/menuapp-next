@@ -382,7 +382,7 @@ const FeaturesPage = () => {
                   </ul>
                 </li>
                 <li className="font-semibold text-[0.95rem]">
-                  Manage Products
+                  Manage products
                   <ul>
                     <li className="font-normal ">
                       Control which items are visible to customers based on
