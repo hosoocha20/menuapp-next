@@ -28,6 +28,7 @@ import {
 
 import { PiShrimp } from "react-icons/pi";
 import { GiPeanut } from "react-icons/gi";
+import EmblaCarasouelStd from "@/ui/EmblaCarasouelStd";
 
 interface AdditionalFeaturesI {
   Icon: ReactNode;
@@ -52,6 +53,7 @@ const FeaturesPage = () => {
     "/phonemenudesign2222.svg",
     "/phonemenudesign333.svg",
   ];
+  const SLIDES_MANAGE = ["/admin1.svg", "/admin2.svg"];
 
   const additionalFeaturesArr: AdditionalFeaturesI[] = [
     {
@@ -80,7 +82,10 @@ const FeaturesPage = () => {
             <span className="block">Your Restaurant Management</span>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  w-fit gap-2 md:gap-6">
-            <a href="#section-feature-design" className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
+            <a
+              href="#section-feature-design"
+              className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between"
+            >
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Brushf />
               </div>
@@ -89,7 +94,10 @@ const FeaturesPage = () => {
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
             </a>
-            <a href="#section-feature-additional" className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
+            <a
+              href="#section-feature-additional"
+              className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between"
+            >
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Customizef />
               </div>
@@ -98,7 +106,7 @@ const FeaturesPage = () => {
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
             </a>
-            <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
+            <a href="#section-feature-manage" className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Controlf />
               </div>
@@ -106,7 +114,7 @@ const FeaturesPage = () => {
                 MANAGE YOUR ORDERS
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
-            </button>
+            </a>
             <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
               <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
                 <Posf />
@@ -119,7 +127,10 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
-      <section id="section-feature-design" className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] min-h-[80vh] ">
+      <section
+        id="section-feature-design"
+        className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] min-h-[80vh] "
+      >
         <div className="flex flex-col  h-full gap-[2rem]">
           <h2 className="text-[1.5rem] font-semibold  text-center">
             Customize Your Menu Theme to Reflect Your Restaurant's Brand
@@ -195,7 +206,10 @@ const FeaturesPage = () => {
           </div>
         </div>
       </section>
-      <section id="section-feature-additional" className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]">
+      <section
+        id="section-feature-additional"
+        className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]"
+      >
         <div>
           <h2 className="text-[1.5rem] font-semibold  text-center">
             Expand Your Menu with Additional Features
@@ -236,7 +250,11 @@ const FeaturesPage = () => {
                   activeAddFeature === 0 ? "block" : "hidden"
                 } `}
               >
-                <p className={`md:hidden px-3 pt-5 pb-3 text-[15px] text-my-orange-400 font-semibold text-center`}>Offer customizable options for your menu</p>
+                <p
+                  className={`md:hidden px-3 pt-5 pb-3 text-[15px] text-my-orange-400 font-semibold text-center`}
+                >
+                  Offer customizable options for your menu
+                </p>
                 <video
                   src="/optionsvideo.mp4"
                   height={400}
@@ -252,7 +270,12 @@ const FeaturesPage = () => {
                   activeAddFeature === 1 ? "block" : "hidden"
                 } `}
               >
-                <p className={`md:hidden px-3  pb-2 text-[15px] text-my-orange-400 font-semibold text-center`}>Clearly indicate allergens and dietary restrictions for each menu item</p>
+                <p
+                  className={`md:hidden px-3  pb-2 text-[15px] text-my-orange-400 font-semibold text-center`}
+                >
+                  Clearly indicate allergens and dietary restrictions for each
+                  menu item
+                </p>
                 <p className="text-center font-medium text-[15px] lg:text-[15.5px]">
                   Choose from a variety of dietary and allergen labels to add to
                   your menu
@@ -287,7 +310,7 @@ const FeaturesPage = () => {
                     <CrustaceanIcon />
                   </div>
                 </div>
-                  <video
+                <video
                   src="/dietaryvideo.mp4"
                   height={400}
                   muted
@@ -302,7 +325,11 @@ const FeaturesPage = () => {
                   activeAddFeature === 2 ? "block" : "hidden"
                 } `}
               >
-                <p className={`md:hidden px-3 pt-5 pb-3 text-center text-[15px] text-my-orange-400 font-semibold`}>Give informative descriptions for your menu items</p>
+                <p
+                  className={`md:hidden px-3 pt-5 pb-3 text-center text-[15px] text-my-orange-400 font-semibold`}
+                >
+                  Give informative descriptions for your menu items
+                </p>
                 <video
                   src="/viewmorevideo.mp4"
                   height={400}
@@ -313,6 +340,57 @@ const FeaturesPage = () => {
                   className="w-[390px] tablet:w-[420px]"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="section-feature-manage"
+        className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]"
+      >
+        <div>
+          <h2 className="text-[1.5rem] font-semibold  text-center">
+            Real-Time Order Management
+          </h2>
+          <div className=" h-full  flex flex-row-reverse flex-wrap gap-[2rem] xl:gap-x-[4rem]   justify-center items-center mt-[3rem]">
+            {/* <KioskUi img='bg-[url("/designmenu1.svg")]'/> */}
+
+            <div className=" h-full min-w-[300px] max-w-[700px]  ">
+              <EmblaCarasouelStd slides={SLIDES_MANAGE} options={OPTIONS} />
+            </div>
+
+            <div className=" h-full w-full flex-1 min-w-[300px]  max-w-[500px]  ">
+              <h3 className="text-[1.3rem] font-semibold mb-[2rem] text-my-orange-400">
+                Manage Your Store
+              </h3>
+              <ul className="flex flex-col gap-3  ">
+                <li className="font-semibold text-[0.95rem]">
+                  Monitor order status
+                  <ul>
+                    <li className="font-normal ">
+                      Keep track of incoming orders, and their progress in real
+                      time.
+                    </li>
+                  </ul>
+                </li>
+                <li className="font-semibold text-[0.95rem]">
+                  Manage orders
+                  <ul>
+                    <li className="font-normal ">
+                      Easily cancel, or modify orders as needed.
+                    </li>
+                  </ul>
+                </li>
+                <li className="font-semibold text-[0.95rem]">
+                  Manage Products
+                  <ul>
+                    <li className="font-normal ">
+                      Control which items are visible to customers based on
+                      availability.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
