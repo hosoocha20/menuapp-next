@@ -81,7 +81,7 @@ const FeaturesPage = () => {
             SmartMenu Offers Extensive Features for
             <span className="block">Your Restaurant Management</span>
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2  w-fit gap-2 md:gap-6">
+          <div className="grid grid-cols-1   w-fit gap-2 md:gap-6">
             <a
               href="#section-feature-design"
               className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between"
@@ -115,15 +115,6 @@ const FeaturesPage = () => {
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
             </a>
-            <button className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between">
-              <div className="w-[3rem] bg-white p-2 rounded-full rounded-bl-none">
-                <Posf />
-              </div>
-              <p className="tracking-wider text-[0.94rem] font-medium text-white">
-                FULLY INTEGRATED
-              </p>
-              <SlArrowRight className="text-[1.1em] text-white" />
-            </button>
           </div>
         </div>
       </section>
