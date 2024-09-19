@@ -83,7 +83,7 @@ const Navbar = () => {
           <a href="/">SmartMenu</a>
         </div>
         <div className="hidden tablet:flex flex-1  justify-center gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
-          <p className=" px-2">Products</p>
+          <a href="/products" className=" px-2">Products</a>
           <a href="/features" className=" px-2">Features</a>
           <p className=" px-2">Contact</p>
         </div>
