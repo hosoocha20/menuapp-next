@@ -83,12 +83,11 @@ const Navbar = () => {
           <a href="/">SmartMenu</a>
         </div>
         <div className="hidden tablet:flex flex-1  justify-center gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
-          <p className=" px-2">About</p>
+          <p className=" px-2">Products</p>
           <a href="/features" className=" px-2">Features</a>
           <p className=" px-2">Contact</p>
         </div>
         <div className=" flex-1  flex justify-end items-center gap-[3.2rem] tracking-wider font-[400] text-sm tablet:text-[0.95rem]">
-          <button className="hidden sm:block ">Login</button>
           <button className={`hidden sm:block border ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
             Get Started
           </button>
@@ -101,10 +100,9 @@ const Navbar = () => {
         </div>
       </div>
       <motion.div variants={navMenuPVariants} animate={controls} initial={"hide"} className={`opacity-0 bg-my-black-950 ${!openNav? "invisible " : "visible opacity-100"} tablet:invisible z-[0] w-full h-screen  transition-[opacity_1s_linear,visibility_0s_linear_300ms] duration-300 absolute left-0 top-0 pt-[3rem] tablet:pt-[4.3rem] px-sm-nav tablet:px-tablet-nav flex flex-col gap-[1rem] text-white text-[1.6rem] md:text-[1.7rem] tablet:text-[2rem] tracking-widest`}>
-        <motion.p variants={navMenuVariants}   className="mt-[2rem]">About</motion.p>
-        <motion.p variants={navMenuVariants}  >Features</motion.p>
+        <motion.p variants={navMenuVariants}   className="mt-[2rem]">Products</motion.p>
+        <motion.a href="/features" variants={navMenuVariants}  >Features</motion.a>
         <motion.p variants={navMenuVariants} >Contact</motion.p>
-        <motion.p variants={navMenuVariants}  >Login</motion.p>
         <motion.p variants={navMenuVariants}  >Get Started</motion.p>
       </motion.div>
     </motion.nav>
