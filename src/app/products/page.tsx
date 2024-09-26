@@ -32,10 +32,11 @@ const ProductsPage = () => {
             </span>
             <span>Act Now and Start Seeing Results.</span>
           </p>
-          <form className="border flex">
-            <input placeholder="Your email address" className="border w-full"/>
+          <form className="border-2 border-my-black-100 rounded-[2rem] pl-[4rem] pr-[200px] flex relative py-[0.5rem] tablet:py-[0.65rem]">
+            <input placeholder="Your email address" className="w-full pr-2 focus:outline-none"/>
+            <IoMailOutline  className="absolute left-[1.5rem] top-[50%] translate-y-[-50%] text-[1.4rem] flex text-my-black-500"/>
             <button
-              className={`hidden sm:block border  tablet:bg-my-black-950 tablet:text-white  rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] w-[200px] `}
+              className={`absolute right-0 top-0   tablet:bg-my-black-950 tablet:text-white  rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] w-[200px] `}
             >
               Get Started
             </button>
