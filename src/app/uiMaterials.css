@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.edge {
+    position: absolute;
+    top: 400px;
+    left: 312px;
+    height: 43px;
+    width: 660px;
+    background: linear-gradient(to right, rgb(34,33,40)1%, rgb(155,153,166)3%,rgb(30,30,34)7%, rgb(30,30,34)15%,rgb(68,66,76)25%,rgb(52,51,61)35%,rgb(52,51,61)85%,rgb(34,33,40)94%,rgb(134,132,148)97%,rgb(105,103,118)98%,rgb(25,24,29)99%);
+    border-radius: 0 0 20px 20px;
+   box-shadow: inset 0px 1px 2px 3px rgb(103, 90, 128);
+    z-index: -1;
+}
+.edge::before /*vertical stripes*/{
+content: "";;
+position: absolute;
+left: 60px;
+height: 40px;
+width: 4px;
+background: rgb(2,2,3);
+}
+.edge::after /*vertical stripes*/{
+    content: "";;
+    position: absolute;
+    right: 60px;
+    height: 40px;
+    width: 4px;
+    background: rgb(2,2,3);
+    }
+
+    .volume-up {
+        position: absolute;
+        top: 19px;
+        left: 160px;
+        height: 13px;
+        width: 50px;
+        background: transparent;
+        border-radius: 50px;
+        box-shadow: 0px -0.7px 1px 1px rgb(12,11,13), inset 0px 0.8px 1px 1px rgb(86,85,97);
+    }
+
+
+    .volume-down {
+        position: absolute;
+        top: 19px;
+        left: 225px;
+        height: 13px;
+        width: 50px;
+        background: transparent;
+        border-radius: 50px;
+        box-shadow: 0px -0.7px 0px 1px rgb(12,11,13), inset 0px 1px 1px 1px rgb(86,85,97);
+    }
+    .volume-down:before /*sim insert*/ {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 235px;
+        width: 75px;
+        height: 12px;
+        background: transparent;
+        border: rgb(34,33,40) solid 1px;
+        border-radius: 50px;
+    }
+    .volume-down::after /*sim insert*/ {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 300px;
+        width: 6px;
+        height: 5px;
+        background: rgb(16, 10, 24);
+        box-shadow:inset -0.5px -1px 1px rgb(124,121,138);
+        border-radius: 50%;
+    }
+
+.screen-base {
+position: absolute;
+top: 320px;
+left: 300px;
+height: 90px;
+width: 685px;
+background-color: #000;
+clip-path: polygon(13% 0%, 87% 0%, 100% 100%, 0% 100%);
+border-radius: 40px;
+box-shadow: inset 2px 1px 2px 4.5px rgb(190, 181, 235);
+}
+
+.screen-top {
+    position: absolute;
+top: 322px;
+left: 320px;
+height: 80px;
+width: 644px;
+background: linear-gradient(40deg, rgb(170, 156, 231)5%, rgb(73, 57, 165)20%, rgb(16, 9, 77)80%, rgb(52, 0, 155)93%);
+clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+border-radius: 28px;
+}
+.screen-top::before /*left*/{
+    content: "";
+    position: absolute;
+    top: 64px;
+    left: 6px;
+    height: 20px;
+    width: 10px;
+    background: rgb(0, 0, 0);
+    clip-path: polygon(57% 29%, 53% 46%, 57% 64%, 71% 80%, 20% 75%, 20% 28%, 71% 9%);
+}
+.screen-top::after /*right*/ {
+    content: "";
+    position: absolute;
+    top: 65px;
+    right: 6px;
+    height: 20px;
+    width: 10px;
+    background: rgb(0, 0, 0);
+    clip-path: polygon(57% 23%, 60% 39%, 57% 57%, 48% 75%, 98% 67%, 95% 28%, 48% 6%);
+} 
+
+/* graphics-lower */
+.graphic-lower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-85%,-38%);
+    height: 120px;
+    width: 300px;
+    border-radius: 50%;
+    /* background: radial-gradient(rgb(124,121,138)40%,rgb(124,121,138)80%); */
+    z-index: 2;
+}
+.graphic-lower::before {
+    content:"";
+    position: absolute;
+    top: 18px;
+    left: -40px;
+    height: 50px;
+    width: 40px;
+    background: black;
+    border-radius: 1% 20% 20% 1%;
+transform: skew(-44deg);
+}
+
+
+/* middle  */
+
+
+
+
+/* ######## reflection ######### */
+.graphic-middle::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -37px;
+    height: 98px;
+    width: 434px;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.236);
+}
+
+.reflection-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-51%, -57%);
+    height: 90px;
+    width: 560px;
+    clip-path: polygon(13% 0%, 87% 0%, 100% 100%, 0% 100%);
+    border-radius: 50px;
+    border: solid rgba(0, 0, 0, 0.25) 4px ;
+    border-left: solid rgba(0, 0, 0, 0.25) 14px;
+    box-shadow: -2px 1px 4px 4.5px rgb(202, 181, 255);
+    opacity: 0.5;
+z-index: 5;
+}
+.reflection-screen::before /*black top screen*/{
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    height: 50px;
+    width: 35px;
+    background: rgb(0, 0, 0, 0.25);
+    border-radius: 1% 20% 20% 1%;
+transform: skew(-44deg);
+}
+.reflection-screen::after {
+content: "";
+position: absolute;
+    top: 30px;
+    left: 120px;
+    height: 70px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 9px 1px rgb(193, 187, 226, 0.4);
+}
