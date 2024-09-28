@@ -342,7 +342,7 @@ const HomePage = () => {
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
-      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav bg-[url('/bbblurry.svg')] bg-no-repeat bg-cover w-full bg-white flex flex-col lg:flex-row  items-center justify-center gap-0 xl:gap-[2rem] py-[5rem]">
+      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav  w-full bg-my-primary-400 flex flex-col lg:flex-row  items-center justify-center gap-0 xl:gap-[2rem] py-[5rem]">
         <div className="flex-1   flex lg:justify-center  ">
           <motion.div
           variants={{"hidden": {opacity: 0}, "visible": {opacity: 1, transition: { duration: 1, staggerChildren: 0.18, ease: "easeOut" }}}}
@@ -352,14 +352,14 @@ const HomePage = () => {
           >
             <motion.h1
               variants={longFadeInUpAni}
-              className=" text-[2rem] md:text-[2.5rem] lg:text-[2.6rem] xl:text-[3.1rem] font-[600] text-gun-powder-950  "
+              className=" text-[2rem] md:text-[2.5rem] lg:text-[2.6rem] xl:text-[3.1rem] font-[600] text-white  "
             >
               <span>Boost Efficiency, </span>
               <span className="block">Delight Customers,</span>{" "}
               <span className="block">Enhance your Service</span>
             </motion.h1>
 
-            <motion.p variants={longFadeInUpAni}>
+            <motion.p variants={longFadeInUpAni} className="text-my-primary-100 font-light  md:text-[1.1rem]">
               <span>Empower customers, optimize operations, maximize profits.</span>
               <span className="block">
                 SmartMenu - The premier self-ordering solution.
@@ -399,7 +399,7 @@ const HomePage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ root: sectionOneRef, amount: 0.4 }}
-            src={"/family-meal-1.svg"}
+            src={"/family-meal.svg"}
             className="w-[70%] sm:w-[45%]"
           ></motion.img>
           <motion.div
