@@ -823,7 +823,7 @@ const HomePage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ root: howSectionRef, amount: 0.4, once: true }}
-          src={"/start1.svg"}
+          src={"/startcomputer.svg"}
           className="w-[70%] tablet:w-[35%] "
         ></motion.img>
         <div className="flex flex-col tablet:w-[500px] gap-[1.5rem]">
@@ -854,8 +854,8 @@ const HomePage = () => {
             viewport={{ root: howSectionRef, amount: 0.4, once: true }}
             className="grid grid-cols-[auto_1fr] text-[1.8rem] gap-x-[2rem] gap-y-[1rem] bg-transparent items-center relative"
           >
-            <div className="absolute top-0 left-6 w-[2px] h-full bg-[linear-gradient(rgba(255,255,255,0),#ffc466_25%,rgba(252,151,117,1)_45%,#ffc466_85%,rgba(255,255,255,0))] z-[-1]"></div>
-            <div className=" mt-1 rounded-full p-[2px] w-max  text-center  bg-[rgb(255,196,102)] bg-[linear-gradient(90deg,rgba(255,196,102,1)_3%,rgba(252,151,117,1)_31%,rgba(252,155,116,1)_78%,rgba(255,196,102,1)_98%)]   ">
+            <div className="absolute top-0 left-6 w-[2px] h-full bg-my-primary-400 z-[-1]"></div>
+            <div className=" mt-1 rounded-full p-[2px] w-max  text-center  bg-my-primary-400  ">
               <div className="w-full   rounded-full p-2 text-white">
                 <PiDevicesLight />
               </div>
@@ -891,8 +891,8 @@ const HomePage = () => {
                 signup process.
               </motion.p>
             </motion.div>
-            <div className="  rounded-full p-[2px] w-max  text-center  bg-[rgb(255,196,102)] bg-[linear-gradient(90deg,rgba(255,196,102,1)_3%,rgba(252,151,117,1)_31%,rgba(252,155,116,1)_78%,rgba(255,196,102,1)_98%)]   ">
-              <div className="w-full bg-white  rounded-full p-2 text-my-mango-600">
+            <div className="  rounded-full p-[2px] w-max  text-center  bg-my-primary-400   ">
+              <div className="w-full bg-white  rounded-full p-2 text-my-primary-400">
                 <PiNotebookLight />
               </div>
             </div>
@@ -927,8 +927,8 @@ const HomePage = () => {
                 items, photos and details.
               </motion.p>
             </motion.div>
-            <div className="  rounded-full p-[2px] w-max  text-center  bg-[rgb(255,196,102)] bg-[linear-gradient(90deg,rgba(255,196,102,1)_3%,rgba(252,151,117,1)_31%,rgba(252,155,116,1)_78%,rgba(255,196,102,1)_98%)]   ">
-              <div className="w-full bg-white  rounded-full p-2 text-my-mango-500">
+            <div className="  rounded-full p-[2px] w-max  text-center  bg-my-primary-400  ">
+              <div className="w-full bg-white  rounded-full p-2 text-my-primary-400">
                 <MdFoodBank />
               </div>
             </div>
