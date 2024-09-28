@@ -9,22 +9,36 @@ const ProductsPage = () => {
   return (
     <div>
       <section className=" font-inter flex flex-col tablet:flex-row-reverse gap-x-[2rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] ">
-        <div className="flex-1 tablet:flex-auto w-full px-[1rem] tablet:px-0 border">
-          <img
+        <div className=" w-full px-[1rem] tablet:px-0 ">
+          {/* <img
             src="/phoneproduct2.svg"
             alt="Image of Phone Menu in Products"
             className="mx-auto my-0 tablet:ml-auto tablet:mr-0  min-h-[300px] h-[45vh] sm:h-auto w-full max-w-[500px] lg:min-w-[500px] xl:max-w-[700px]  "
-          />
+          /> */}
+          <div className="relative mx-auto my-0 tablet:ml-auto tablet:mr-0  aspect-[700/615] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] flex flex-col justify-end">
+            <img
+                src="/phoneprod2.svg"
+                alt="Image of Phone Menu Cart"
+                className="absolute right-[4.2%] top-0   w-[44%] z-[1]  "
+              />
+            <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-mango-400 overflow-hidden  ">
+                <img
+                  src="/phoneprod1.svg"
+                  alt="Image of Phone Menu"
+                  className="absolute left-[4.2%] top-[5%]  w-[44%]  "
+                />
+            </div>
+          </div>
         </div>
-        <div className="border flex flex-col gap-[1rem] tablet:gap-[2.5rem]  tablet:mt-[2rem]">
+        <div className=" flex flex-col gap-[1rem] tablet:gap-[2.5rem]  tablet:mt-[2rem]">
           <h1 className="text-[1.7rem] md:text-[1.9rem] tablet:text-[2.5rem] xl:text-[3rem] font-semibold text-my-black-950 leading-tight">
             Are you ready{" "}
-            <span className="text-my-purple-500 inline-block align-middle whitespace-nowrap">
+            <span className="text-my-mango-400 inline-block align-middle whitespace-nowrap">
               <GiDiamonds />
             </span>
             <span className="block max-w-fit">to take your restaurant</span>
             <span>to the </span>
-            <span className="text-my-purple-500 inline-block font-bold">
+            <span className="text-my-mango-400 inline-block font-bold">
               next level?
             </span>
           </h1>
