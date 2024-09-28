@@ -21,7 +21,7 @@ const ProductsPage = () => {
                 alt="Image of Phone Menu Cart"
                 className="absolute right-[4.2%] top-0   w-[44%] z-[1]  "
               />
-            <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-orange-300 overflow-hidden  ">
+            <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-orange-400 overflow-hidden  ">
                 <img
                   src="/phoneprod1.svg"
                   alt="Image of Phone Menu"
@@ -67,7 +67,7 @@ const ProductsPage = () => {
           </form>
         </div>
       </section>
-      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   ">
+      <section className="min-h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   ">
         {/* Phone */}
         {/* <div className="relative">
           <div className="edge">
@@ -83,10 +83,15 @@ const ProductsPage = () => {
           </div>
         </div> */}
         <div className="relative  w-fit mx-auto my-0 z-[10]">
-          <img src="/phonesidephone.svg" className="w-[700px] " />
+          <img src="/phonesidephone3.svg" className="w-[700px] " />
         </div>
-        <div className=" bg-none rounded-lg w-full max-w-[900px] mx-auto my-0 h-[500px]  p-5 mt-[-5rem] ">
-          
+        <div className="flex gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px]   mt-[-5rem] ">
+          <div className="w-[40%]  bg-my-orange-400"></div>
+          <div className="flex-1   bg-[#fce4e4]"></div>
+        </div>
+        <div className="mt-[2rem] flex gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px] ">
+          <div className="flex-1   bg-[#f6f6f6]"></div>
+          <div className=" w-[40%] bg-my-purple-50"></div>
         </div>
       </section>
     </div>
