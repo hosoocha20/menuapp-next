@@ -74,14 +74,17 @@ const FeaturesPage = () => {
     },
   ];
   return (
-    <div>
-      <section className="font-inter h-[75vh] sm:min-h-[500px]   px-[1rem] sm:px-[2rem]">
-        <div className='h-full  bg-my-orange-50 bg-[url("/mesh-920.png")] bg-cover bg-no-repeat rounded-[2rem] rounded-bl-none rounded-br-none px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav flex flex-col items-center sm:justify-between tablet:justify-normal gap-[3rem] sm:gap-[6rem] py-[2rem] sm:py-[8rem]'>
-          <h1 className="text-[1.5rem] sm:text-[2rem] font-semibold text-my-black-900 tracking-wide text-center">
-            SmartMenu Offers Extensive Features for
-            <span className="block">Your Restaurant Management</span>
-          </h1>
-          <div className="grid grid-cols-1   w-fit gap-2 md:gap-6">
+    <div className="font-inter">
+      <section className=" font-inter h-[75vh] sm:min-h-[500px]   px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
+        <div className='h-full  bg-my-primary-400 rounded-[2rem]  px-[2rem] sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav flex flex-col sm:flex-row items-center sm:justify-between tablet:justify-normal gap-[3rem] sm:gap-[6rem] py-[2rem] sm:py-[8rem]'>
+          <div className=" sm:w-[550px]">
+            <h1 className="text-[1.5rem] sm:text-[2.5rem] text-white tracking-wide leading-tight">
+              Explore
+              <span className="block">Our Features</span>
+            </h1>
+            <p className="text-[1.2rem] sm:text-[1.5rem] text-[#fee3d6] font-light tracking-wide mt-[1.5rem]">Discover how you can streamline operations, enhance customer experience, and boost your bottom line with SmartMenu's features.</p>
+          </div>
+          {/* <div className="grid grid-cols-1   w-fit gap-2 md:gap-6">
             <a
               href="#section-feature-design"
               className=" bg-my-black-950 rounded-tl-[1.7rem] rounded-br-[1.7rem] w-[300px] py-2 px-2 flex items-center justify-between"
@@ -115,7 +118,7 @@ const FeaturesPage = () => {
               </p>
               <SlArrowRight className="text-[1.1em] text-white" />
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
       <section
@@ -337,7 +340,7 @@ const FeaturesPage = () => {
       </section>
       <section
         id="section-feature-manage"
-        className="px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]"
+        className=" px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  lg:px-lg-nav  py-[4rem] min-h-[80vh]"
       >
         <div>
           <h2 className="text-[1.5rem] font-semibold  text-center">
