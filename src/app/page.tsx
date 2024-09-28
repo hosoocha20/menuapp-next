@@ -598,25 +598,25 @@ const HomePage = () => {
               className=" h-full flex-1 flex  items-center justify-center  "
             >
               <div className="h-full flex flex-col justify-center gap-[0.6rem] sm:gap-[1rem]">
-                <motion.p variants={fadeInUpAni} className="text-my-black-300">
+                <motion.p variants={fadeInUpAni} className="text-my-black-600">
                   02
                 </motion.p>
                 <motion.h3
                   variants={fadeInUpAni}
-                  className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[400] text-gun-powder-950"
+                  className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[400] text-my-black-900"
                 >
                   Table Order
                 </motion.h3>
                 <motion.p
                   variants={fadeInUpAni}
-                  className="text-[0.9rem] tablet:text-base "
+                  className="text-[0.9rem] tablet:text-base text-my-black-800"
                 >
                   Enjoy the ease of ordering directly from a device placed at
                   each table.
                 </motion.p>
                 <motion.p
                   variants={fadeInUpAni}
-                  className="text-[0.9rem] tablet:text-base "
+                  className="text-[0.9rem] tablet:text-base text-my-black-800"
                 >
                   Allow your customers to order directly from their table with a
                   tap.
@@ -625,7 +625,7 @@ const HomePage = () => {
                   variants={fadeInUpAni}
                   className="w-max mt-[1rem] sm:mt-[1.7rem] md:mt-[2.5rem]"
                 >
-                  <LinkUI name="Learn More" />
+                  <LinkUI name="Learn More" color="#222222" underlineColor="#fdf3f3"/>
                 </motion.div>
               </div>
             </motion.div>
