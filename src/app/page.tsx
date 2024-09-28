@@ -646,7 +646,7 @@ const HomePage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3, once: true }}
-              className="md:flex-1 flex flex-col justify-between md:justify-normal h-[12rem]  sm:h-[14rem] md:h-[24rem]   bg-[url('/mesh-gradientOR.png')] bg-cover bg-center px-7 py-4 md:py-5 border rounded-2xl my-bg-shadow"
+              className="md:flex-1 flex flex-col justify-between md:justify-normal h-[12rem]  sm:h-[14rem] md:h-[24rem]   bg-my-accent-100 px-7 py-4 md:py-5 border border-my-accent-200 rounded-2xl my-bg-shadow"
             >
               <motion.img
                 variants={fadeInUpAni}
@@ -674,7 +674,7 @@ const HomePage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3, once: true }}
-              className="md:flex-1 flex flex-col justify-between md:justify-normal  h-[12rem]  sm:h-[14rem] md:h-[24rem]  bg-[url('/mesh-gradientM.png')] bg-cover bg-center px-7 py-4 md:py-5 border rounded-2xl my-bg-shadow"
+              className="md:flex-1 flex flex-col justify-between md:justify-normal  h-[12rem]  sm:h-[14rem] md:h-[24rem]  bg-my-secondary-200 px-7 py-4 md:py-5 border border-my-secondary-300 rounded-2xl my-bg-shadow"
             >
               <motion.img
                 variants={fadeInUpAni}
@@ -701,7 +701,7 @@ const HomePage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3, once: true }}
-              className="md:flex-1 flex flex-col justify-between md:justify-normal  h-[12rem]  sm:h-[14rem] md:h-[24rem]   bg-[url('/mesh-gradientPU.png')] bg-cover bg-center px-7 py-4 md:py-5 border rounded-2xl my-bg-shadow"
+              className="md:flex-1 flex flex-col justify-between md:justify-normal  h-[12rem]  sm:h-[14rem] md:h-[24rem]   bg-my-purple-200 px-7 py-4 md:py-5 border border-my-purple-300 rounded-2xl my-bg-shadow"
             >
               <motion.img
                 variants={fadeInUpAni}
