@@ -7,8 +7,8 @@ import { IoMailOutline } from "react-icons/io5";
 
 const ProductsPage = () => {
   return (
-    <div>
-      <section className=" font-inter flex flex-col tablet:flex-row-reverse gap-x-[2rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav py-[2rem] lg:py-[4rem] ">
+    <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
+      <section className=" flex flex-col tablet:flex-row-reverse gap-x-[2rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav pt-[4rem] md:pt-[5.5rem] ">
         <div className=" w-full px-[1rem] tablet:px-0 ">
           {/* <img
             src="/phoneproduct2.svg"
