@@ -2,6 +2,8 @@ import { motion, useAnimationControls, useInView } from "framer-motion";
 import React, { useEffect } from "react";
 import { IoIosWifi } from "react-icons/io";
 import { IoBatteryFull, IoCellular } from "react-icons/io5";
+import { BsArrowLeft } from "react-icons/bs";
+import { MdQrCodeScanner } from "react-icons/md";
 
 interface Props {
   parentRef: React.MutableRefObject<null>;
@@ -45,8 +47,8 @@ const PhoneUi = (props: Props) => {
           <div className="absolute right-[-1.5px] top-[6.5rem] ">
             <div className="h-[47px] w-[2px] bg-[#292929] rounded-[0_2px_2px_0]"></div>
           </div>
-          <motion.div className=" flex flex-col items-center gap-[1rem]  w-full h-full rounded-[1.5rem] iphone  bg-gun-powder-600 overflow-hidden ">
-            <div className="iphone-screen-top">
+          <motion.div className=" flex flex-col items-center gap-[1rem]  w-full h-full rounded-[1.5rem] iphone  bg-white overflow-hidden ">
+            <div className="iphone-screen-top ">
               <p className="text-[0.84rem] leading-none font-[600]">7:53</p>
               <div className="flex gap-1">
                 <IoCellular />
@@ -54,15 +56,20 @@ const PhoneUi = (props: Props) => {
                 <IoBatteryFull />
               </div>
             </div>
+            <div className="flex justify-between items-center mt-[2.5rem] w-full px-5">
+              <BsArrowLeft className="flex sm:text-[1.2rem]"/>
+              <p>Scan QR Code</p>
+              <MdQrCodeScanner className="flex sm:text-[1.2rem] text-my-black-900"/>
+            </div>
             {/* Before Animation */}
             <motion.div
               transition={{ duration: 1, ease: "easeOut" }}
-              className="z-1 opacity-1"
+              className="z-1 opacity-1  bg-my-primary-400 mt-[4rem] p-6 rounded-[1rem]"
             >
-              <p className="text-white font-cabin font-[500] mt-[8rem] text-center">
-                Scan QR Code
+              <p className="text-my-primary-50 font-cabin text-xs tracking-wide font-light text-center">
+                Align the QR code <span className="block">within the frame to scan</span>
               </p>
-              <div className=" w-fit p-4 relative  mt-[1rem]">
+              <div className=" w-fit p-4 relative  mt-[1rem]  mx-auto my-0">
                 <motion.div
                   animate={controls}
                   variants={{
@@ -135,7 +142,7 @@ const PhoneUi = (props: Props) => {
                     duration: 1.4,
                     delay: 0.8,
                   }}
-                  className="absolute bottom-0 left-0 w-full h-[2px] opacity-0 rounded-full bg-[#00a36c]"
+                  className="absolute bottom-0 left-0 w-full h-[2px] opacity-0 rounded-full bg-[#b7ff00]"
                 ></motion.div>
                 <img
                   src={"/qr-code-128.png"}
