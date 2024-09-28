@@ -515,7 +515,7 @@ const HomePage = () => {
       <section className="pt-[3.5rem] tablet:pt-[5rem]  ">
         <div className="pb-[2rem] tablet:pb-[5rem]">
           <FadeInRight once={true}>
-            <h2 className="font-cabin  text-center uppercase font-medium text-my-mango-600 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] py-[1rem]">
+            <h2 className="font-cabin  text-center uppercase font-medium text-my-black-300 text-[0.89rem] portrait-tablet:text-[0.92rem] tracking-[0.3em] py-[1rem]">
               {" "}
               Our Solution
             </h2>
@@ -530,7 +530,7 @@ const HomePage = () => {
           ref={phoneContainerRef}
           className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav xl:px-[8rem] overflow-hidden "
         >
-          <div className="bg-[url('/mesh-920.png')] bg-cover bg-no-repeat h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center md:items-center">
+          <div className="bg-my-primary-400 h-full rounded-[2rem]  pb-0 pt-[3rem] md:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse md:flex-row justify-center md:items-center">
             <div className="md:flex-1  flex md:flex-col justify-center items-end md:items-center h-full w-auto">
               <PhoneUi parentRef={qrAniRef} />
             </div>
@@ -542,25 +542,25 @@ const HomePage = () => {
               viewport={{ amount: 0.4, once: true }}
               className=" h-max flex-1 flex flex-col gap-[0.6rem] sm:gap-[1rem]   "
             >
-              <motion.p variants={fadeInUpAni} className="text-my-black-300">
+              <motion.p variants={fadeInUpAni} className="text-my-primary-200">
                 01
               </motion.p>
               <motion.h3
                 variants={fadeInUpAni}
-                className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[600] text-gun-powder-950"
+                className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[400] text-white"
               >
                 QR Code
               </motion.h3>
               <motion.p
                 variants={fadeInUpAni}
-                className="text-[0.9rem] tablet:text-base xl:w-[600px]"
+                className="text-[0.9rem] tablet:text-base xl:w-[600px] text-my-primary-50"
               >
                 Scan the QR code at your table to access our mobile-optimized
                 ordering platform using a device.
               </motion.p>
               <motion.p
                 variants={fadeInUpAni}
-                className="text-[0.9rem] tablet:text-base xl:w-[600px]"
+                className="text-[0.9rem] tablet:text-base xl:w-[600px] text-my-primary-50"
               >
                 Allow your customers to use their own device to scan the QR code
                 to connect to the digitlized menu designated to the specific
@@ -571,7 +571,7 @@ const HomePage = () => {
                 ref={qrAniRef}
                 className=" w-max mt-[1rem] sm:mt-[1.7rem] md:mt-[2.5rem]"
               >
-                <LinkUI name="Learn More" />
+                <LinkUI name="Learn More" underlineColor="#fee3d6" color="#222222"/>
               </motion.div>
             </motion.div>
           </div>
@@ -580,7 +580,7 @@ const HomePage = () => {
           ref={kioskContainerRef}
           className="h-[600px] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav  xl:px-[8rem] mt-[4rem] overflow-hidden "
         >
-          <div className="bg-[url('/mesh-921.png')] bg-cover bg-no-repeat h-full rounded-[2rem] pb-0 pt-[3rem] tablet:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse tablet:flex-row-reverse gap-x-[1rem] justify-center tablet:items-center">
+          <div className="bg-my-secondary-200 h-full rounded-[2rem] pb-0 pt-[3rem] tablet:py-[3rem] px-[1.5rem] tablet:px-[3rem]   flex flex-col-reverse tablet:flex-row-reverse gap-x-[1rem] justify-center tablet:items-center">
             {/* <h2 className="text-[2.5rem] text-center text-gun-powder-950 font-[600]">
                 Our Solution
               </h2>
@@ -603,7 +603,7 @@ const HomePage = () => {
                 </motion.p>
                 <motion.h3
                   variants={fadeInUpAni}
-                  className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[600] text-gun-powder-950"
+                  className="font-cabin text-[1.4rem] md:text-[2rem] tablet:text-[2.2rem] lg:text-[2.5rem] font-[400] text-gun-powder-950"
                 >
                   Table Order
                 </motion.h3>
