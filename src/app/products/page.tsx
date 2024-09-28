@@ -21,7 +21,7 @@ const ProductsPage = () => {
                 alt="Image of Phone Menu Cart"
                 className="absolute right-[4.2%] top-0   w-[44%] z-[1]  "
               />
-            <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-mango-400 overflow-hidden  ">
+            <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-orange-300 overflow-hidden  ">
                 <img
                   src="/phoneprod1.svg"
                   alt="Image of Phone Menu"
@@ -33,12 +33,12 @@ const ProductsPage = () => {
         <div className=" flex flex-col  gap-[1rem] tablet:gap-[2.5rem]  tablet:mt-[2rem]">
           <h1 className="sm:mx-auto my-0 tablet:m-0 w-fit text-[1.5rem] sm:text-[1.7rem] md:text-[1.9rem] tablet:text-[2.5rem] xl:text-[3rem] font-semibold text-my-black-950 leading-tight">
             Are you ready{" "}
-            <span className="text-my-mango-400 inline-block align-middle whitespace-nowrap">
+            <span className="text-my-orange-400 inline-block align-middle whitespace-nowrap">
               <GiDiamonds />
             </span>
             <span className="block ">to take your restaurant</span>
             <span>to the </span>
-            <span className="text-my-mango-400 inline-block font-bold">
+            <span className="text-my-orange-400 inline-block font-bold">
               next level?
             </span>
           </h1>
@@ -67,7 +67,7 @@ const ProductsPage = () => {
           </form>
         </div>
       </section>
-      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav border">
+      <section className="h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   ">
         {/* Phone */}
         {/* <div className="relative">
           <div className="edge">
@@ -82,8 +82,11 @@ const ProductsPage = () => {
             <div className="reflection-screen"></div>
           </div>
         </div> */}
-        <div className=" border">
-          <img src="/phonesidephone.svg" className="w-[700px]" />
+        <div className="relative  w-fit mx-auto my-0 z-[10]">
+          <img src="/phonesidephone.svg" className="w-[700px] " />
+        </div>
+        <div className=" bg-none rounded-lg w-full max-w-[900px] mx-auto my-0 h-[500px]  p-5 mt-[-5rem] ">
+          
         </div>
       </section>
     </div>

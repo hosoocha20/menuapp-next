@@ -196,3 +196,15 @@ position: absolute;
     border-radius: 50%;
     box-shadow: inset 1px 1px 9px 1px rgb(193, 187, 226, 0.4);
 }
+
+
+/*box shadow ui*/
+.box-shadow-white-bg{
+    box-shadow:
+    0px 0px 3px rgba(0, 0, 0, 0.014),
+    0px 0px 8.4px rgba(0, 0, 0, 0.02),
+    0px 0px 20.2px rgba(0, 0, 0, 0.026),
+    0px 0px 67px rgba(0, 0, 0, 0.04)
+  
+;
+}
