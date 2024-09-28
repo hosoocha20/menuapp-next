@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -15,6 +15,7 @@ import {
 import { HamburgerI } from "@/ui/Hamburger";
 
 const Navbar = () => {
+  const scrollRef = useRef(null)
   const { scrollY } = useScroll();
   const [hideNav, setHideNav] = useState(false);
   const [scope, animate] = useAnimate();
@@ -59,22 +60,33 @@ const Navbar = () => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious()!;
     if (latest > prev && latest > 150 && !openNav) {
-      setHideNav(true);
+      // setHideNav(true);
+      controls.start("hidden")
     } else {
-      setHideNav(false);
+      // setHideNav(false);
+      if (latest === 0)
+        controls.start("visible")
+      else{
+        controls.start("chngBg")
+      }
+
+      
     }
   });
 
   return (
     <motion.nav
-      ref={scope}
+      ref={scrollRef}
       variants={{
-        visible: { y: 0 },
+        visible: { y: 0, backgroundColor: "transparent" },
         hidden: { y: "-100%" },
+        chngBg: {y: 0, backgroundColor: "#ffffff"}
       }}
-      animate={hideNav ? "hidden" : "visible"}
+      initial={"visible"}
+      animate={controls}
+
       transition={{ duration: 0.35, ease: easeInOut }}
-      className={` px-mob-nav sm:px-sm-nav tablet:px-tablet-nav lg:px-lg-nav  font-inter w-full   flex flex-col tablet:h-[4.3rem]  sticky top-0 z-50  bg-my-primary-400 `}
+      className={` px-mob-nav sm:px-sm-nav tablet:px-tablet-nav lg:px-lg-nav  font-inter w-full   flex flex-col tablet:h-[4.3rem]  sticky top-0 z-50   `}
     >
       <div
         className={`z-[1] flex justify-between items-center  h-[3rem] tablet:h-[4.3rem] px-1 ${!openNav? "text-my-black-950" :"text-white"} transition-colors duration-300 `}
@@ -88,7 +100,7 @@ const Navbar = () => {
           <p className=" px-2">Contact</p>
         </div>
         <div className=" flex-1  flex justify-end items-center gap-[3.2rem] tracking-wider font-[400] text-sm tablet:text-[0.95rem]">
-          <button className={`hidden sm:block border ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
+          <button className={`hidden sm:block ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
             Get Started
           </button>
           <div
