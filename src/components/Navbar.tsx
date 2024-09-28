@@ -74,7 +74,7 @@ const Navbar = () => {
       }}
       animate={hideNav ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: easeInOut }}
-      className={` px-mob-nav sm:px-sm-nav tablet:px-tablet-nav lg:px-lg-nav  font-inter w-full   flex flex-col tablet:h-[4.3rem]  sticky top-0 z-50  bg-white `}
+      className={` px-mob-nav sm:px-sm-nav tablet:px-tablet-nav lg:px-lg-nav  font-inter w-full   flex flex-col tablet:h-[4.3rem]  sticky top-0 z-50  bg-my-primary-400 `}
     >
       <div
         className={`z-[1] flex justify-between items-center  h-[3rem] tablet:h-[4.3rem] px-1 ${!openNav? "text-my-black-950" :"text-white"} transition-colors duration-300 `}
