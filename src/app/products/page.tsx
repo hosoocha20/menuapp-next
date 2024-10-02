@@ -7,7 +7,7 @@ import { IoMailOutline } from "react-icons/io5";
 
 const ProductsPage = () => {
   return (
-    <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] ">
+    <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] pb-[2rem]">
       <section className=" flex flex-col tablet:flex-row-reverse gap-y-[1rem] gap-x-[3rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav pt-[4rem] md:pt-[5.5rem] ">
         <div className=" w-full px-[1rem] tablet:px-0 ">
           {/* <img
@@ -17,16 +17,16 @@ const ProductsPage = () => {
           /> */}
           <div className="relative mx-auto my-0 tablet:ml-auto tablet:mr-0  aspect-[700/615] sm:min-w-[300px] lg:min-w-[400px] max-w-[500px] xl:max-w-[700px] flex flex-col justify-end">
             <img
-                src="/phoneprod2.svg"
-                alt="Image of Phone Menu Cart"
-                className="absolute right-[4.2%] top-0   w-[44%] z-[1]  "
-              />
+              src="/phoneprod2.svg"
+              alt="Image of Phone Menu Cart"
+              className="absolute right-[4.2%] top-0   w-[44%] z-[1]  "
+            />
             <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-orange-400 overflow-hidden  ">
-                <img
-                  src="/phoneprod1.svg"
-                  alt="Image of Phone Menu"
-                  className="absolute left-[4.2%] top-[5%]  w-[44%]  "
-                />
+              <img
+                src="/phoneprod1.svg"
+                alt="Image of Phone Menu"
+                className="absolute left-[4.2%] top-[5%]  w-[44%]  "
+              />
             </div>
           </div>
         </div>
@@ -51,7 +51,9 @@ const ProductsPage = () => {
               Discover how our products can revolutionize your business and
               drive revenue growth.
             </span>
-            <span className="font-semibold">Act Now and Start Seeing Results.</span>
+            <span className="font-semibold">
+              Act Now and Start Seeing Results.
+            </span>
           </p>
           <form className="w-full sm:mx-auto tablet:m-0 sm:w-[450px] tablet:w-auto xl:w-[550px] border-2 border-my-black-100 rounded-[2rem] pl-[3rem] md:pl-[4rem] pr-[100px] md:pr-[150px] xl:pr-[200px] flex relative py-[0.5rem] tablet:py-[0.65rem]">
             <input
@@ -85,13 +87,44 @@ const ProductsPage = () => {
         <div className="relative  w-fit mx-auto my-0 z-[10]">
           <img src="/phonesidephone3.svg" className="w-[700px] " />
         </div>
-        <div className="flex gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px]   mt-[-5rem] ">
-          <div className="w-[40%]  bg-my-orange-400"></div>
-          <div className="flex-1   bg-[#fce4e4]"></div>
+        <div className="flex gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px]   mt-[-5rem] ">
+          <div className="w-[40%]  bg-my-orange-400 overflow-hidden px-[2rem] pt-[2rem]">
+            <h3 className="text-[1.5rem] text-my-primary-50 font-medium">Digital Access</h3>
+            <p className="text-[1.4rem] text-my-black-950">
+              Easily access your digital menu with a QR Code.
+            </p>
+            <img
+              src={"/phoneqr.svg"}
+              alt="Digital Access Qr Phone Image"
+              className="max-w-[480px] mx-auto my-0 mt-[2rem]"
+            />
+          </div>
+          <div className="flex-1   bg-my-secondary-200 overflow-hidden px-[2rem] pt-[2rem]">
+            <h3 className="text-[1.5rem] text-white text-center font-medium">All for One</h3>
+            <p className="text-[1.4rem] text-my-black-950 ">
+              All customers can access your digital menu on their own device and place their orders for their table.
+            </p>
+            <img
+              src={"/allforone.svg"}
+              alt="Multiple menu devices Image"
+              className="max-w-[760px] mx-auto my-0 mt-[2rem] "
+            />
+          </div>
         </div>
-        <div className="mt-[2rem] flex gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px] ">
-          <div className="flex-1   bg-[#f6f6f6]"></div>
-          <div className=" w-[40%] bg-my-purple-50"></div>
+        <div className="mt-[1rem] lg:mt-[1.5rem] xl:mt-[2rem] flex gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px] ">
+          <div className="flex-1   bg-my-accent-100 overflow-hidden px-[2rem] pt-[2rem]">
+          <h3 className="text-[1.5rem] text-my-black-950 text-center font-medium">Manage Your Menu</h3>
+            <p className="text-[1.4rem] text-my-black-900 ">
+            Easily create, edit, and organize your restaurant's menu items with our management system.
+            </p>
+            <img src={'/smartmenumanager.svg'} alt="SmartMenu Managing System" className="aspect-[570/370] max-w-[800px] mx-auto my-0 mt-[2rem]"/>
+          </div>
+          <div className=" w-[40%] bg-my-purple-200 px-[2rem] pt-[2rem]">
+          <h3 className="text-[1.5rem] text-white  font-medium">Happy Customers, Happy Restaurant</h3>
+            <p className="text-[1.4rem] text-my-black-900 ">
+            Elevate your restaurant with SmartMenu and experience enhanced customer satisfaction, faster service, and increased revenue.
+            </p>
+          </div>
         </div>
       </section>
     </div>

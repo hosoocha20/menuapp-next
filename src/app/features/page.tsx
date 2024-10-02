@@ -78,7 +78,7 @@ const FeaturesPage = () => {
       <section className=" font-inter h-[75vh] sm:min-h-[500px]   px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
         <div className='h-full  bg-my-primary-400 rounded-[2rem]  px-[2rem] sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav flex flex-col sm:flex-row items-center sm:justify-between tablet:justify-normal gap-[3rem] sm:gap-[6rem] py-[2rem] sm:py-[8rem]'>
           <div className=" sm:w-[550px]">
-            <h1 className="text-[1.5rem] sm:text-[2.5rem] text-white tracking-wide leading-tight">
+            <h1 className="text-[1.7rem] sm:text-[2.5rem] text-white tracking-wide leading-tight">
               Explore
               <span className="block">Our Features</span>
             </h1>
