@@ -1,11 +1,32 @@
 "use client";
 
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { GiDiamonds } from "react-icons/gi";
 import { IoMailOutline } from "react-icons/io5";
 
 const ProductsPage = () => {
+
+  //Animation
+  const barParent: Variants = {
+    hidden: {
+      opacity: 1
+    },
+    show: {
+      opacity: 1,
+      transition: {  duration: 0.35 ,delay: 0.4,staggerChildren: 0.05, type:"spring", stiffness: 60 }
+    }
+  }
+  const barSpringUp : Variants = {
+    hidden: {
+      y: "100%",
+    },
+    show: {
+      y: "10%",
+      transition: { duration: 0.35 ,  staggerChildren: 0.05, type:"spring", stiffness: 60 }
+    }
+  }
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] pb-[2rem]">
       <section className=" flex flex-col tablet:flex-row-reverse gap-y-[1rem] gap-x-[3rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav pt-[4rem] md:pt-[5.5rem] ">
@@ -89,7 +110,9 @@ const ProductsPage = () => {
         </div>
         <div className="flex gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px]   mt-[-5rem] ">
           <div className="w-[40%]  bg-my-orange-400 overflow-hidden px-[2rem] pt-[2rem]">
-            <h3 className="text-[1.5rem] text-my-primary-50 font-medium">Digital Access</h3>
+            <h3 className="text-[1.5rem] text-my-primary-50 font-medium">
+              Digital Access
+            </h3>
             <p className="text-[1.4rem] text-my-black-950">
               Easily access your digital menu with a QR Code.
             </p>
@@ -100,9 +123,12 @@ const ProductsPage = () => {
             />
           </div>
           <div className="flex-1   bg-my-secondary-200 overflow-hidden px-[2rem] pt-[2rem]">
-            <h3 className="text-[1.5rem] text-white text-center font-medium">All for One</h3>
+            <h3 className="text-[1.5rem] text-white text-center font-medium">
+              All for One
+            </h3>
             <p className="text-[1.4rem] text-my-black-950 ">
-              All customers can access your digital menu on their own device and place their orders for their table.
+              All customers can access your digital menu on their own device and
+              place their orders for their table.
             </p>
             <img
               src={"/allforone.svg"}
@@ -113,18 +139,45 @@ const ProductsPage = () => {
         </div>
         <div className="mt-[1rem] lg:mt-[1.5rem] xl:mt-[2rem] flex gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px] ">
           <div className="flex-1   bg-my-accent-100 overflow-hidden px-[2rem] pt-[2rem]">
-          <h3 className="text-[1.5rem] text-my-black-950 text-center font-medium">Manage Your Menu</h3>
+            <h3 className="text-[1.5rem] text-my-black-950 text-center font-medium">
+              Manage Your Menu
+            </h3>
             <p className="text-[1.4rem] text-my-black-900 ">
-            Easily create, edit, and organize your restaurant's menu items with our management system.
+              Easily create, edit, and organize your restaurant's menu items
+              with our management system.
             </p>
-            <img src={'/smartmenumanager.svg'} alt="SmartMenu Managing System" className="aspect-[570/370] max-w-[800px] mx-auto my-0 mt-[2rem]"/>
+            <img
+              src={"/smartmenumanager.svg"}
+              alt="SmartMenu Managing System"
+              className="aspect-[570/370] max-w-[770px] mx-auto my-0 mt-[2rem]"
+            />
           </div>
-          <div className=" w-[40%] bg-my-purple-200 px-[2rem] pt-[2rem]">
-          <h3 className="text-[1.5rem] text-white  font-medium">Happy Customers, Happy Restaurant</h3>
+          <motion.div variants={barParent} whileInView="show" initial="hidden"
+          className=" w-[40%] bg-my-purple-200 px-[2rem] py-[2rem] flex flex-col">
+            <h3 className="text-[1.5rem] text-white  font-medium">
+              Happy Customers, Happy Restaurant
+            </h3>
             <p className="text-[1.4rem] text-my-black-900 ">
-            Elevate your restaurant with SmartMenu and experience enhanced customer satisfaction, faster service, and increased revenue.
+              Elevate your restaurant with SmartMenu and experience enhanced
+              customer satisfaction, faster service, and increased revenue.
             </p>
-          </div>
+            <div className="border flex-1 mt-[2rem]  px-[15%]">
+              <div className=" relative w-full h-full border-b-2 border-my-black-800 border-l-2">
+                <div className="absolute left-0 bottom-0 w-full h-full  flex flex-col justify-end overflow-hidden">
+                  <div className="flex gap-2 w-full h-[80%] pl-[10%] *:w-[8%] *:bg-[#5d99fd]">
+                    <motion.div variants={barSpringUp} className="  h-[5%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[10%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[18%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[29%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[43%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[60%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[80%]  self-end"></motion.div>
+                    <motion.div variants={barSpringUp} className="  h-[100%]  self-end"></motion.div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
