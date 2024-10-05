@@ -571,7 +571,7 @@ const HomePage = () => {
                 ref={qrAniRef}
                 className=" w-max mt-[1rem] sm:mt-[1.7rem] md:mt-[2.5rem]"
               >
-                <LinkUI name="Learn More" underlineColor="#fee3d6" color="#222222"/>
+                <LinkUI name="Learn More" underlineColor="#fee3d6" color="#222222" link="products"/>
               </motion.div>
             </motion.div>
           </div>
@@ -625,7 +625,7 @@ const HomePage = () => {
                   variants={fadeInUpAni}
                   className="w-max mt-[1rem] sm:mt-[1.7rem] md:mt-[2.5rem]"
                 >
-                  <LinkUI name="Learn More" color="#222222" underlineColor="#fdf3f3"/>
+                  <LinkUI name="Learn More" color="#222222" underlineColor="#fdf3f3" link="products"/>
                 </motion.div>
               </div>
             </motion.div>
