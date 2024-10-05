@@ -143,51 +143,51 @@ const ProductsPage = () => {
             <div className="reflection-screen"></div>
           </div>
         </div> */}
-        <div className="relative  w-fit mx-auto my-0 z-[10]">
+        {/* <div className="relative  w-fit mx-auto my-0 z-[10]">
           <img src="/phonesidephone3.svg" className="w-[700px] " />
-        </div>
-        <div className="flex gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px]   mt-[-5rem] ">
-          <div className="w-[40%]  bg-my-orange-400 overflow-hidden px-[2rem] pt-[2rem]">
-            <h3 className="text-[1.5rem] text-my-primary-50 font-medium">
+        </div> */}
+        <div className="flex flex-col md:flex-row gap-[0.6rem] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[1.5rem] md:*:rounded-[2rem] w-full  mx-auto my-0 h-[600px] md:h-[500px]    ">
+          <div className=" w-full md:w-[40%]  bg-my-orange-400 overflow-hidden px-[1rem] pt-[1rem] md:px-[2rem] md:pt-[2rem]">
+            <h3 className="sm:text-[1.2rem] lg:text-[1.4rem] xl:text-[1.5rem] text-my-primary-50 font-medium">
               Digital Access
             </h3>
-            <p className="text-[1.4rem] text-my-black-950">
+            <p className="sm:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem] text-my-black-950">
               Easily access your digital menu with a QR Code.
             </p>
             <img
               src={"/phoneqr.svg"}
               alt="Digital Access Qr Phone Image"
-              className="max-w-[480px] mx-auto my-0 mt-[2rem]"
+              className="max-w-[400px] md:max-w-[480px] min-w-[300px] mx-auto my-0 mt-0 md:mt-[2rem]"
             />
           </div>
-          <div className="flex-1   bg-my-secondary-200 overflow-hidden px-[2rem] pt-[2rem]">
-            <h3 className="text-[1.5rem] text-white text-center font-medium">
+          <div className=" md:flex-1   bg-my-secondary-200 overflow-hidden px-[1rem] pt-[1rem] md:px-[2rem] md:pt-[2rem]">
+            <h3 className="sm:text-[1.2rem] lg:text-[1.4rem] xl:text-[1.5rem] text-white md:text-center font-medium">
               All for One
             </h3>
-            <p className="text-[1.4rem] text-my-black-950 ">
+            <p className="sm:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem] text-my-black-950 ">
               All customers can access your digital menu on their own device and
               place their orders for their table.
             </p>
             <img
               src={"/allforone.svg"}
               alt="Multiple menu devices Image"
-              className="max-w-[760px] mx-auto my-0 mt-[2rem] "
+              className="max-w-[760px]  mx-auto my-0 mt-2 md:mt-[2rem] "
             />
           </div>
         </div>
-        <div className="mt-[1rem] lg:mt-[1.5rem] xl:mt-[2rem] flex gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[500px] ">
-          <div className="flex-1   bg-my-accent-100 overflow-hidden px-[2rem] pt-[2rem]">
-            <h3 className="text-[1.5rem] text-my-black-950 text-center font-medium">
+        <div className="mt-[0.6rem] md:mt-[1rem] lg:mt-[1.5rem] xl:mt-[2rem] flex flex-col md:flex-row gap-[0.6rem] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[2rem] w-full  mx-auto my-0 h-[600px] md:h-[500px] ">
+          <div className="md:flex-1   bg-my-accent-100 overflow-hidden px-[1rem] pt-[1rem] md:px-[2rem] md:pt-[2rem]">
+            <h3 className="sm:text-[1.2rem] lg:text-[1.4rem] xl:text-[1.5rem] text-my-black-950 md:text-center font-medium">
               Manage Your Menu
             </h3>
-            <p className="text-[1.4rem] text-my-black-900 ">
+            <p className="sm:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem] text-my-black-900 ">
               Easily create, edit, and organize your restaurant's menu items
               with our management system.
             </p>
             <img
               src={"/smartmenumanager.svg"}
               alt="SmartMenu Managing System"
-              className="aspect-[570/370] max-w-[770px] mx-auto my-0 mt-[2rem]"
+              className="aspect-[570/370] max-w-[770px] mx-auto my-0 mt-2 md:mt-[2rem]"
             />
           </div>
           <motion.div
@@ -196,16 +196,16 @@ const ProductsPage = () => {
             whileInView="show"
             viewport={{ once: true }}
             initial="hidden"
-            className=" w-[40%] bg-my-purple-200 px-[2rem] py-[2rem] flex flex-col"
+            className=" flex-1 w-full md:w-[40%] bg-my-purple-200 px-[1rem] py-[1rem] md:px-[2rem] md:py-[2rem] flex flex-col min-h-[300px]"
           >
-            <h3 className="text-[1.5rem] text-white  font-medium">
+            <h3 className="sm:text-[1.2rem] lg:text-[1.4rem] xl:text-[1.5rem] text-white  font-medium">
               Happy Customers, Happy Restaurant
             </h3>
-            <p className="text-[1.4rem] text-my-black-900 ">
+            <p className="sm:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem] text-my-black-900 ">
               Elevate your restaurant with SmartMenu and experience enhanced
               customer satisfaction, faster service, and increased revenue.
             </p>
-            <div className="flex-1 mt-[2rem]  px-[15%]">
+            <div className="flex-1 mt-2 md:mt-[2rem]  px-[15%]">
               <div className=" relative w-full h-full border-b-[3px] border-l-[3px] border-my-purple-50 ">
                 <div className="absolute left-6 top-0 w-[60%] h-[70%] flex items-center justify-center">
                   <svg
@@ -213,6 +213,7 @@ const ProductsPage = () => {
                     height="100%"
                     viewBox="0 0 31 26"
                     xmlns="http://www.w3.org/2000/svg"
+                    
                   >
                     <motion.path
                       d="M0,25 Q23,25 30,10"
