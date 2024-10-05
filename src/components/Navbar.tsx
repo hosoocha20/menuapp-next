@@ -112,7 +112,7 @@ const Navbar = () => {
         </div>
       </div>
       <motion.div variants={navMenuPVariants} animate={controls} initial={"hide"} className={`opacity-0 bg-my-black-950 ${!openNav? "invisible " : "visible opacity-100"} tablet:invisible z-[0] w-full h-screen  transition-[opacity_1s_linear,visibility_0s_linear_300ms] duration-300 absolute left-0 top-0 pt-[3rem] tablet:pt-[4.3rem] px-sm-nav tablet:px-tablet-nav flex flex-col gap-[1rem] text-white text-[1.6rem] md:text-[1.7rem] tablet:text-[2rem] tracking-widest`}>
-        <motion.p variants={navMenuVariants}   className="mt-[2rem]">Products</motion.p>
+        <motion.a href="/products" variants={navMenuVariants}   className="mt-[2rem]">Products</motion.a>
         <motion.a href="/features" variants={navMenuVariants}  >Features</motion.a>
         <motion.p variants={navMenuVariants} >Contact</motion.p>
         <motion.p variants={navMenuVariants}  >Get Started</motion.p>
