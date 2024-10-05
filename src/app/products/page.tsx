@@ -67,14 +67,14 @@ const ProductsPage = () => {
 
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] pb-[2rem]">
-      <section className=" flex flex-col tablet:flex-row-reverse gap-y-[1rem] gap-x-[3rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav pt-[4rem] md:pt-[5.5rem] ">
-        <div className=" w-full px-[1rem] tablet:px-0 ">
+      <section className=" flex flex-col lg:flex-row-reverse gap-y-[1rem] gap-x-[1.5rem] xl:gap-x-[3rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav pt-[4rem] lg:pt-0 ">
+        <div className=" lg:flex lg:flex-col lg:justify-center w-full px-[1rem] tablet:px-0 ">
           {/* <img
             src="/phoneproduct2.svg"
             alt="Image of Phone Menu in Products"
             className="mx-auto my-0 tablet:ml-auto tablet:mr-0  min-h-[300px] h-[45vh] sm:h-auto w-full max-w-[500px] lg:min-w-[500px] xl:max-w-[700px]  "
           /> */}
-          <div className="relative mx-auto my-0 tablet:ml-auto tablet:mr-0  aspect-[700/615] sm:min-w-[300px] lg:min-w-[400px] max-w-[500px] xl:max-w-[700px] flex flex-col justify-end">
+          <div className="w-full relative mx-auto my-0 lg:ml-auto lg:mr-0 aspect-[700/615] sm:min-w-[300px] lg:min-w-[400px] max-w-[500px] xl:max-w-[700px] flex flex-col justify-end">
             <img
               src="/phoneprod2.svg"
               alt="Image of Phone Menu Cart"
@@ -89,8 +89,8 @@ const ProductsPage = () => {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col  gap-[1rem] tablet:gap-[2.5rem]  tablet:mt-[2rem]">
-          <h1 className="sm:mx-auto my-0 tablet:m-0 w-fit text-[1.5rem] sm:text-[1.7rem] md:text-[1.9rem] tablet:text-[2.5rem] xl:text-[3rem] font-semibold text-my-black-950 leading-tight">
+        <div className=" w-full  flex flex-col  gap-[1rem] tablet:gap-[2.5rem]  justify-center">
+          <h1 className="sm:mx-auto my-0 lg:m-0 w-fit text-[1.5rem] sm:text-[1.7rem] md:text-[1.9rem] tablet:text-[2.5rem] xl:text-[3rem] font-semibold text-my-black-950 leading-tight">
             Are you ready{" "}
             <span className="text-my-orange-400 inline-block align-middle whitespace-nowrap">
               <GiDiamonds />
