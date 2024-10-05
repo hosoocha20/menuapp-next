@@ -20,9 +20,9 @@ const config: Config = {
         'mob-nav': '1rem',
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        cabin: ["Cabin", "sans-serif"],
-        "cabin-condensed": ["Cabin Condensed", "sans-serif"],
+        inter: "var(--font-inter)",
+        monsterrat: "var(--font-monsterrat)",
+
       },
       colors: {
         'my-primary': {

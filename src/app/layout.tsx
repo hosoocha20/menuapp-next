@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import 'material-symbols/outlined.css';
 
 import "./globals.css";
@@ -7,7 +7,8 @@ import "./uiMaterials.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const monsterrat = Montserrat( { subsets: ["latin"],variable: "--font-monsterrat" })
 
 export const metadata: Metadata = {
   title: "SmartMenu",
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${monsterrat.variable}`}>
         <Navbar />
         {children}
         <Footer />

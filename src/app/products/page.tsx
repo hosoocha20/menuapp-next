@@ -129,20 +129,7 @@ const ProductsPage = () => {
         </div>
       </section>
       <section className="min-h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   ">
-        {/* Phone */}
-        {/* <div className="relative">
-          <div className="edge">
-            <div className="volume-up"></div>
-            <div className="volume-down"></div>
-          </div>
-          <div className="screen-base"></div>
-          <div className="screen-top">
-            <div className="graphic-lower"></div>
-            <div className="graphic-middle"></div>
-            <div className="reflection-edge"></div>
-            <div className="reflection-screen"></div>
-          </div>
-        </div> */}
+        <h2 className="xl:text-[3.5rem] px-4 font-monsterrat tracking-[-0.1rem]">Our <span className="block">Products</span></h2>
         {/* <div className="relative  w-fit mx-auto my-0 z-[10]">
           <img src="/phonesidephone3.svg" className="w-[700px] " />
         </div> */}
