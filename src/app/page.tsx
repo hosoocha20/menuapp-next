@@ -510,6 +510,7 @@ const HomePage = () => {
         tag="About us"
         body="Learn more about what we do"
         className="bg-[#ffffff]"
+        link="contact"
       />
       <hr className="border w-[70%] mx-auto my-0 border-[#f3f3f3]"></hr>
       <section className="pt-[3.5rem] tablet:pt-[5rem]  ">
@@ -812,6 +813,7 @@ const HomePage = () => {
         tag="Enhance your service"
         body="Learn more about our features"
         className="bg-[#f9f9f9]"
+        link="features"
       />
 
       <section
@@ -985,11 +987,13 @@ const HomePage = () => {
           tag="Get in touch"
           body="Tell us how we can help"
           className="flex-1 bg-white border-b portrait-tablet:border-r portrait-tablet:border-b-0 border-my-black-80 py-6"
+          link="contact"
         />
         <ViewMoreUI
           tag="Service"
           body="Learn more about our features"
           className="flex-1 bg-white py-6"
+          link="features"
         />
       </section>
     </div>
