@@ -128,25 +128,7 @@ const HomePage = () => {
     },
   };
 
-  const foodMenuKioskImgArr = [
-    "food1.jpg",
-    "food2.jpg",
-    "food3.jpg",
-    "food4.jpg",
-    "food5.jpg",
-    "food6.jpg",
-    "food7.jpg",
-    "food8.jpg",
-    "food9.jpg",
-  ];
-  const foodMenuPhoneArr = [
-    "food1.jpg",
-    "food6.jpg",
-    "food7.jpg",
-    "food8.jpg",
-    "food9.jpg",
-    "food3.jpg",
-  ];
+
   const offerArr: OfferI[] = [
     {
       svg: "qrf",
