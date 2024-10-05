@@ -7,7 +7,7 @@ import { PiNotebookLight } from "react-icons/pi";
 import { MdFoodBank } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-//SVG Components
+//SVG Component
 import {
   Brushf,
   Callf,
