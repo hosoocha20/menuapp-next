@@ -29,6 +29,7 @@ import {
 import { PiShrimp } from "react-icons/pi";
 import { GiPeanut } from "react-icons/gi";
 import EmblaCarasouelStd from "@/ui/EmblaCarasouelStd";
+import { motion } from "framer-motion";
 
 interface AdditionalFeaturesI {
   Icon: ReactNode;
@@ -73,11 +74,14 @@ const FeaturesPage = () => {
       Icon: <BsInfoCircle size={"20px"} />,
     },
   ];
+
+  //Animation
+ 
   return (
     <div className="font-inter">
       <section className=" font-inter h-[75vh] sm:min-h-[500px]   px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav">
         <div className="relative h-full overflow-hidden  bg-my-primary-400 rounded-[2rem]  px-[2rem] sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav flex flex-col sm:flex-row  sm:justify-between tablet:justify-normal gap-[3rem] sm:gap-[6rem] py-[2rem] sm:py-[8rem]">
-          <div className=" lg:w-[40%]">
+          <motion.div className=" lg:w-[40%]" variants={{hidden: {opacity: 0, x:-20}, show: {opacity:1, x: 0, transition: {ease: "easeOut", duration: 0.5}}}} initial="hidden" animate="show">
             <h1 className="text-[1.7rem] sm:text-[2.5rem] text-white tracking-wide leading-tight">
               Explore
               <span className="block">Our Features</span>
@@ -86,14 +90,14 @@ const FeaturesPage = () => {
               Discover how you can streamline operations, enhance customer
               experience, and boost your bottom line with SmartMenu's features.
             </p>
-          </div>
-          <div className="sm:px-[2rem] lg:px-0  absolute bottom-0 sm:bottom-[-9rem] lg:bottom-[-3rem] w-full lg:w-[70%] xl:w-[55%] right-[-5%] sm:right-[50%] sm:translate-x-[50%] lg:translate-x-0 lg:right-[-15%] xl:right-[-5%] min-x-[600px] max-w-[700px] lg:max-w-[900px]">
+          </motion.div>
+          <motion.div variants={{hidden: {opacity: 0, x:20}, show: {opacity:1, x: 0, transition: {ease: "easeOut", duration: 0.5}}}} initial="hidden" animate="show" className="sm:px-[2rem] lg:px-0  absolute bottom-0 sm:bottom-[-9rem] lg:bottom-[-3rem] w-full lg:w-[70%] xl:w-[55%] right-[-5%] sm:right-[50%] sm:translate-x-[50%] lg:translate-x-0 lg:right-[-15%] xl:right-[-5%] min-x-[600px] max-w-[700px] lg:max-w-[900px]">
             <img
               src={"/smartmenumanager.svg"}
               alt="Smart Menu Managing System Image"
               className=""
             />
-          </div>
+          </motion.div>
           {/* <div className="grid grid-cols-1   w-fit gap-2 md:gap-6">
             <a
               href="#section-feature-design"
