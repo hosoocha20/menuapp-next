@@ -12,23 +12,23 @@ const Footer = () => {
             <h5 className="font-cabin uppercase font-medium text-my-black-300 text-[0.82rem] tracking-[0.3em]">
               About
             </h5>
-            <LinkUI name="About Us" />
-            <LinkUI name="Contact" />
+            <LinkUI name="About Us" link="about"/>
+            <LinkUI name="Contact" link="contact"/>
           </div>
           <div className="flex flex-col gap-1">
             <h5 className="font-cabin uppercase font-medium text-my-black-300 text-[0.82rem] tracking-[0.3em]">
               Services
             </h5>
 
-            <LinkUI name="Products" />
+            <LinkUI name="Products" link="products"/>
 
-            <LinkUI name="Features" />
+            <LinkUI name="Features" link="features"/>
           </div>
           <div className="flex flex-col gap-1">
             <h5 className="font-cabin uppercase font-medium text-my-black-300 text-[0.82rem] tracking-[0.3em]">
               Other
             </h5>
-            <LinkUI name="Attributions" />
+            <LinkUI name="Attributions" link="attributions"/>
           </div>
         </div>
       </div>
