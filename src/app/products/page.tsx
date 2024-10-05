@@ -1,32 +1,70 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import React from "react";
+import {
+  motion,
+  useAnimationControls,
+  useInView,
+  Variants,
+} from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { GiDiamonds } from "react-icons/gi";
 import { IoMailOutline } from "react-icons/io5";
 
 const ProductsPage = () => {
-
   //Animation
+
+  const controls = useAnimationControls();
+
+  const barContainerRef = useRef(null);
+  const isInView = useInView(barContainerRef);
   const barParent: Variants = {
     hidden: {
-      opacity: 1
+      opacity: 1,
     },
     show: {
       opacity: 1,
-      transition: {  duration: 0.35 ,delay: 0.4,staggerChildren: 0.05, type:"spring", stiffness: 60 }
-    }
-  }
-  const barSpringUp : Variants = {
+      transition: {
+        duration: 0.35,
+        delay: 0.4,
+        staggerChildren: 0.05,
+        type: "spring",
+        stiffness: 60,
+      },
+    },
+  };
+  const barSpringUp: Variants = {
     hidden: {
       y: "100%",
     },
     show: {
       y: "10%",
-      transition: { duration: 0.35 ,  staggerChildren: 0.05, type:"spring", stiffness: 60 }
-    }
-  }
+      transition: {
+        duration: 0.35,
+        staggerChildren: 0.05,
+        type: "spring",
+        stiffness: 60,
+      },
+    },
+  };
+
+  const drawLine: Variants = {
+    hidden: {
+      pathLength: 0,
+      opacity: 0,
+    },
+    show: {
+      pathLength: 1,
+      opacity: 1,
+      transition: { delay: 0.5, duration: 0.3, ease: "easeOut" },
+    },
+    show2: {
+      pathLength: 1,
+      opacity: 1,
+      transition: { delay: 0.8, duration: 0.3, ease: "easeOut" },
+    },
+  };
+
   return (
     <div className=" font-inter mt-[-3rem] tablet:mt-[-4.3rem] pb-[2rem]">
       <section className=" flex flex-col tablet:flex-row-reverse gap-y-[1rem] gap-x-[3rem] tablet:justify-between h-[100vh]  px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav pt-[4rem] md:pt-[5.5rem] ">
@@ -152,8 +190,14 @@ const ProductsPage = () => {
               className="aspect-[570/370] max-w-[770px] mx-auto my-0 mt-[2rem]"
             />
           </div>
-          <motion.div variants={barParent} whileInView="show" initial="hidden"
-          className=" w-[40%] bg-my-purple-200 px-[2rem] py-[2rem] flex flex-col">
+          <motion.div
+            ref={barContainerRef}
+            variants={barParent}
+            whileInView="show"
+            viewport={{ once: true }}
+            initial="hidden"
+            className=" w-[40%] bg-my-purple-200 px-[2rem] py-[2rem] flex flex-col"
+          >
             <h3 className="text-[1.5rem] text-white  font-medium">
               Happy Customers, Happy Restaurant
             </h3>
@@ -161,18 +205,89 @@ const ProductsPage = () => {
               Elevate your restaurant with SmartMenu and experience enhanced
               customer satisfaction, faster service, and increased revenue.
             </p>
-            <div className="border flex-1 mt-[2rem]  px-[15%]">
-              <div className=" relative w-full h-full border-b-2 border-my-black-800 border-l-2">
+            <div className="flex-1 mt-[2rem]  px-[15%]">
+              <div className=" relative w-full h-full border-b-[3px] border-l-[3px] border-my-purple-50 ">
+                <div className="absolute left-6 top-0 w-[60%] h-[70%] flex items-center justify-center">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 31 26"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <motion.path
+                      d="M0,25 Q23,25 30,10"
+                      fill={"none"}
+                      stroke={"#30be30"}
+                      strokeWidth={0.4}
+                      strokeLinecap={"round"}
+                      variants={drawLine}
+                      initial={"hidden"}
+                      whileInView={"show"}
+                      viewport={{ once: true }}
+                    />
+
+                    <motion.line
+                      x1="30"
+                      y1="10"
+                      x2="28"
+                      y2="11"
+                      strokeWidth={0.4}
+                      stroke="#30be30"
+                      fill={"none"}
+                      variants={drawLine}
+                      initial={"hidden"}
+                      whileInView={"show2"}
+                      viewport={{ once: true }}
+                    />
+                    <motion.line
+                      x1="30"
+                      y1="10"
+                      x2="30.7"
+                      y2="11.7"
+                      strokeWidth={0.4}
+                      stroke="#30be30"
+                      fill={"none"}
+                      variants={drawLine}
+                      initial={"hidden"}
+                      whileInView={"show2"}
+                      viewport={{ once: true }}
+                    />
+                  </svg>
+                </div>
                 <div className="absolute left-0 bottom-0 w-full h-full  flex flex-col justify-end overflow-hidden">
-                  <div className="flex gap-2 w-full h-[80%] pl-[10%] *:w-[8%] *:bg-[#5d99fd]">
-                    <motion.div variants={barSpringUp} className="  h-[5%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[10%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[18%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[29%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[43%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[60%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[80%]  self-end"></motion.div>
-                    <motion.div variants={barSpringUp} className="  h-[100%]  self-end"></motion.div>
+                  <div className="flex gap-2 w-full h-[80%] pl-[10%] *:w-[8%] *:bg-my-purple-50">
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[5%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[10%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[18%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[29%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[43%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[60%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[80%]  self-end"
+                    ></motion.div>
+                    <motion.div
+                      variants={barSpringUp}
+                      className="  h-[100%]  self-end"
+                    ></motion.div>
                   </div>
                 </div>
               </div>
