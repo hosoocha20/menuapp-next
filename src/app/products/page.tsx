@@ -75,13 +75,15 @@ const ProductsPage = () => {
             className="mx-auto my-0 tablet:ml-auto tablet:mr-0  min-h-[300px] h-[45vh] sm:h-auto w-full max-w-[500px] lg:min-w-[500px] xl:max-w-[700px]  "
           /> */}
           <div className="w-full relative mx-auto my-0 lg:ml-auto lg:mr-0 aspect-[700/615] sm:min-w-[300px] lg:min-w-[400px] max-w-[500px] xl:max-w-[700px] flex flex-col justify-end">
-            <img
+            <motion.img
+              variants={{hidden: {opacity: 0, y:20}, show: {opacity:1, y: 0, transition: {ease: "easeOut", duration: 0.5}}}} initial="hidden" animate="show"
               src="/phoneprod2.svg"
               alt="Image of Phone Menu Cart"
               className="absolute right-[4.2%] top-0   w-[44%] z-[1]  "
             />
             <div className="relative  aspect-[700/500] sm:min-w-[500px] lg:min-w-[500px] xl:max-w-[700px] rounded-[7.14%/10%]  bg-my-orange-400 overflow-hidden  ">
-              <img
+              <motion.img
+                variants={{hidden: {opacity: 0, y:-20}, show: {opacity:1, y: 0, transition: {ease: "easeOut", duration: 0.5}}}} initial="hidden" animate="show"
                 src="/phoneprod1.svg"
                 alt="Image of Phone Menu"
                 className="absolute left-[4.2%] top-[5%]  w-[44%]  "
@@ -91,9 +93,11 @@ const ProductsPage = () => {
         </div>
         <div className=" w-full  flex flex-col  gap-[1rem] tablet:gap-[2.5rem]  justify-center">
           <h1 className="sm:mx-auto my-0 lg:m-0 w-fit text-[1.5rem] sm:text-[1.7rem] md:text-[1.9rem] tablet:text-[2.5rem] xl:text-[3rem] font-semibold text-my-black-950 leading-tight">
-            Are you ready{" "}
-            <span className="text-my-orange-400 inline-block align-middle whitespace-nowrap">
-              <GiDiamonds />
+            <span>
+              Are you ready{" "}
+              <span className="text-my-orange-400 inline-block align-middle whitespace-nowrap">
+                <GiDiamonds />
+              </span>
             </span>
             <span className="block ">to take your restaurant</span>
             <span>to the </span>
