@@ -128,12 +128,12 @@ const ProductsPage = () => {
           </form>
         </div>
       </section>
-      <section className="min-h-[100vh] px-mob-nav sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   ">
-        <h2 className="xl:text-[3.5rem] px-4 font-monsterrat tracking-[-0.1rem]">Our <span className="block">Products</span></h2>
+      <section className="min-h-[100vh] px-mob-nav md:py-[3rem] sm:px-sm-nav  tablet:px-tablet-nav lg:px-lg-nav   ">
+        <h2 className="text-[2.3rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[3.7rem] px-4 font-monsterrat tracking-[-0.1rem] text-my-black-900 font-medium leading-none">Our <span className="block">Products</span></h2>
         {/* <div className="relative  w-fit mx-auto my-0 z-[10]">
           <img src="/phonesidephone3.svg" className="w-[700px] " />
         </div> */}
-        <div className="flex flex-col md:flex-row gap-[0.6rem] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[1.5rem] md:*:rounded-[2rem] w-full  mx-auto my-0 h-[600px] md:h-[500px]    ">
+        <div className="flex flex-col md:flex-row gap-[0.6rem] md:gap-[1rem] lg:gap-[1.5rem] xl:gap-[2rem]  *:rounded-[1.5rem] md:*:rounded-[2rem] w-full  mx-auto my-0 mt-[2rem] h-[600px] md:h-[500px]    ">
           <div className=" w-full md:w-[40%]  bg-my-orange-400 overflow-hidden px-[1rem] pt-[1rem] md:px-[2rem] md:pt-[2rem]">
             <h3 className="sm:text-[1.2rem] lg:text-[1.4rem] xl:text-[1.5rem] text-my-primary-50 font-medium">
               Digital Access
