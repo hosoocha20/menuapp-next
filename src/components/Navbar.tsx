@@ -97,7 +97,7 @@ const Navbar = () => {
         <div className="hidden tablet:flex flex-1  justify-center gap-[3.2rem] tracking-wider font-[400] text-[0.95rem] text-my-black-950">
           <a href="/products" className=" px-2">Products</a>
           <a href="/features" className=" px-2">Features</a>
-          <p className=" px-2">Contact</p>
+          <a href="/contact" className=" px-2">Contact</a>
         </div>
         <div className=" flex-1  flex justify-end items-center gap-[3.2rem] tracking-wider font-[400] text-sm tablet:text-[0.95rem]">
           <button className={`hidden sm:block ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
@@ -114,7 +114,7 @@ const Navbar = () => {
       <motion.div variants={navMenuPVariants} animate={controls} initial={"hide"} className={`opacity-0 bg-my-black-950 ${!openNav? "invisible " : "visible opacity-100"} tablet:invisible z-[0] w-full h-screen  transition-[opacity_1s_linear,visibility_0s_linear_300ms] duration-300 absolute left-0 top-0 pt-[3rem] tablet:pt-[4.3rem] px-sm-nav tablet:px-tablet-nav flex flex-col gap-[1rem] text-white text-[1.6rem] md:text-[1.7rem] tablet:text-[2rem] tracking-widest`}>
         <motion.a href="/products" variants={navMenuVariants}   className="mt-[2rem]">Products</motion.a>
         <motion.a href="/features" variants={navMenuVariants}  >Features</motion.a>
-        <motion.p variants={navMenuVariants} >Contact</motion.p>
+        <motion.a href="/contact" variants={navMenuVariants} >Contact</motion.a>
         <motion.p variants={navMenuVariants}  >Get Started</motion.p>
       </motion.div>
     </motion.nav>
