@@ -16,10 +16,10 @@ const page = () => {
             <div className='flex-1  lg:pt-[4rem]'>
                 <div className='w-full h-full flex flex-col  bg-my-primary-400 rounded-[2rem] px-[2rem] md:px-[4rem] py-[3rem] md:py-[4rem] '>
                    
-                    <form className='justify-center flex-1 flex flex-col gap-8 text-white [&_.CONTACT-LABEL]:flex [&_.CONTACT-LABEL]:flex-col [&_.CONTACT-LABEL]:text-sm [&_.CONTACT-LABEL]:md:text-[0.9rem] [&_.CONTACT-LABEL]:tracking-wide [&_.CONTACT-INPUT]:bg-transparent [&_.CONTACT-INPUT]:placeholder-my-primary-200 [&_.CONTACT-INPUT]:border-b-2 [&_.CONTACT-INPUT]:border-my-primary-50 [&_.CONTACT-INPUT]:py-2 [&_.CONTACT-INPUT]:text-sm [&_.CONTACT-INPUT]:md:text-[0.9rem]'>
+                    <form className='justify-center flex-1 flex flex-col gap-8 text-white [&_.CONTACT-LABEL]:flex [&_.CONTACT-LABEL]:flex-col [&_.CONTACT-LABEL]:font-monsterrat [&_.CONTACT-LABEL]:text-[0.85rem] [&_.CONTACT-LABEL]:font-medium [&_.CONTACT-LABEL]:md:font-normal [&_.CONTACT-LABEL]:md:text-[0.9rem]  [&_.CONTACT-INPUT]:bg-transparent [&_.CONTACT-INPUT]:placeholder-my-primary-200 [&_.CONTACT-INPUT]:border-b-2 [&_.CONTACT-INPUT]:border-my-primary-50 [&_.CONTACT-INPUT]:py-2 [&_.CONTACT-INPUT]:font-inter [&_.CONTACT-INPUT]:text-[0.82rem] [&_.CONTACT-INPUT]:md:text-[0.9rem]'>
                             <label className=' CONTACT-LABEL'>
                                 NAME
-                                <input className="CONTACT-INPUT focus:outline-none" placeholder='Your Name' type='text'/>
+                                <input className=" CONTACT-INPUT focus:outline-none" placeholder='Your Name' type='text'/>
                             </label>
 
                         <label className='CONTACT-LABEL'>
@@ -38,7 +38,7 @@ const page = () => {
                             MESSAGE
                             <textarea className="placeholder-my-primary-200  py-2 bg-transparent focus:outline-none focus:border focus:border-my-primary-100 min-h-min" placeholder='Leave a message'/>
                         </label>
-                        <button className='flex gap-3 bg-my-primary-50 hover:bg-white rounded-[0.3rem] text-my-primary-500 text-[0.97rem] font-bold w-min justify-center items-center px-9 py-[0.45rem]'>
+                        <button className='mt-[2rem] flex gap-3 bg-my-primary-50 hover:bg-white rounded-[0.3rem] text-my-primary-500 text-[0.97rem] font-bold w-min justify-center items-center px-9 py-[0.45rem]'>
                             SEND
                             <IoMdSend className='text-[0.875rem] flex'/>
                         </button>
