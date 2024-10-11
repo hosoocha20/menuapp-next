@@ -100,9 +100,9 @@ const Navbar = () => {
           <a href="/contact" className=" px-2">Contact</a>
         </div>
         <div className=" flex-1  flex justify-end items-center gap-[3.2rem] tracking-wider font-[400] text-sm tablet:text-[0.95rem]">
-          <button className={`hidden sm:block ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
+          <a href="/getstarted" className={`hidden sm:block ${!openNav ? "bg-my-black-950 text-white" : "bg-white text-my-black-950"} tablet:bg-my-black-950 tablet:text-white transition-[background-color,color] duration-300 ease-out rounded-[2rem] px-5 py-[0.5rem] tablet:py-[0.65rem] `}>
             Get Started
-          </button>
+          </a>
           <div
             className="block tablet:hidden w-[2rem] h-[1.2rem] "
             onClick={openMenuAni}
@@ -115,7 +115,7 @@ const Navbar = () => {
         <motion.a href="/products" variants={navMenuVariants}   className="mt-[2rem]">Products</motion.a>
         <motion.a href="/features" variants={navMenuVariants}  >Features</motion.a>
         <motion.a href="/contact" variants={navMenuVariants} >Contact</motion.a>
-        <motion.p variants={navMenuVariants}  >Get Started</motion.p>
+        <motion.a href="/getstarted" variants={navMenuVariants}  >Get Started</motion.a>
       </motion.div>
     </motion.nav>
   );
