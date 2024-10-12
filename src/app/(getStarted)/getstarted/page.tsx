@@ -2,7 +2,7 @@ import React from 'react'
 
 const getStarted = () => {
   return (
-    <div>app</div>
+    <div>page</div>
   )
 }
 
