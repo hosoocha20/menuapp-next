@@ -347,9 +347,9 @@ const HomePage = () => {
                 SmartMenu - The premier self-ordering solution.
               </span>
             </motion.p>
-            <motion.button variants={longFadeInUpAni} className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white self-center lg:self-auto">
+            <motion.a href="/getstarted" variants={longFadeInUpAni} className=" border-my-black-950 bg-my-black-950 rounded-3xl w-[9rem] py-3 text-white text-center self-center lg:self-auto">
               Get Started
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
         <motion.div
@@ -419,12 +419,13 @@ const HomePage = () => {
               orders, and complete payments without the need for waitstaff
               intervention.
             </motion.p>
-            <motion.button
+            <motion.a
+            href="/getstarted"
               variants={fadeInUpAni}
-              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 mt-[2.5rem] tablet:mt-[3.2rem] text-white text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base smooth-text-rendering"
+              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 mt-[2.5rem] tablet:mt-[3.2rem] text-center text-white text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base smooth-text-rendering"
             >
               Get Started Now
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
         {/* </RevealAni> */}
@@ -479,12 +480,13 @@ const HomePage = () => {
               Say goodbye to outdated menus and hello to a more responsible and
               efficient way to manage your restaurant.
             </motion.p>
-            <motion.button
+            <motion.a
+            href="/getstarted"
               variants={fadeInUpAni}
-              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 mt-[2.5rem] tablet:mt-[3.2rem] text-white text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
+              className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 mt-[2.5rem] tablet:mt-[3.2rem] text-center text-white text-[0.9rem] portrait-tablet:text-[0.95rem] lg:text-base"
             >
               Get Started Now
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -960,9 +962,9 @@ const HomePage = () => {
             Your Smart Choice for a Modern Restaurant
           </span>
         </p>
-        <button className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3  text-white text-[0.9rem] portrait-tablet:text-[0.95rem]">
+        <a href="/getstarted" className="border border-my-black-950 bg-my-black-950 rounded-3xl w-[11rem] py-2 tablet:py-3 text-center  text-white text-[0.9rem] portrait-tablet:text-[0.95rem]">
           Try Now For Free
-        </button>
+        </a>
       </section>
       <section className="flex flex-col portrait-tablet:flex-row w-full">
         <ViewMoreUI
