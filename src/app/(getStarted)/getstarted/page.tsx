@@ -64,6 +64,7 @@ const getStarted = () => {
                     <HiMiniComputerDesktop className="text-my-primary-400 text-[1.7rem]" />
                   </div>
                   <input
+                    disabled
                     className="w-full rounded-[0.6rem] border-2 border-gray-100 py-[2rem] text-transparent"
                     type="button"
                     value={"Table Order Kiosk"}
@@ -77,7 +78,7 @@ const getStarted = () => {
                 </div>
               </div>
             </div>
-            <div className=" flex flex-col gap-3 sm:w-full md:w-[65%] lg:w-[80%] xl:w-[65%] [&_.GETSTARTED-LABEL]:flex [&_.GETSTARTED-LABEL]:flex-col [&_.GETSTARTED-LABEL]:gap-2 [&_.GETSTARTED-LABEL]:text-[0.83rem] [&_.GETSTARTED-LABEL]:md:text-[0.9rem] [&_.GETSTARTED-LABEL]:font-medium [&_.GETSTARTED-LABEL]:tracking-wide [&_.GETSTARTED-INPUT]:border-2 [&_.GETSTARTED-INPUT]:rounded-md [&_.GETSTARTED-INPUT]:p-2 [&_.GETSTARTED-INPUT]:w-full [&_.GETSTARTED-INPUT]:font-normal [&_.GETSTARTED-INPUT]:text-[0.875rem]  ">
+            <div className=" flex flex-col gap-3 sm:w-full md:w-[65%] lg:w-[80%] xl:w-[65%] [&_.GETSTARTED-LABEL]:flex [&_.GETSTARTED-LABEL]:flex-col [&_.GETSTARTED-LABEL]:gap-2 [&_.GETSTARTED-LABEL]:text-[0.83rem] [&_.GETSTARTED-LABEL]:md:text-[0.9rem] [&_.GETSTARTED-LABEL]:font-medium [&_.GETSTARTED-LABEL]:tracking-wide [&_.GETSTARTED-INPUT]:border-2 [&_.GETSTARTED-INPUT]:border-[#e8eaee] [&_.GETSTARTED-INPUT]:rounded-md [&_.GETSTARTED-INPUT]:p-2 [&_.GETSTARTED-INPUT]:w-full [&_.GETSTARTED-INPUT]:font-normal [&_.GETSTARTED-INPUT]:text-[0.875rem]  ">
               <h4 className="text-sm md:text-base font-medium text-my-black-400 font-monsterrat">
                 Fill in your details
               </h4>
@@ -85,6 +86,7 @@ const getStarted = () => {
                 <label className="GETSTARTED-LABEL">
                   First Name
                   <input
+                  required
                     className="GETSTARTED-INPUT focus:outline-none"
                     type="text"
                     placeholder="First Name"
@@ -93,6 +95,7 @@ const getStarted = () => {
                 <label className="GETSTARTED-LABEL">
                   Last Name
                   <input
+                  required
                     className="GETSTARTED-INPUT focus:outline-none"
                     type="text"
                     placeholder="Last Name"
@@ -102,6 +105,7 @@ const getStarted = () => {
               <label className="GETSTARTED-LABEL">
                 Email
                 <input
+                required
                   className="GETSTARTED-INPUT focus:outline-none"
                   type="email"
                   placeholder="Your email address"
@@ -110,6 +114,7 @@ const getStarted = () => {
               <label className="GETSTARTED-LABEL">
                 Restaurant Name
                 <input
+                required
                   className="GETSTARTED-INPUT focus:outline-none"
                   type="text"
                   placeholder="Your restaurant name"
@@ -128,6 +133,7 @@ const getStarted = () => {
               <label className="GETSTARTED-LABEL">
                 Password
                 <input
+                required
                   className="GETSTARTED-INPUT focus:outline-none"
                   type="password"
                   autoComplete="new-password"
@@ -137,6 +143,7 @@ const getStarted = () => {
               <label className="GETSTARTED-LABEL">
                 Confirm your password
                 <input
+                required
                   className="GETSTARTED-INPUT focus:outline-none"
                   type="password"
                   autoComplete="new-password"
